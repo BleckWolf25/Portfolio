@@ -4,7 +4,7 @@ Welcome to my portfolio Read Me! I'm a developer who likes coding. Here you'll f
 
 ## 🛠 Technologies & Tools
 
-- **Languages:** JavaScript, C++, Java, Python, HTML5, CSS, C#, Swift, Shell Scripting, Lua & C
+- **Languages:** JavaScript, C++, Java, Python, HTML5, CSS3, C#, Swift, Shell Scripting, Lua & C
 - **Frameworks & Libraries That I mostly use:** React, Node.js, Express
 - **Databases:** MongoDB, MySQL
 - **Tools & Platforms:** Git, Docker, Kubernetes
