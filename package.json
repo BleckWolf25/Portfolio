@@ -1,0 +1,32 @@
+{
+  "name": "bleckwolf-portfolio",
+  "version": "1.0.0",
+  "description": "BleckWolf Portfolio Website",
+  "keywords": [
+    "portfolio",
+    "website",
+    "open-source",
+    "website-portfolio"
+  ],
+  "private": true,
+  "homepage": "https://github.com/BleckWolf/Portfolio#readme",
+  "bugs": {
+    "url": "https://github.com/BleckWolf/Portfolio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BleckWolf/Portfolio.git"
+  },
+  "license": "MIT",
+  "author": "BleckWolf",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}
