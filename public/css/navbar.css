@@ -1,8 +1,8 @@
 /* Imports */
-@import './main.css';
+@import "./main.css";
 
 .navbar {
-  transition: var(--transition);
+  transition: transform 0.3s ease-in-out;
   padding: 1rem 2rem;
   z-index: 1000;
   width: 100%;
@@ -44,6 +44,7 @@
   align-items: center;
   gap: 1.5rem;
   list-style: none;
+  transition: transform 0.3s ease-in-out, opacity 0.2s ease;
 }
 
 .navbar__links {
@@ -52,7 +53,7 @@
   text-decoration: none;
   font-size: 0.95rem;
   padding: 0.5rem 1rem;
-  transition: var(--transition);
+  transition: color 0.2s ease, transform 0.2s ease;
   display: flex;
   align-items: center;
   outline: none;
@@ -95,56 +96,56 @@
   height: 2px;
   background: var(--text-light);
   border-radius: 2px;
-  transition: var(--transition);
+  transition: transform 0.3s ease, opacity 0.2s ease;
 }
 
 @media (max-width: 768px) {
   /* Responsive Navbar for Smaller Devices */
   .navbar__container {
-	margin: 0.5rem;
-	padding: 0.75rem 1rem;
-	width: calc(100% - 1rem);
-	border-radius: 20px;
+    margin: 0.5rem;
+    padding: 0.75rem 1rem;
+    width: calc(100% - 1rem);
+    border-radius: 20px;
   }
 
   .navbar__menu {
-	position: fixed;
-	top: 0;
-	right: -100%;
-	width: 250px;
-	height: 100vh;
-	flex-direction: column;
-	background: rgba(18, 18, 18, 0.95);
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-	padding: 6rem 2rem;
-	gap: 2rem;
-	transition: var(--transition);
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    flex-direction: column;
+    background: rgba(18, 18, 18, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 6rem 2rem;
+    gap: 2rem;
+    transition: var(--transition);
   }
 
   .navbar__menu.active {
-	right: 0;
+    right: 0;
   }
 
   .navbar__toggle {
-	display: flex;
+    display: flex;
   }
 
   .navbar__links .nav-indicator {
-	left: -1rem;
-	top: 50%;
-	transform: translateY(-50%) scale(0);
+    left: -1rem;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
   }
 
   .navbar__links:hover .nav-indicator,
   .navbar__links.active .nav-indicator {
-	transform: translateY(-50%) scale(1);
+    transform: translateY(-50%) scale(1);
   }
 }
 
 @media (max-width: 480px) {
   /* Extra Small Devices Adjustments */
   .navbar__logo {
-	font-size: 1.25rem;
+    font-size: 1.25rem;
   }
 }
