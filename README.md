@@ -39,7 +39,7 @@ I'm a full-stack and versatile programmer who loves to build things. Whether it'
 
 ## 📈 GitHub Stats
 
-![JotaRYT's GitHub stats](https://github-readme-stats.vercel.app/api?username=JotaRYT&show_icons=true&theme=radical)
+![JotaRYT's GitHub stats](https://github-readme-stats.vercel.app/api?username=BleckWolf25&show_icons=true&theme=radical)
 
 ## 🌱 Currently Learning
 
