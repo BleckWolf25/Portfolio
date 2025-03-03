@@ -123,6 +123,7 @@
   left: 15%;
   filter: blur(2px);
   -webkit-filter: blur(2px);
+  filter: blur(2px);
   -webkit-animation: shadowScale 1s alternate infinite
     cubic-bezier(0.42, 0, 0.58, 1);
   animation: shadowScale 1s alternate infinite cubic-bezier(0.42, 0, 0.58, 1);

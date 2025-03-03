@@ -1,37 +1,17 @@
+/**
+ * Core navbar.js - Handles mobile menu toggling and section highlighting
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
-  const navbar = document.querySelector('.navbar');
   const mobileMenuButton = document.getElementById('mobile-menu');
   const navMenu = document.querySelector('.navbar__menu');
   const navLinks = document.querySelectorAll('.navbar__links');
   const body = document.body;
 
-  // Throttle scroll handler
-  let lastScroll = 0;
-  let isScrolling = false;
+  // Track menu state
+  let menuOpen = false;
 
-  const handleScroll = () => {
-    if (isScrolling) { return; }
-    isScrolling = true;
-
-    requestAnimationFrame(() => {
-      const currentScroll = window.scrollY;
-
-      if (currentScroll <= 0) {
-        navbar.classList.remove('scroll-up');
-      } else if (currentScroll > lastScroll) {
-        navbar.classList.remove('scroll-up');
-        navbar.classList.add('scroll-down');
-      } else {
-        navbar.classList.remove('scroll-down');
-        navbar.classList.add('scroll-up');
-      }
-
-      lastScroll = currentScroll;
-      isScrolling = false;
-    });
-  };
-
-  // Intersection Observer for active links
+  // Intersection Observer for active section highlighting
   const observerOptions = {
     root: null,
     rootMargin: '0px',
@@ -55,54 +35,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-  document.querySelectorAll('section[id]').forEach((section) => observer.observe(section));
+  // Observe all sections with IDs for navigation highlighting
+  document.querySelectorAll('section[id]').forEach((section) => {
+    observer.observe(section);
+  });
 
-  // Mobile menu handling
-  const toggleMenu = (state) => {
-    const isExpanded = state === 'toggle' ?
-      !(mobileMenuButton.getAttribute('aria-expanded') === 'true') :
-      state;
+  // Mobile menu toggle function
+  const toggleMenu = () => {
+    menuOpen = !menuOpen;
 
-    mobileMenuButton.setAttribute('aria-expanded', isExpanded);
-    navMenu.classList.toggle('active', isExpanded);
-    body.style.overflow = isExpanded ? 'hidden' : '';
+    // Accessibility attributes and visual state
+    mobileMenuButton.setAttribute('aria-expanded', menuOpen);
+    navMenu.classList.toggle('active', menuOpen);
 
-    if (isExpanded) {
-      navMenu.querySelector('a').focus();
+    // Lock scroll when menu is open
+    body.style.overflow = menuOpen ? 'hidden' : '';
+
+    // Focus management for accessibility
+    if (menuOpen) {
+      navMenu.querySelector('a:first-of-type')?.focus();
     }
   };
 
-  // Event handlers
-  const handleMenuClick = (event) => {
-    if (event.target === mobileMenuButton || event.key === 'Enter') {
-      toggleMenu('toggle');
-    }
-  };
+  // Mobile menu button click handler
+  mobileMenuButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    toggleMenu();
+  });
 
-  const handleDocumentClick = (event) => {
-    if (!navMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
-      toggleMenu(false);
-    }
-  };
-
-  const handleEscape = (event) => {
-    if (event.key === 'Escape' && navMenu.classList.contains('active')) {
-      toggleMenu(false);
-      mobileMenuButton.focus();
-    }
-  };
-
-  // Event listeners
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  mobileMenuButton.addEventListener('click', handleMenuClick);
-  mobileMenuButton.addEventListener('keydown', handleMenuClick);
-  document.addEventListener('click', handleDocumentClick);
-  document.addEventListener('keydown', handleEscape);
-
+  // Close menu when clicking a nav link
   navLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      toggleMenu(false);
-      link.blur();
+      if (menuOpen) {
+        toggleMenu();
+      }
     });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (event) => {
+    if (menuOpen &&
+      !navMenu.contains(event.target) &&
+      !mobileMenuButton.contains(event.target)) {
+      toggleMenu();
+    }
+  });
+
+  // Close menu on Escape key
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menuOpen) {
+      toggleMenu();
+      mobileMenuButton.focus();
+    }
+  });
+
+  // Keyboard accessibility for mobile menu button
+  mobileMenuButton.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleMenu();
+    }
   });
 });

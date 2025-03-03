@@ -1,0 +1,39 @@
+body {
+  cursor: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  background-image: url("../images/cursor.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out, background-image 0.2s ease;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background-image 0.2s ease, scale 0.2s ease;
+  will-change: transform;
+}
+
+.custom-cursor.interactive {
+  background-image: url("../images/pointer.png");
+  transform: translate(-50%, -50%) scale(1.2);
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    background-image 0.2s ease;
+}
+
+/* Add pointer cursor fallback for touch devices */
+@media (hover: hover) and (pointer: fine) {
+  body * {
+    cursor: none !important;
+  }
+
+  .interactive {
+    cursor: none !important;
+  }
+}

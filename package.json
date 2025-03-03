@@ -38,6 +38,7 @@
     "vite": "^6.2.0"
   },
   "dependencies": {
-    "@vercel/speed-insights": "^1.2.0"
+    "@vercel/speed-insights": "^1.2.0",
+    "motion": "^12.4.7"
   }
 }

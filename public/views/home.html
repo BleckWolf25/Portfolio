@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../css/home.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
     <link rel="stylesheet" href="../css/loading_dots.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <link rel="stylesheet" href="../css/cursor.css" />"
 
     <!-- Import Fonts -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -28,6 +30,9 @@
   </head>
 
   <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    
     <!-- Start the page with the loading element -->
     <div class="loader-wrapper">
       <div class="loader">
@@ -167,7 +172,7 @@
           id="tech"
           aria-label="Technologies I've Worked With"
         >
-          <div class="techs__container">
+          <div  class="techs__container">
             <h2 class="techs__title">Technologies I've Worked With</h2>
             <div class="techs__grid">
               <!-- Programming Languages -->
@@ -351,11 +356,19 @@
                   </li>
                   <li class="tech-item" role="listitem">
                     <iconify-icon
-                      icon="simple-icons:qt"
+                      icon="mdi:tailwind"
                       aria-hidden="true"
                       role="img"
                     ></iconify-icon>
-                    <span>Qt</span>
+                    <span>Tailwind</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:nextdotjs"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Next.js</span>
                   </li>
                   <li class="tech-item" role="listitem">
                     <iconify-icon
@@ -629,6 +642,7 @@
           <div class="develop__container">
             <h2 class="develop__title">What I Develop</h2>
             <div class="develop__grid">
+
               <!-- Web Development -->
               <div class="develop-item">
                 <div class="develop-item__header">
@@ -704,19 +718,270 @@
         </section>
 
         <!-- Soft Skills Section -->
-        <section class="projects section" id="soft_skills"></section>
+        <section class="soft_skills section" id="soft_skills">
+          <div class="soft_skills__container">
+            <h2 class="soft_skills__title">Soft Skills</h2>
+            <div class="soft_skills__grid">
+              
+              <!-- Problem-Solving -->
+              <div class="soft_skills-item">
+                <div class="soft_skills-item__header">
+                  <div class="soft_skills-item__icon">
+                    <iconify-icon icon="mdi:brain" width="24"></iconify-icon>
+                  </div>
+                  <h3 class="soft_skills-item__title">Problem-Solving</h3>
+                </div>
+                <p class="soft_skills-item__description">
+                  <strong>Situation:</strong> A project faced unexpected technical issues.<br>
+                  <strong>Task:</strong> Identify and resolve the root cause efficiently.<br>
+                  <strong>Action:</strong> Troubleshot the problem, analyzed possible solutions, check for typos, and iterated through different logic structures.<br>
+                  <strong>Result:</strong> Successfully fixed the issue, it was an typo and a parameter causing the issue.
+                </p>
+              </div>
+
+              <!-- Teamwork -->
+              <div class="soft_skills-item">
+                <div class="soft_skills-item__header">
+                  <div class="soft_skills-item__icon">
+                    <iconify-icon icon="mdi:account-group" width="24"></iconify-icon>
+                  </div>
+                  <h3 class="soft_skills-item__title">Teamwork</h3>
+                </div>
+                <p class="soft_skills-item__description">
+                  <strong>Situation:</strong> A teammate was struggling with a complex task.<br>
+                  <strong>Task:</strong> Assist them in understanding and solving the issue.<br>
+                  <strong>Action:</strong> Provided guidance, shared a cheat sheet, and motivated them to keep pushing forward.<br>
+                  <strong>Result:</strong> The teammate successfully completed the task, improving overall team performance.
+                </p>
+              </div>
+
+              <!-- Adaptability -->
+              <div class="soft_skills-item">
+                <div class="soft_skills-item__header">
+                  <div class="soft_skills-item__icon">
+                    <iconify-icon icon="mdi:shuffle-variant" width="24"></iconify-icon>
+                  </div>
+                  <h3 class="soft_skills-item__title">Adaptability</h3>
+                </div>
+                <p class="soft_skills-item__description">
+                  <strong>Situation:</strong> A project required the use of unfamiliar software tools & project structure.<br>
+                  <strong>Task:</strong> Learn and apply new tools and project structure quickly.<br>
+                  <strong>Action:</strong> Researched, practiced, and integrated the tools and project structure.<br>
+                  <strong>Result:</strong> Successfully adapted, contributing to the project's success with a little bit of delay.
+                </p>
+              </div>
+            
+              <!-- Creativity -->
+              <div class="soft_skills-item">
+                <div class="soft_skills-item__header">
+                  <div class="soft_skills-item__icon">
+                    <iconify-icon icon="mdi:lightbulb-on" width="24"></iconify-icon>
+                  </div>
+                  <h3 class="soft_skills-item__title">Creativity</h3>
+                </div>
+                <p class="soft_skills-item__description">
+                  <strong>Situation:</strong> A project needed a unique and seamless user experience.<br>
+                  <strong>Task:</strong> Develop innovative features to enhance usability.<br>
+                  <strong>Action:</strong> Designed and implemented creative solutions by thinking outside the box.<br>
+                  <strong>Result:</strong> Delivered an seamless, original product that impressed users.
+                </p>
+              </div>
+
+              <!-- Leadership -->
+              <div class="soft_skills-item">
+                <div class="soft_skills-item__header">
+                  <div class="soft_skills-item__icon">
+                    <iconify-icon icon="mdi:medal-outline" width="24"></iconify-icon>
+                  </div>
+                  <h3 class="soft_skills-item__title">Leadership</h3>
+                </div>
+                <p class="soft_skills-item__description">
+                  <strong>Situation:</strong> Faced with a project where team coordination was lacking and deadlines were at risk.<br>
+                  <strong>Task:</strong> Step up as the leader to align team efforts and establish clear objectives.<br>
+                  <strong>Action:</strong> Organized regular chatting, delegated tasks according to individual strengths, and maintained open communication channels.<br>
+                  <strong>Result:</strong> In the start, it was hard for the team but then the team became more unified, and the project was completed ahead of schedule.
+                </p>
+              </div>
+
+              <!-- Quality -->
+              <div class="soft_skills-item">
+                <div class="soft_skills-item__header">
+                  <div class="soft_skills-item__icon">
+                    <iconify-icon icon="mdi:diamond" width="24"></iconify-icon>
+                  </div>
+                  <h3 class="soft_skills-item__title">Quality > Quantity</h3>
+                </div>
+                <p class="soft_skills-item__description">
+                  <strong>Situation:</strong> In a project under tight deadlines, inconsistencies in deliverables and code infinite loops began to surface.<br>
+                  <strong>Task:</strong> Ensure that every component met high-quality standards despite the time constraints. Quality > Quantity. <br>
+                  <strong>Action:</strong> Implemented debug modes, conducted detailed code reviews, and refined quality assurance processes. <br>
+                  <strong>Result:</strong> The final product exceeded quality expectations, reducing 81% of errors and earning satisfaction.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section>
 
         <!-- Projects Section -->
-        <section class="projects section" id="projects"></section>
+        <section class="projects section" id="projects">
+          <div class="projects__container">
+            <h2 class="projects__title">Featured Projects</h2>
+            <div class="projects__grid">
+              
+              <!-- Project Card 1 -->
+              <div class="projects-card">
+                <div class="projects-card__image">
+                  <img src="../images/antonio_workshop_showcase.png" alt="António Costa Workshop" class="projects-card__image-zoom">
+                </div>
+                <div class="projects-card__info">
+                  <h3 class="projects-card__title">António Costa Workshop</h3>
+                  <p class="projects-card__description">
+                    I developed a responsive Progressive Web App (PWA) for a mechanic enterprise, 
+                    prioritizing super fast database interactions. The project features a modern, clean 
+                    UI/UX design, and incorporates AI functionalities to enhance operational efficiency.
+                  </p>
 
-        <!-- Contact Section -->
-        <section class="contact section" id="contact"></section>
+                  <!-- Links Section -->
+                  <div class="projects-card__links">
+                    <a href="#" class="projects-card__link" target="_blank" aria-label="GitHub Repository">
+                      <iconify-icon icon="mdi:github"></iconify-icon> GitHub Repository (Private)
+                    </a>
+                    <a href="https://oficina-apocar.web.app/" class="projects-card__link" target="_blank" aria-label="Live Website">
+                      <iconify-icon icon="mdi:globe"></iconify-icon> Live Website
+                    </a>
+                  </div>
+
+                  <!-- Tech Stack Section -->
+                  <div class="projects-card__tech">
+                    <span class="projects-card__tech-item">HTML5</span>
+                    <span class="projects-card__tech-item">CSS3</span>
+                    <span class="projects-card__tech-item">JavaScript</span>
+                    <span class="projects-card__tech-item">Node.js</span>
+                    <span class="projects-card__tech-item">Sass</span>
+                    <span class="projects-card__tech-item">Vue.js</span>
+                    <span class="projects-card__tech-item">Vite</span>
+                    <span class="projects-card__tech-item">Firebase</span>
+                    <span class="projects-card__tech-item">ESLint</span>
+                    <span class="projects-card__tech-item">Bootstrap</span>
+                    <span class="projects-card__tech-item">Sentry</span>
+                    <span class="projects-card__tech-item">Motion</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Card 2 -->
+              <div class="projects-card">
+                <div class="projects-card__image">
+                  <img src="" alt="MaiPA" class="projects-card__image-zoom">
+                </div>
+                <div class="projects-card__info">
+                  <h3 class="projects-card__title">My A.I. Personal Assistant(MaiPA)</h3>
+                  <p class="projects-card__description">
+                    This is my first console-based personal assistant AI, equipped with 
+                    system commands to clear cache, check system status and usage, and 
+                    much more. It includes a command that lets you switch between AI 
+                    and PA modes, allowing you to ask the AI various questions. For now, 
+                    this project remains private until I start the production build, 
+                    secure APIs, optimize, and address additional security concerns.
+                  </p>
+
+                  <!-- Links Section -->
+                  <div class="projects-card__links">
+                    <a href="https://github.com/BleckWolf25/MaiPA" class="projects-card__link" target="_blank" aria-label="GitHub Repository">
+                      <iconify-icon icon="mdi:github"></iconify-icon> GitHub Repository
+                    </a>
+                  </div>
+
+                  <!-- Tech Stack Section -->
+                  <div class="projects-card__tech">
+                    <span class="projects-card__tech-item">C++</span>
+                    <span class="projects-card__tech-item">More Info soon!</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Card 3 -->
+              <div class="projects-card">
+                <div class="projects-card__image">
+                  <img src="../images/the_great_calculator_showcase.png" alt="My First Calculator Vanilla Website" class="projects-card__image-zoom">
+                </div>
+                <div class="projects-card__info">
+                  <h3 class="projects-card__title">The Great Calculator</h3>
+                  <p class="projects-card__description">
+                    This was my first advanced, responsive calculator website, 
+                    featuring, Apple-like design, keyboard support, animations, 
+                    and an operation history display for an enhanced UX.
+                  </p>
+
+                  <!-- Links Section -->
+                  <div class="projects-card__links">
+                    <a href="https://github.com/BleckWolf25/TheGreatCalculator" class="projects-card__link" target="_blank" aria-label="GitHub Repository">
+                      <iconify-icon icon="mdi:github"></iconify-icon> GitHub Repository
+                    </a>
+                    <a href="https://bleckwolf25.github.io/TheGreatCalculator/" class="projects-card__link" target="_blank" aria-label="Live Website">
+                      <iconify-icon icon="mdi:globe"></iconify-icon> Live Website
+                    </a>
+                  </div>
+
+                  <!-- Tech Stack Section -->
+                  <div class="projects-card__tech">
+                    <span class="projects-card__tech-item">HTML5</span>
+                    <span class="projects-card__tech-item">CSS3</span>
+                    <span class="projects-card__tech-item">JavaScript</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+              
+            <!-- More Projects Link -->
+            <div class="projects__more">
+              <a href="https://github.com/BleckWolf25" target="_blank" rel="noopener noreferrer">
+                See more of my projects on GitHub (some might be private).
+              </a>
+
+            </div>
+          </div>
+        </section>
+
+
+        <!-- Contact-Footer Like Section -->
+        <section class="contact section" id="contact">
+          <div class="contact__container">
+            <h2 class="contact__title">Contact Me</h2>
+            <div class="contact__icons">
+              <a href="mailto:coutinho4gaming@gmail.com" target="_blank" rel="noopener noreferrer" class="contact__link">
+                <iconify-icon icon="mdi:email" width="32" class="contact__icon"></iconify-icon>
+              </a>
+              <a href="https://github.com/BleckWolf25" target="_blank" rel="noopener noreferrer" class="contact__link">
+                <iconify-icon icon="mdi:github" width="32" class="contact__icon"></iconify-icon>
+              </a>
+              <a href="https://pt.linkedin.com/in/bleck-wolf-827a0b328?trk=profile-badge" target="_blank" rel="noopener noreferrer" class="contact__link">
+                <iconify-icon icon="mdi:linkedin" width="32" class="contact__icon"></iconify-icon>
+              </a>
+            </div>
+          </div>
+        </section>  
+
+        <div class="modal" id="image-modal">
+          <div class="modal__content">
+            <span class="modal__close" id="modal-close">&times;</span>
+            <p class="modal__caption" id="modal-caption"></p>
+            <img class="modal__image" id="modal-image" alt="Enlarged view">
+          </div>
+        </div>
+
       </main>
     </div>
 
     <!-- Scripts -->
     <script src="../js/loading.js" defer></script>
     <script src="../js/navbar.js" defer></script>
-    <script src="../js/main.js" type="module" ></script>
+    <script src="../js/navbar-animations.js" defer></script>
+    <script src="../js/animations.js" defer></script>
+    <script src="../js/main.js" type="module" defer></script>
+    <script src="../js/projects.js" defer></script>
+    <script src="../js/cursor.js" defer></script>
   </body>
 </html>
