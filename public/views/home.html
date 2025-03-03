@@ -14,14 +14,17 @@
     <link rel="stylesheet" href="../css/loading_dots.css" />
 
     <!-- Import Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Import Favicon -->
     <link rel="icon" href="../icons/favicon.ico" />
 
     <!-- Title -->
-    <title>JotaRYT Portfolio</title>
+    <title>BleckWolf25 Portfolio</title>
   </head>
 
   <body>
@@ -42,21 +45,26 @@
       <!-- Navbar -->
       <nav class="navbar">
         <div class="navbar__container glass">
-
           <!-- Logo Text -->
           <a href="#home" class="navbar__logo">
             <span class="logo-text">BleckWolf Portfolio</span>
           </a>
-          
-          <!-- Mobile menu -->
-          <div class="navbar__toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
 
+          <!-- Mobile menu -->
+          <button
+            class="navbar__toggle"
+            id="mobile-menu"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="navbar-menu"
+          >
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
+          </button>
+
+          <!-- Navbar Menu -->
           <ul class="navbar__menu">
-            
             <!-- Home -->
             <li class="navbar__item">
               <a href="#home" class="navbar__links active">
@@ -72,7 +80,7 @@
                 <span class="nav-text">About</span>
               </a>
             </li>
-            
+
             <!--- Technology -->
             <li class="navbar__item">
               <a href="#tech" class="navbar__links">
@@ -81,11 +89,19 @@
               </a>
             </li>
 
-            <!-- Skills -->
+            <!-- What I develop -->
             <li class="navbar__item">
-              <a href="#skills" class="navbar__links">
+              <a href="#develop" class="navbar__links">
                 <span class="nav-indicator"></span>
-                <span class="nav-text">Skills</span>
+                <span class="nav-text">What I Develop</span>
+              </a>
+            </li>
+
+            <!-- Soft Skills -->
+            <li class="navbar__item">
+              <a href="#soft_skills" class="navbar__links">
+                <span class="nav-indicator"></span>
+                <span class="nav-text">Soft Skills</span>
               </a>
             </li>
 
@@ -96,13 +112,12 @@
                 <span class="nav-text">Projects</span>
               </a>
             </li>
-            
+
             <li class="navbar__item">
               <a href="#contact" class="navbar__links">
                 <span class="nav-indicator"></span>
                 <span class="nav-text">Contact</span>
               </a>
-            
             </li>
           </ul>
         </div>
@@ -110,13 +125,14 @@
 
       <!-- Main content -->
       <main>
-
         <!-- Home Section -->
         <section class="home" id="home">
           <div class="home__container">
             <span class="home__greeting">Welcome, I'm</span>
             <h1 class="home__title">BleckWolf</h1>
-            <h2 class="home__role">Full-Stack Developer & Experienced Leader</h2>
+            <h2 class="home__role">
+              Full-Stack Developer & Experienced Leader
+            </h2>
             <p class="home__description">
               Passionate about programming & leading in the digital world.
             </p>
@@ -125,109 +141,582 @@
 
         <!-- About Section -->
         <section class="about" id="about">
+          <div class="td_lr">
+            <p></p>
+          </div>
           <div class="about__container">
             <h2 class="about__title">About Me</h2>
             <p class="about__description">
-              Hello there! I'm a full-stack and versatile programmer who loves to build things.
-              Whether it's software, games, websites, scripts or something completely new!
-              I'm really interested in making things that are high-quality and useful.
-              I'm always learning and growing, and I enjoy working on different kinds of projects.
-              I believe in quality over the quantity and that's why I always try to make the best product possible.
-              I also find it really fun to work with teams and help everyone do their best.
-              I'm excited for the future of technology and I'm always looking for new ways to create and innovate.
-              If you have a cool project in mind, I'd love to hear about it!
+              Hello there! I'm a full-stack and versatile programmer who loves
+              to build things. Whether it's software, games, websites, scripts
+              or something completely new! I'm really interested in making
+              things that are high-quality and useful. I'm always learning and
+              growing, and I enjoy working on different kinds of projects. I
+              believe in quality over the quantity and that's why I always try
+              to make the best product possible. I also find it fun to work with
+              teams and help everyone do their best. I'm curious about how
+              things work and for the future of tech. I'm always looking for new
+              ways to create, innovate and adapt.
             </p>
           </div>
         </section>
 
         <!-- Technologies Section -->
-        <section class="techs section" id="tech">
+        <section
+          class="techs section"
+          id="tech"
+          aria-label="Technologies I've Worked With"
+        >
           <div class="techs__container">
             <h2 class="techs__title">Technologies I've Worked With</h2>
             <div class="techs__grid">
-
               <!-- Programming Languages -->
-              <div class="tech-item">
-                <img src="../images/C++-solid.png" alt="C++" class="techs_no_icons"></img>
-                <span>C++</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-c"></i>
-                <span>C</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-python"></i>
-                <span>Python</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-js"></i>
-                <span>JavaScript</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-java"></i>
-                <span>Java</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-html5"></i>
-                <span>HTML5</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-css3-alt"></i>
-                <span>CSS3</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-react"></i>
-                <span>React</span>
-              </div>
-              
-              <!-- Frameworks -->
-              <div class="tech-item">
-                <i class="fab fa-node-js"></i>
-                <span>Node.js</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-git-alt"></i>
-                <span>Git</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
-              </div>
-              <div class="tech-item">
-                <i class="fab fa-docker"></i>
-                <span>Docker</span>
-              </div>
+              <article class="tech-group">
+                <h3 class="tech-group__title">Languages</h3>
+                <ul class="tech-group__items" role="list">
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:language-c"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>C</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:language-cpp"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>C++</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:language-csharp"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>C#</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:language-java"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Java</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:language-python"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Python</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:language-javascript"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>JavaScript</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:language-typescript"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>TypeScript</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:language-lua"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Lua</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:swift"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Swift UI</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:language-html5"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>HTML5</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:language-css3"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>CSS3</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:mysql"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>SQL</span>
+                  </li>
+                </ul>
+              </article>
 
-              <!-- Tools -->
+              <!-- Frameworks & Libraries -->
+              <article class="tech-group">
+                <h3 class="tech-group__title">Frameworks & Libraries</h3>
+                <ul class="tech-group__items" role="list">
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:nodejs"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Node.js</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:vite"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Vite</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:vuejs"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Vue.js</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:firebase"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Firebase</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:react"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>React</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:express"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Express</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:electron-framework"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Electron</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:angular"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Angular</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:bootstrap"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Bootstrap</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:qt"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Qt</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:dot-net"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>.NET</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:language-java"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>JavaFX</span>
+                  </li>
+                </ul>
+              </article>
 
+              <!-- Tools & Platforms -->
+              <article class="tech-group">
+                <h3 class="tech-group__title">Tools & Platforms</h3>
+                <ul class="tech-group__items" role="list">
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:git"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Git</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:github"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>GitHub</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:vercel"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Vercel</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:replit"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Replit</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:eslint"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>ESLint</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:docker"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Docker</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:cmake"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>CMake</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:npm"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>npm</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:yarn"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Yarn</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:apachemaven"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Maven</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:gradle"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Gradle</span>
+                  </li>
+                </ul>
+              </article>
 
-              <!-- OS -->
+              <!-- IDEs & Editors -->
+              <article class="tech-group">
+                <h3 class="tech-group__title">IDEs & Editors</h3>
+                <ul class="tech-group__items" role="list">
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:microsoft-visual-studio-code"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>VS Code</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:microsoft-visual-studio"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Visual Studio</span>
+                  </li>
+                </ul>
+              </article>
 
+              <!-- Game Development -->
+              <article class="tech-group">
+                <h3 class="tech-group__title">Game Development</h3>
 
+                <ul class="tech-group__items" role="list">
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:robloxstudio"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Roblox Studio</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:godotengine"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Godot</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:unreal"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Unreal Engine</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:unity"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Unity</span>
+                  </li>
+                </ul>
+              </article>
+
+              <!-- Operating Systems -->
+              <article class="tech-group">
+                <h3 class="tech-group__title">Operating Systems</h3>
+                <ul class="tech-group__items" role="list">
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:apple"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>macOS</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="mdi:windows"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Windows</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:linux"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Linux</span>
+                  </li>
+                </ul>
+              </article>
+
+              <!-- AI Tools -->
+              <article class="tech-group">
+                <h3 class="tech-group__title">AI Tools</h3>
+                <ul class="tech-group__items" role="list">
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:githubcopilot"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>GitHub Copilot</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:claude"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Claude</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:openai"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>ChatGPT</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="arcticons:deepseek"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>DeepSeek</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="simple-icons:googlegemini"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <span>Gemini</span>
+                  </li>
+                  <li class="tech-item" role="listitem">
+                    <iconify-icon
+                      icon="arcticons:x-twitter"
+                      aria-hidden="true"
+                      role="img"
+                    ></iconify-icon>
+                    <!-- Temporary Grok Icon -->
+                    <span>Grok</span>
+                  </li>
+                </ul>
+              </article>
             </div>
           </div>
         </section>
 
-        <!-- Skills Section -->
-        <section class="skills section" id="skills">
-          
+        <!-- What I Develop Section -->
+        <section class="develop section" id="develop">
+          <div class="develop__container">
+            <h2 class="develop__title">What I Develop</h2>
+            <div class="develop__grid">
+              <!-- Web Development -->
+              <div class="develop-item">
+                <div class="develop-item__header">
+                  <div class="develop-item__icon">
+                    <iconify-icon icon="mdi:globe" width="24"></iconify-icon>
+                  </div>
+                  <h3 class="develop-item__title">Web Applications</h3>
+                </div>
+                <p class="develop-item__description">
+                  Creating modern, responsive, and user-friendly web applications with focus on performance, 
+                  accessibility, and seamless user experience.
+                </p>
+                <ul class="develop-item__features">
+                  <li>E-commerce Platforms</li>
+                  <li>Business Websites</li>
+                  <li>Web Portals</li>
+                  <li>Progressive Web Apps</li>
+                  <li>Utility Websites</li>
+                  <li>Wikis/Knowledge Websites</li>
+                  <li>Portfolio Templates</li>
+                  <li>Blogs</li>
+                </ul>
+              </div>
+        
+              <!-- Software Applications -->
+              <div class="develop-item">
+                <div class="develop-item__header">
+                  <div class="develop-item__icon">
+                    <iconify-icon icon="mdi:desktop-windows" width="24"></iconify-icon>
+                  </div>
+                  <h3 class="develop-item__title">Software Applications</h3>
+                </div>
+                <p class="develop-item__description">
+                  Developing robust and efficient desktop applications for Windows, macOS, and Linux 
+                  with native performance and integration.
+                </p>
+                <ul class="develop-item__features">
+                  <li>Productivity Tools</li>
+                  <li>System Utilities</li>
+                  <li>Data Analysis Tools</li>
+                  <li>Custom Business Software</li>
+                  <li>Console Apps</li>
+                  <li>Automation Scripts</li>
+                </ul>
+              </div>
+        
+              <!-- Game Development -->
+              <div class="develop-item">
+                <div class="develop-item__header">
+                  <div class="develop-item__icon">
+                    <iconify-icon icon="mdi:google-gamepad" width="24"></iconify-icon>
+                  </div>
+                  <h3 class="develop-item__title">Games</h3>
+                </div>
+                <p class="develop-item__description">
+                  Creating engaging and entertaining games for various platforms using various
+                  game engines.
+                </p>
+                <ul class="develop-item__features">
+                  <li>3D Games</li>
+                  <li>2D Games</li>
+                  <li>Race Games</li>
+                  <li>Simulation Games</li>
+                  <li>Action Games</li>
+                  <li>Horror Games</li>
+                  <li>Adventure Games</li>
+                  <li>Educational Games</li>
+                  <li>Add-ons for Games</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </section>
+
+        <!-- Soft Skills Section -->
+        <section class="projects section" id="soft_skills"></section>
 
         <!-- Projects Section -->
-        <section class="projects section" id="projects">
-  
-        </section>
+        <section class="projects section" id="projects"></section>
 
         <!-- Contact Section -->
-        <section class="contact section" id="contact">
-
-        </section>
-
+        <section class="contact section" id="contact"></section>
       </main>
     </div>
 
     <!-- Scripts -->
     <script src="../js/loading.js" defer></script>
     <script src="../js/navbar.js" defer></script>
+    <script src="../js/main.js" type="module" ></script>
   </body>
 </html>
