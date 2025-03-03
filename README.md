@@ -46,6 +46,7 @@ I'm a full-stack and versatile programmer who loves to build things. Whether it'
 - Motion (Web-Framework)
 - Cyber Security
 - Advanced Next.js
+- Sass
 
 ## ⚡ Fun Facts
 
