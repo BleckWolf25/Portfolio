@@ -36,5 +36,8 @@
     "globals": "^16.0.0",
     "terser": "^5.39.0",
     "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.2.0"
   }
 }
