@@ -39,6 +39,6 @@
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.2.0",
-    "motion": "^12.4.7"
+    "motion": "^12.4.10"
   }
 }

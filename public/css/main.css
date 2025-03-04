@@ -54,11 +54,14 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 /* -------------------------------------------------- */
 /* Container & Section Styles */
 /* -------------------------------------------------- */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;

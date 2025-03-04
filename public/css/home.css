@@ -60,10 +60,10 @@
 }
 
 .home__subtitle {
-  margin: 0 0 1.875rem 0.25rem; 
+  margin: 0 0 1.875rem 0.25rem;
   color: var(--primary-color);
   font-family: var(--font-mono, "SF Mono", "Fira Code", monospace);
-  font-size: clamp(0.875rem, 5vw, 1rem); 
+  font-size: clamp(0.875rem, 5vw, 1rem);
   letter-spacing: 1px;
 }
 
@@ -94,7 +94,7 @@
 
 .home__title {
   margin: 0;
-  font-size: clamp(2.5rem, 8vw, 5rem); 
+  font-size: clamp(2.5rem, 8vw, 5rem);
   line-height: 1.1;
   color: var(--text-primary);
   background: var(--gradient);
@@ -122,14 +122,14 @@
 }
 
 .home__title-large {
-  margin-top: 0.625rem; 
+  margin-top: 0.625rem;
   color: var(--text-secondary);
   line-height: 0.9;
-  font-size: clamp(3.125rem, 10vw, 5.625rem); 
+  font-size: clamp(3.125rem, 10vw, 5.625rem);
 }
 
 .home__role {
-  font-size: clamp(1.125rem, 4vw, 1.5rem); 
+  font-size: clamp(1.125rem, 4vw, 1.5rem);
   margin: 1rem 0;
   opacity: 0.8;
   position: relative;
@@ -139,7 +139,7 @@
 }
 
 .home__description {
-  margin: 1.25rem auto 0; 
+  margin: 1.25rem auto 0;
   max-width: 540px;
   color: var(--text-secondary);
   font-size: clamp(1rem, 3vw, 1.25rem);
@@ -154,7 +154,7 @@
   position: absolute;
   width: 40%;
   height: 1px;
-  bottom: -1.25rem; 
+  bottom: -1.25rem;
   left: 30%;
   background: linear-gradient(
     90deg,
@@ -169,7 +169,7 @@
 /* -------------------------------------------------- */
 
 .home__button {
-  margin-top: 3.125rem; 
+  margin-top: 3.125rem;
   padding: 1.25rem 1.75rem;
   position: relative;
   overflow: hidden;
@@ -180,7 +180,7 @@
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: var(--transition);
-  font-size: 0.875rem; 
+  font-size: 0.875rem;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   animation: slideUp 0.8s 0.6s ease-out backwards;
@@ -556,7 +556,11 @@
 
 .develop.section {
   position: relative;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(var(--primary-color-rgb), 0.05));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(var(--primary-color-rgb), 0.05)
+  );
   padding-bottom: 4rem;
 }
 
@@ -610,7 +614,8 @@
 .develop-item:hover {
   transform: translateY(-10px) rotateX(2deg) rotateY(2deg);
   background: rgba(255, 255, 255, 0.03);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 0 20px rgba(var(--primary-color-rgb), 0.1),
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(var(--primary-color-rgb), 0.1),
     inset 0 0 20px rgba(var(--primary-color-rgb), 0.05);
 }
 
@@ -629,7 +634,12 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
   opacity: 0.3;
 }
 
@@ -639,7 +649,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   border-radius: 12px;
   color: #fff;
   transition: all 0.4s ease;
@@ -654,7 +668,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transform: translateX(-100%);
   transition: transform 0.6s ease;
 }
@@ -708,9 +727,14 @@
 }
 
 .develop-item__features li:hover {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
   transform: translateY(-4px) scale(1.08) rotate(2deg);
-  box-shadow: 0 6px 18px rgba(var(--primary-color-rgb), 0.3), 0 0 10px rgba(var(--primary-color-rgb), 0.2);
+  box-shadow: 0 6px 18px rgba(var(--primary-color-rgb), 0.3),
+    0 0 10px rgba(var(--primary-color-rgb), 0.2);
 }
 
 .develop-item:hover .develop-item__title {
@@ -723,7 +747,11 @@
 
 .soft_skills {
   position: relative;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02), rgba(var(--primary-color-rgb), 0.03));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.02),
+    rgba(var(--primary-color-rgb), 0.03)
+  );
   padding: 4rem 0;
 }
 
@@ -783,7 +811,12 @@
 }
 
 .soft_skills-item__header::after {
-  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
   margin-left: 1rem;
 }
 
@@ -793,7 +826,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   border-radius: 50%;
   color: #fff;
 }
@@ -1019,11 +1056,16 @@
   background-color: #333333;
   padding: 0.75rem;
   border-radius: 50%;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .contact__link:hover {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   transform: translateY(-5px) scale(1.1);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -1041,6 +1083,15 @@
 /* -------------------------------------------------- */
 /* Features */
 /* -------------------------------------------------- */
+
+.line {
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: expandLine 1s forwards;
+}
 
 .modal {
   display: none;
@@ -1120,10 +1171,6 @@
   height: 100%;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 /* -------------------------------------------------- */
 /* Animations */
 /* -------------------------------------------------- */
@@ -1175,10 +1222,12 @@ html {
 
 @keyframes glow {
   from {
-    text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 15px var(--primary-color);
+    text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color),
+      0 0 15px var(--primary-color);
   }
   to {
-    text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color),
+      0 0 30px var(--primary-color);
   }
 }
 
@@ -1196,10 +1245,10 @@ html {
 
 @keyframes expandLine {
   from {
-    width: 0;
+    transform: scaleX(0);
   }
   to {
-    width: 50px;
+    transform: scaleX(1);
   }
 }
 

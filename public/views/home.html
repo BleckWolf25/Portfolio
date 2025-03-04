@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 
-<!-- Language: English -->
 <html lang="en">
   <head>
-    <!-- Metas -->
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Import css -->
-    <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/home.css" />
-    <link rel="stylesheet" href="../css/navbar.css" />
-    <link rel="stylesheet" href="../css/loading_dots.css" />
-    <link rel="stylesheet" href="../css/animations.css" />
-    <link rel="stylesheet" href="../css/cursor.css" />"
+    <link rel="stylesheet" href="../css/main.css?v=1.0" />
+    <link rel="stylesheet" href="../css/home.css?v=1.0" />
+    <link rel="stylesheet" href="../css/cursor.css?v=1.0" />
+    <link rel="stylesheet" href="../css/navbar.css?v=1.0" />
+    <link rel="stylesheet" href="../css/loading_dots.css?v=1.0" />
 
     <!-- Import Fonts -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -21,6 +18,9 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Import motion for animations -->
+    <script src="https://cdn.jsdelivr.net/npm/motion/dist/motion.min.js"></script>
 
     <!-- Import Favicon -->
     <link rel="icon" href="../icons/favicon.ico" />
@@ -30,8 +30,12 @@
   </head>
 
   <body>
+    
     <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
+
+    <!-- Motion Progress -->
+    <div class="progress"></div>
     
     <!-- Start the page with the loading element -->
     <div class="loader-wrapper">
@@ -44,7 +48,7 @@
         <div class="shadow"></div>
       </div>
     </div>
-
+    
     <!-- Main content wrapper -->
     <div class="content-wrapper">
       <!-- Navbar -->
@@ -57,11 +61,13 @@
 
           <!-- Mobile menu -->
           <button
+            type="button"
             class="navbar__toggle"
             id="mobile-menu"
             aria-label="Toggle navigation menu"
             aria-expanded="false"
             aria-controls="navbar-menu"
+            role="button"
           >
             <span class="bar" aria-hidden="true"></span>
             <span class="bar" aria-hidden="true"></span>
@@ -130,17 +136,18 @@
 
       <!-- Main content -->
       <main>
+
         <!-- Home Section -->
         <section class="home" id="home">
           <div class="home__container">
-            <span class="home__greeting">Welcome, I'm</span>
-            <h1 class="home__title">BleckWolf</h1>
-            <h2 class="home__role">
-              Full-Stack Developer & Experienced Leader
-            </h2>
-            <p class="home__description">
-              Passionate about programming & leading in the digital world.
-            </p>
+              <span class="home__greeting">Welcome, I'm</span>
+              <h1 id="home-title" class="home__title" data-text="BleckWolf">BleckWolf</h1>
+              <h2 class="home__role">
+                Full-Stack Developer & Experienced Leader
+              </h2>
+              <p class="home__description">
+                Passionate about programming & leading in the digital world.
+              </p>
           </div>
         </section>
 
@@ -167,11 +174,7 @@
         </section>
 
         <!-- Technologies Section -->
-        <section
-          class="techs section"
-          id="tech"
-          aria-label="Technologies I've Worked With"
-        >
+        <section aria-labelledby="tech-title" class="techs section" id="tech">
           <div  class="techs__container">
             <h2 class="techs__title">Technologies I've Worked With</h2>
             <div class="techs__grid">
@@ -184,6 +187,7 @@
                       icon="mdi:language-c"
                       aria-hidden="true"
                       role="img"
+                      aria-label="C Programming Language"
                     ></iconify-icon>
                     <span>C</span>
                   </li>
@@ -192,6 +196,7 @@
                       icon="mdi:language-cpp"
                       aria-hidden="true"
                       role="img"
+                      aria-label="C++ Programming Language"
                     ></iconify-icon>
                     <span>C++</span>
                   </li>
@@ -200,6 +205,7 @@
                       icon="mdi:language-csharp"
                       aria-hidden="true"
                       role="img"
+                      aria-label="C# Programming Language"
                     ></iconify-icon>
                     <span>C#</span>
                   </li>
@@ -208,6 +214,7 @@
                       icon="mdi:language-java"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Java Programming Language"
                     ></iconify-icon>
                     <span>Java</span>
                   </li>
@@ -224,6 +231,7 @@
                       icon="mdi:language-javascript"
                       aria-hidden="true"
                       role="img"
+                      aria-label="JavaScript Programming Language"
                     ></iconify-icon>
                     <span>JavaScript</span>
                   </li>
@@ -232,6 +240,7 @@
                       icon="mdi:language-typescript"
                       aria-hidden="true"
                       role="img"
+                      aria-label="TypeScript Programming Language"
                     ></iconify-icon>
                     <span>TypeScript</span>
                   </li>
@@ -240,6 +249,7 @@
                       icon="mdi:language-lua"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Lua Programming Language"
                     ></iconify-icon>
                     <span>Lua</span>
                   </li>
@@ -248,6 +258,7 @@
                       icon="simple-icons:swift"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Swift UI Programming Language"
                     ></iconify-icon>
                     <span>Swift UI</span>
                   </li>
@@ -256,6 +267,7 @@
                       icon="mdi:language-html5"
                       aria-hidden="true"
                       role="img"
+                      aria-label="HTML5 Language"
                     ></iconify-icon>
                     <span>HTML5</span>
                   </li>
@@ -264,6 +276,7 @@
                       icon="mdi:language-css3"
                       aria-hidden="true"
                       role="img"
+                      aria-label="CSS3 Language"
                     ></iconify-icon>
                     <span>CSS3</span>
                   </li>
@@ -272,6 +285,7 @@
                       icon="simple-icons:mysql"
                       aria-hidden="true"
                       role="img"
+                      aria-label="SQL Programming Language"
                     ></iconify-icon>
                     <span>SQL</span>
                   </li>
@@ -287,6 +301,7 @@
                       icon="mdi:nodejs"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Node.js Framework"
                     ></iconify-icon>
                     <span>Node.js</span>
                   </li>
@@ -295,6 +310,7 @@
                       icon="simple-icons:vite"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Vite Framework"
                     ></iconify-icon>
                     <span>Vite</span>
                   </li>
@@ -303,6 +319,7 @@
                       icon="mdi:vuejs"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Vue.js Framework"
                     ></iconify-icon>
                     <span>Vue.js</span>
                   </li>
@@ -311,6 +328,7 @@
                       icon="mdi:firebase"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Firebase Framework"
                     ></iconify-icon>
                     <span>Firebase</span>
                   </li>
@@ -319,6 +337,7 @@
                       icon="mdi:react"
                       aria-hidden="true"
                       role="img"
+                      aria-label="React Framework"
                     ></iconify-icon>
                     <span>React</span>
                   </li>
@@ -327,6 +346,7 @@
                       icon="simple-icons:express"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Express Framework"
                     ></iconify-icon>
                     <span>Express</span>
                   </li>
@@ -335,6 +355,7 @@
                       icon="mdi:electron-framework"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Electron Framework"
                     ></iconify-icon>
                     <span>Electron</span>
                   </li>
@@ -343,6 +364,7 @@
                       icon="mdi:angular"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Angular Framework"
                     ></iconify-icon>
                     <span>Angular</span>
                   </li>
@@ -351,6 +373,7 @@
                       icon="mdi:bootstrap"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Bootstrap CSS3 Framework"
                     ></iconify-icon>
                     <span>Bootstrap</span>
                   </li>
@@ -359,6 +382,7 @@
                       icon="mdi:tailwind"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Tailwind CSS3 Framework"
                     ></iconify-icon>
                     <span>Tailwind</span>
                   </li>
@@ -367,6 +391,7 @@
                       icon="simple-icons:nextdotjs"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Next.js Framework"
                     ></iconify-icon>
                     <span>Next.js</span>
                   </li>
@@ -375,6 +400,7 @@
                       icon="mdi:dot-net"
                       aria-hidden="true"
                       role="img"
+                      aria-label=".NET Framework"
                     ></iconify-icon>
                     <span>.NET</span>
                   </li>
@@ -383,6 +409,7 @@
                       icon="mdi:language-java"
                       aria-hidden="true"
                       role="img"
+                      aria-label="JavaFX Framework"
                     ></iconify-icon>
                     <span>JavaFX</span>
                   </li>
@@ -398,6 +425,7 @@
                       icon="mdi:git"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Git Version Control"
                     ></iconify-icon>
                     <span>Git</span>
                   </li>
@@ -406,6 +434,7 @@
                       icon="mdi:github"
                       aria-hidden="true"
                       role="img"
+                      aria-label="GitHub"
                     ></iconify-icon>
                     <span>GitHub</span>
                   </li>
@@ -414,6 +443,7 @@
                       icon="simple-icons:vercel"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Vercel, Deployment Platform"
                     ></iconify-icon>
                     <span>Vercel</span>
                   </li>
@@ -422,6 +452,7 @@
                       icon="simple-icons:replit"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Replit"
                     ></iconify-icon>
                     <span>Replit</span>
                   </li>
@@ -438,6 +469,7 @@
                       icon="mdi:docker"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Docker Tool"
                     ></iconify-icon>
                     <span>Docker</span>
                   </li>
@@ -446,6 +478,7 @@
                       icon="simple-icons:cmake"
                       aria-hidden="true"
                       role="img"
+                      aria-label="CMake Tool"
                     ></iconify-icon>
                     <span>CMake</span>
                   </li>
@@ -454,6 +487,7 @@
                       icon="mdi:npm"
                       aria-hidden="true"
                       role="img"
+                      aria-label="npm, package manager"
                     ></iconify-icon>
                     <span>npm</span>
                   </li>
@@ -462,6 +496,7 @@
                       icon="simple-icons:yarn"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Yarn, package manager"
                     ></iconify-icon>
                     <span>Yarn</span>
                   </li>
@@ -470,6 +505,7 @@
                       icon="simple-icons:apachemaven"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Maven Tool"
                     ></iconify-icon>
                     <span>Maven</span>
                   </li>
@@ -478,6 +514,7 @@
                       icon="simple-icons:gradle"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Gradle Tool"
                     ></iconify-icon>
                     <span>Gradle</span>
                   </li>
@@ -493,6 +530,7 @@
                       icon="mdi:microsoft-visual-studio-code"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Visual Studio Code"
                     ></iconify-icon>
                     <span>VS Code</span>
                   </li>
@@ -501,6 +539,7 @@
                       icon="mdi:microsoft-visual-studio"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Visual Studio"
                     ></iconify-icon>
                     <span>Visual Studio</span>
                   </li>
@@ -517,6 +556,7 @@
                       icon="simple-icons:robloxstudio"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Roblox Studio - Engine"
                     ></iconify-icon>
                     <span>Roblox Studio</span>
                   </li>
@@ -525,6 +565,7 @@
                       icon="simple-icons:godotengine"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Godot - Engine"
                     ></iconify-icon>
                     <span>Godot</span>
                   </li>
@@ -533,6 +574,7 @@
                       icon="mdi:unreal"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Unreal Engine"
                     ></iconify-icon>
                     <span>Unreal Engine</span>
                   </li>
@@ -541,6 +583,7 @@
                       icon="mdi:unity"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Unity Engine"
                     ></iconify-icon>
                     <span>Unity</span>
                   </li>
@@ -556,6 +599,7 @@
                       icon="mdi:apple"
                       aria-hidden="true"
                       role="img"
+                      aria-label="macOS"
                     ></iconify-icon>
                     <span>macOS</span>
                   </li>
@@ -564,6 +608,7 @@
                       icon="mdi:windows"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Windows"
                     ></iconify-icon>
                     <span>Windows</span>
                   </li>
@@ -572,6 +617,7 @@
                       icon="simple-icons:linux"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Linux"
                     ></iconify-icon>
                     <span>Linux</span>
                   </li>
@@ -587,6 +633,7 @@
                       icon="simple-icons:githubcopilot"
                       aria-hidden="true"
                       role="img"
+                      aria-label="GitHub Copilot - AI"
                     ></iconify-icon>
                     <span>GitHub Copilot</span>
                   </li>
@@ -595,6 +642,7 @@
                       icon="simple-icons:claude"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Claude - AI"
                     ></iconify-icon>
                     <span>Claude</span>
                   </li>
@@ -603,6 +651,7 @@
                       icon="simple-icons:openai"
                       aria-hidden="true"
                       role="img"
+                      aria-label="OpenAI - AI"
                     ></iconify-icon>
                     <span>ChatGPT</span>
                   </li>
@@ -611,6 +660,7 @@
                       icon="arcticons:deepseek"
                       aria-hidden="true"
                       role="img"
+                      aria-label="DeepSeek - AI"
                     ></iconify-icon>
                     <span>DeepSeek</span>
                   </li>
@@ -619,6 +669,7 @@
                       icon="simple-icons:googlegemini"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Gemini - AI"
                     ></iconify-icon>
                     <span>Gemini</span>
                   </li>
@@ -627,6 +678,7 @@
                       icon="arcticons:x-twitter"
                       aria-hidden="true"
                       role="img"
+                      aria-label="Grok - AI"
                     ></iconify-icon>
                     <!-- Temporary Grok Icon -->
                     <span>Grok</span>
@@ -832,7 +884,10 @@
               <!-- Project Card 1 -->
               <div class="projects-card">
                 <div class="projects-card__image">
-                  <img src="../images/antonio_workshop_showcase.png" alt="António Costa Workshop" class="projects-card__image-zoom">
+                  <div class="project-image-2">
+                    <img src="../images/antonio_workshop_showcase.png" alt="António Costa Workshop" class="projects-card__image-zoom">
+                    <h2>#001</h2>
+                  </div>
                 </div>
                 <div class="projects-card__info">
                   <h3 class="projects-card__title">António Costa Workshop</h3>
@@ -847,7 +902,7 @@
                     <a href="#" class="projects-card__link" target="_blank" aria-label="GitHub Repository">
                       <iconify-icon icon="mdi:github"></iconify-icon> GitHub Repository (Private)
                     </a>
-                    <a href="https://oficina-apocar.web.app/" class="projects-card__link" target="_blank" aria-label="Live Website">
+                    <a href="https://oficina-apocar.web.app/" rel="noopener noreferrer" class="projects-card__link" target="_blank" aria-label="Live Website">
                       <iconify-icon icon="mdi:globe"></iconify-icon> Live Website
                     </a>
                   </div>
@@ -873,7 +928,10 @@
               <!-- Project Card 2 -->
               <div class="projects-card">
                 <div class="projects-card__image">
-                  <img src="" alt="MaiPA" class="projects-card__image-zoom">
+                  <div class="project-image-2">
+                    <img src="" alt="MaiPA" class="projects-card__image-zoom">
+                    <h2>#002</h2>
+                  </div>
                 </div>
                 <div class="projects-card__info">
                   <h3 class="projects-card__title">My A.I. Personal Assistant(MaiPA)</h3>
@@ -888,7 +946,7 @@
 
                   <!-- Links Section -->
                   <div class="projects-card__links">
-                    <a href="https://github.com/BleckWolf25/MaiPA" class="projects-card__link" target="_blank" aria-label="GitHub Repository">
+                    <a href="https://github.com/BleckWolf25/MaiPA" rel="noopener noreferrer" class="projects-card__link" target="_blank" aria-label="GitHub Repository">
                       <iconify-icon icon="mdi:github"></iconify-icon> GitHub Repository
                     </a>
                   </div>
@@ -904,7 +962,10 @@
               <!-- Project Card 3 -->
               <div class="projects-card">
                 <div class="projects-card__image">
-                  <img src="../images/the_great_calculator_showcase.png" alt="My First Calculator Vanilla Website" class="projects-card__image-zoom">
+                  <div class="project-image-2">
+                    <img src="../images/the_great_calculator_showcase.png" alt="The Great Calculator" class="projects-card__image-zoom">
+                    <h2>#003</h2>
+                  </div>
                 </div>
                 <div class="projects-card__info">
                   <h3 class="projects-card__title">The Great Calculator</h3>
@@ -916,10 +977,10 @@
 
                   <!-- Links Section -->
                   <div class="projects-card__links">
-                    <a href="https://github.com/BleckWolf25/TheGreatCalculator" class="projects-card__link" target="_blank" aria-label="GitHub Repository">
+                    <a href="https://github.com/BleckWolf25/TheGreatCalculator" rel="noopener noreferrer" class="projects-card__link" target="_blank" aria-label="GitHub Repository">
                       <iconify-icon icon="mdi:github"></iconify-icon> GitHub Repository
                     </a>
-                    <a href="https://bleckwolf25.github.io/TheGreatCalculator/" class="projects-card__link" target="_blank" aria-label="Live Website">
+                    <a href="https://bleckwolf25.github.io/TheGreatCalculator/" rel="noopener noreferrer" class="projects-card__link" target="_blank" aria-label="Live Website">
                       <iconify-icon icon="mdi:globe"></iconify-icon> Live Website
                     </a>
                   </div>
@@ -951,13 +1012,13 @@
           <div class="contact__container">
             <h2 class="contact__title">Contact Me</h2>
             <div class="contact__icons">
-              <a href="mailto:coutinho4gaming@gmail.com" target="_blank" rel="noopener noreferrer" class="contact__link">
+              <a href="mailto:coutinho4gaming@gmail.com" target="_blank" aria-label="Email coutinho4gaming@gmail.com" rel="noopener noreferrer" class="contact__link">
                 <iconify-icon icon="mdi:email" width="32" class="contact__icon"></iconify-icon>
               </a>
-              <a href="https://github.com/BleckWolf25" target="_blank" rel="noopener noreferrer" class="contact__link">
+              <a href="https://github.com/BleckWolf25" target="_blank" aria-label="BleckWolf25 GitHub" rel="noopener noreferrer" class="contact__link">
                 <iconify-icon icon="mdi:github" width="32" class="contact__icon"></iconify-icon>
               </a>
-              <a href="https://pt.linkedin.com/in/bleck-wolf-827a0b328?trk=profile-badge" target="_blank" rel="noopener noreferrer" class="contact__link">
+              <a href="https://pt.linkedin.com/in/bleck-wolf-827a0b328?trk=profile-badge" target="_blank" aria-label="BleckWolf Linkedin" rel="noopener noreferrer" class="contact__link">
                 <iconify-icon icon="mdi:linkedin" width="32" class="contact__icon"></iconify-icon>
               </a>
             </div>
@@ -976,12 +1037,12 @@
     </div>
 
     <!-- Scripts -->
-    <script src="../js/loading.js" defer></script>
-    <script src="../js/navbar.js" defer></script>
-    <script src="../js/navbar-animations.js" defer></script>
-    <script src="../js/animations.js" defer></script>
-    <script src="../js/main.js" type="module" defer></script>
-    <script src="../js/projects.js" defer></script>
-    <script src="../js/cursor.js" defer></script>
+    <script src="../js/loading.js?v=1.0" defer></script>
+    <script src="../js/navbar.js?v=1.0" defer></script>
+    <script src="../js/navbar-animations.js?v=1.0" defer></script>
+    <script src="../js/animations.js?v=1.0" type="module" defer></script>
+    <script src="../js/main.js?v=1.0" type="module" defer></script>
+    <script src="../js/projects.js?v=1.0" defer></script>
+    <script src="../js/cursor.js?v=1.0" defer></script>
   </body>
 </html>

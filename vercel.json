@@ -1,0 +1,10 @@
+{
+    "builds": [
+      {
+        "src": "dist/**",
+        "use": "@vercel/static"
+      }
+    ],
+    "outputDirectory": "dist",
+    "ignoreCommand": "git branch --show-current | grep -v 'deployment' && exit 1 || exit 0"
+  }
