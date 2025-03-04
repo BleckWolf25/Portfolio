@@ -1,5 +1,5 @@
 /* Imports */
-@import "./main.css";
+@import "./main.css"; /* Base stylesheet dependency */
 
 /* Global Reset */
 *,
@@ -10,32 +10,29 @@
   padding: 0;
 }
 
-/* Loader wrapper covers the full viewport */
+/* Full-screen loading overlay */
 .loader-wrapper {
   width: 100%;
   height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: var(--background-dark);
+  position: fixed; /* Lock overlay position */
+  background-color: var(--background-dark); /* Customizable background on main.css */
+  z-index: 9999; /* Ensure loader stays on top */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
 }
 
-/* Content wrapper with fade-in effect */
+/* Main content fade-in animation container */
 .content-wrapper {
   opacity: 0;
-  -webkit-transition: opacity 1s ease-in;
-  transition: opacity 1s ease-in;
+  transition: opacity 1s ease-in; /* Smooth content reveal */
 }
 
-/* Loader container */
+/* Animated loader container */
 .loader {
   width: 200px;
   height: 60px;
-  position: relative;
+  position: relative; /* Base for absolute positioning */
 }
 
 /* Circle styles */
@@ -44,18 +41,18 @@
   height: 20px;
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ffffff, #8cbdf9);
+  background: linear-gradient(135deg, #ffffff, #8cbdf9); /* Gradient - Customizable */
   left: 15%;
   transform-origin: center;
   -webkit-animation: circleBounce 1s alternate infinite
     cubic-bezier(0.42, 0, 0.58, 1);
-  animation: circleBounce 1s alternate infinite cubic-bezier(0.42, 0, 0.58, 1);
+  animation: circleBounce 1s alternate infinite cubic-bezier(0.42, 0, 0.58, 1); /* Elastic Bounce */
 }
 
 /* Circle bounce keyframes */
 @-webkit-keyframes circleBounce {
   0% {
-    top: 60px;
+    top: 60px; /* Bottom position - Customizable */
     height: 5px;
     border-radius: 50px 50px 25px 25px;
     -webkit-transform: scaleX(1.5) rotate(5deg);
@@ -68,7 +65,7 @@
     transform: scaleX(1) rotate(0deg);
   }
   100% {
-    top: 0%;
+    top: 0%; /* Top position - Customizable */
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
   }
@@ -76,7 +73,7 @@
 
 @keyframes circleBounce {
   0% {
-    top: 60px;
+    top: 60px; /* Bottom position - Customizable */
     height: 5px;
     border-radius: 50px 50px 25px 25px;
     -webkit-transform: scaleX(1.5) rotate(5deg);
@@ -89,26 +86,17 @@
     transform: scaleX(1) rotate(0deg);
   }
   100% {
-    top: 0%;
+    top: 0%; /* Top position - Customizable */
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
   }
 }
 
-/* Second circle */
-.circle:nth-child(2) {
-  left: 45%;
-  -webkit-animation-delay: 0.3s;
-  animation-delay: 0.3s;
-}
+/* Second circle - Customizable */
+.circle:nth-child(2) { left: 45%; -webkit-animation-delay: 0.3s; animation-delay: 0.3s; }
 
-/* Third circle */
-.circle:nth-child(3) {
-  left: auto;
-  right: 15%;
-  -webkit-animation-delay: 0.6s;
-  animation-delay: 0.6s;
-}
+/* Third circle - Customizable */
+.circle:nth-child(3) { left: auto; right: 15%; -webkit-animation-delay: 0.6s; animation-delay: 0.6s; }
 
 /* Shadow styles */
 .shadow {
@@ -121,13 +109,17 @@
   transform-origin: center;
   z-index: -1;
   left: 15%;
-  filter: blur(2px);
+  filter: blur(2px); /* Soft shadow effect */
   -webkit-filter: blur(2px);
   filter: blur(2px);
   -webkit-animation: shadowScale 1s alternate infinite
     cubic-bezier(0.42, 0, 0.58, 1);
-  animation: shadowScale 1s alternate infinite cubic-bezier(0.42, 0, 0.58, 1);
+  animation: shadowScale 1s alternate infinite cubic-bezier(0.42, 0, 0.58, 1); /* Matches circle timing */
 }
+
+/* -------------------------------------------------- */
+/* CUSTOMIZABLE BUT NOT RECOMMENDED TO CHANGE */
+/* -------------------------------------------------- */
 
 /* Shadow scale keyframes */
 @-webkit-keyframes shadowScale {

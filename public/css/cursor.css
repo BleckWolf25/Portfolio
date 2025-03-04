@@ -1,33 +1,36 @@
+/* Hide the default cursor on the entire page */
 body {
   cursor: none;
 }
 
+/* Styles for the custom cursor */
 .custom-cursor {
-  position: fixed;
+  position: fixed; /* Ensure the cursor stays in place relative to the viewport */
   top: 0;
   left: 0;
   width: 32px;
   height: 32px;
-  background-image: url("../images/cursor.svg");
+  background-image: url("../images/default_cursor.svg"); /* Here you can change the cursor image, keep in mind SVG is the best extension. */
   background-size: cover;
   background-repeat: no-repeat;
   transform: translate(-50%, -50%);
-  transition: transform 0.1s ease-out, background-image 0.2s ease;
   pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    background-image 0.2s ease, scale 0.2s ease;
+  z-index: 9999; /* Ensure the cursor is always on top of everything */
   will-change: transform;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), /* Smooth movement */
+    background-image 0.2s ease,
+    scale 0.2s ease; /* Smooth scaling */
 }
 
+/* Styles for the custom cursor when interacting with elements */
 .custom-cursor.interactive {
-  background-image: url("../images/pointer.png");
-  transform: translate(-50%, -50%) scale(1.2);
-  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+  background-image: url("../images/default_pointer.png"); /* Here you can change the pointer image, keep in mind SVG is the best extension. */
+  transform: translate(-50%, -50%) scale(1.2); /* Scale up the cursor - Optional */
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), /* Faster transition for interactivity - Optional */
     background-image 0.2s ease;
 }
 
-/* Add pointer cursor fallback for touch devices */
+/* Ensure the default cursor is hidden on hoverable devices */
 @media (hover: hover) and (pointer: fine) {
   body * {
     cursor: none !important;

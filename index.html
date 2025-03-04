@@ -1,39 +1,31 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="0; url=/views/home.html" />
+    
+    <!-- REDIRECT CONFIGURATION -->
+    <meta http-equiv="refresh" content="0; url=/views/home.html" /> <!-- Update URL if needed -->
 
-    <!-- Import index.css -->
-    <link rel="stylesheet" href="./css/cursor.css">
-    <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/loading_dots.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <!-- STYLE DEPENDENCIES -->
+    <link rel="stylesheet" href="./css/cursor.css">     <!-- Custom cursor styles -->
+    <link rel="stylesheet" href="./css/main.css">      <!-- Base styles -->
+    
+    <!-- EXTERNAL RESOURCES -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
-    <!-- Import Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Import Favicon -->
-    <link rel="icon" href="./icons/favicon.ico" />
-
-    <!-- Title -->
-    <title>Redirecting to My Portfolio...</title>
+    <!-- CUSTOMIZE THESE -->
+    <title>Redirecting to {YourName} Portfolio...</title>
+    <link rel="icon" href="./icons/favicon.ico" />      <!-- Update favicon path if needed -->
   </head>
 
-  <!-- Body -->
   <body>
-    <!-- Redirecting to home.html -->
-    <div>
-      <p>Welcome to my portfolio! You will be redirected shortly.</p>
+    <!-- REDIRECT MESSAGING -->
+    <div class="redirect-notice">
+      <p>Welcome to {YourName}'s portfolio! You will be redirected shortly.</p>
       <p>
-        If you are not redirected automatically, follow this
-        <a href="/views/home.html">link to home.html</a>.
+        If redirection fails, manually access:
+        <a href="/views/home.html">Home Page</a>.      <!-- Update link if needed -->
       </p>
     </div>
   </body>

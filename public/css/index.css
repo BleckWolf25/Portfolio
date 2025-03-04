@@ -1,4 +1,5 @@
-/* General Styles */
+/* index.css is a style of index.html, change this if you want to */
+/* Base page layout - centers content vertically/horizontally */
 body {
   background-color: rgb(32, 32, 32);
   color: white;
@@ -6,34 +7,34 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh; /* Full viewport height */
   margin: 0;
   text-align: center;
 }
 
-/* Link Styles */
+/* Core link styling */
 a {
-  color: #1e90ff;
+  color: #1e90ff; /* Bright blue for contrast */
   text-decoration: none;
   font-weight: bold;
 }
 
-/* Hover Styles */
+/* Interactive states */
 a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Simple hover feedback */
 }
 
-/* Paragraph Styles */
+/* Main text content */
 p {
-  font-size: 1.2em;
+  font-size: 1.2em; /* Slightly enlarged text */
 }
 
-/* Media query for responsiveness */
+/* Mobile-first adjustments */
 @media (max-width: 768px) {
   body {
-    padding: 20px; /* Add some padding for smaller screens */
+    padding: 20px; /* Prevent edge crowding */
   }
   p {
-    font-size: 1em; /* Reduce font size for smaller screens */
+    font-size: 1em; /* Better readability on small screens */
   }
 }

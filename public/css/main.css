@@ -1,70 +1,64 @@
 /* 
  * Main CSS
- * - Organized structure with logical grouping
- * - Consolidated duplicate selectors
- * - Performance optimizations
+ * - The style sheet that will make your site more constant
 */
 
 /* CSS Reset & Global Box Sizing */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Consistent element sizing */
   margin: 0;
   padding: 0;
 }
 
 /* -------------------------------------------------- */
-/* Constant Variables */
+/* Design Token System */
 /* -------------------------------------------------- */
 :root {
   /* Colors */
-  --primary-color: #70a1ff;
-  --secondary-color: #ff5a48;
-  --accent-color: #8ab4f8;
+  --primary-color: #70a1ff; /* Main Color - Customizable */
+  --secondary-color: #ff5a48; /* Secondary Color - Customizable */
+  --accent-color: #8ab4f8; /* Accent Color - Customizable */
   
   /* Background colors */
-  --background-dark: #202020;
-  --background-medium: #2a2a2a;
-  --background-light: #333;
-  
-  /* Text colors */
-  --text-primary: #fff;
-  --text-light: #eee;
-  --text-secondary: #ccc;
+  --background-dark: #202020; /* Background Dark Color - Customizable */
+  --background-medium: #2a2a2a; /* Background Medium Color - Customizable */
+  --background-light: #333; /* Background Light Color - Customizable */
   
   /* UI properties */
-  --card-radius: 8px;
-  --transition: all 0.3s ease;
-  --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  --card-radius: 8px; /* Card Radius - Customizable */
+  --transition: all 0.3s ease; /* Transition Duration - Customizable */
+  --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Gradient To create google-like elements - Customizable */
+
 }
 
-/* Base Styles */
+/* Base Styles - Everything Customizable */
 html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color);
 }
 
+/* Everything here is also customizable */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, sans-serif; /* Modern font stack */
   background-color: var(--background-dark);
   color: var(--text-light);
   line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased; /* Crisp text rendering */
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
 /* -------------------------------------------------- */
-/* Container & Section Styles */
+/* Layout System */
 /* -------------------------------------------------- */
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1200px;            /* Content max width */
+  margin: 0 auto;               /* Horizontal centering */
   padding: 0 2rem;
 }
 
@@ -72,6 +66,7 @@ body {
   padding: 6rem 0;
 }
 
+/* Title Section - Customizable */
 .section__title {
   font-size: 2.75rem;
   text-align: center;
@@ -81,6 +76,7 @@ body {
   width: 100%;
 }
 
+/* Gradient effect for sections - Customizable */
 .section__title::after {
   content: "";
   position: absolute;
@@ -94,15 +90,15 @@ body {
 }
 
 /* -------------------------------------------------- */
-/* Utility & Effects Styles */
+/* Utility & Effects Styles - Everything Customizable */
 /* -------------------------------------------------- */
 
 .glass {
   background: rgba(255, 255, 255, 0.05);
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); /* Frosted glass effect */
   border-radius: var(--card-radius);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Frosted glass effect */
 }
 
 .card {
@@ -128,7 +124,7 @@ body {
 }
 
 /* -------------------------------------------------- */
-/* Animation Styles */
+/* Animation Styles - Everything Customizable */
 /* -------------------------------------------------- */
 
 .lazy-load {
@@ -158,7 +154,7 @@ body {
 }
 
 /* -------------------------------------------------- */
-/* Navbar Styles */
+/* Navbar Styles - Everything Customizable */
 /* -------------------------------------------------- */
 
 .navbar.at-top {
@@ -294,7 +290,7 @@ body {
 
 
 /* -------------------------------------------------- */
-/* Responsive Styles */
+/* Responsive Styles - Everything Customizable */
 /* -------------------------------------------------- */
 
 /* Tablet and smaller devices */

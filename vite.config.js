@@ -1,52 +1,45 @@
-// -------- IMPORTS -------- \\
+/**
+ * Vite Configuration File
+ * 
+ * Handles build process, server configuration, and asset management
+ * Remove this file if not using Vite
+ */
 
-import { defineConfig } from 'vite';
-
-// -------- EXPORT CONFIG -------- \\
-
+// Base configuration
 export default defineConfig({
-  // Root directory
+  
+  // Project root directory
   root: '.',
-
-  // Build options for production
+  
+  // Production build settings
   build: {
-    // Output directory for the production build
-    outDir: './dist',
-
-    // Clear the dist folder before building
-    emptyOutDir: true,
-
-    // Minify JS with Terser
-    minify: 'terser',
-
-    // Generate sourcemap for debugging (false for small builds, true for big builds)
-    sourcemap: false,
-
-    // Rollup options to handle entry points and assets
+    outDir: './dist',              // Output directory
+    minify: 'terser',              // JS minification
+    sourcemap: false,              // Disable source maps
+    chunkSizeWarningLimit: 500,    // Size warning threshold
+    
+    // Rollup bundler configuration
     rollupOptions: {
-      input: {
-        main: './index.html', // Main entry point
-      },
+      input: './index.html',       // Main entry point
       output: {
-        assetFileNames: 'assets/[name].[hash][extname]', // Minified asset naming
-      },
-    },
-
-    // Chunk size warning limit
-    chunkSizeWarningLimit: 500, // Warn if chunks exceed 500KB
+        assetFileNames: 'assets/[name].[hash][extname]' // Hashed asset names
+      }
+    }
   },
 
-  // Server options
+  // Development server settings
   server: {
-    port: 3000,
-    open: true,
-    hmr: true,
-    cors: true,
+    port: 3000,       // Local dev port
+    open: true,       // Auto-open browser
+    hmr: true,        // Hot module replacement
+    cors: true        // Enable CORS
   },
 
-  // Base URL for production deployment
-  base: '/',
-
-  // Asset handling
-  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.svg', '**/*.ico'],
+  // Asset handling configuration
+  assetsInclude: [    // Supported file types
+    '**/*.png',
+    '**/*.jpg', 
+    '**/*.svg',
+    '**/*.ico'
+  ]
 });

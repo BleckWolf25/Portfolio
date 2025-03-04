@@ -1,60 +1,55 @@
+// loading.js
+
 /**
- * loading.js - Loading screen handler
- * Coordinates with animations.js to ensure proper sequencing
+ * Manages the loading screen, hiding it once the page is fully loaded.
+ * It coordinates with animations.js to ensure proper sequencing.
  */
 document.addEventListener('DOMContentLoaded', () => {
   const loaderWrapper = document.querySelector('.loader-wrapper');
   const contentWrapper = document.querySelector('.content-wrapper');
 
+
+  // Error handling for missing elements
   if (!loaderWrapper) {
     console.warn('Loading wrapper not found in the document');
-
     return;
   }
   if (!contentWrapper) {
     console.warn('Content wrapper not found in the document');
   }
 
-  // Display the loader
-  loaderWrapper.style.display = 'flex';
+  // Initial Display of Loader
+  loaderWrapper.style.display = 'flex'; // Show loader - Customizable
 
-  // Hide the main content until loading is complete
-  if (contentWrapper) {
-    contentWrapper.style.opacity = '0';
-    contentWrapper.style.transform = 'translateY(20px)';
-    contentWrapper.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+  // Initially hide main content - Customizable but not recommended to change except style.transition
+  contentWrapper.style.opacity = '0';
+  contentWrapper.style.transform = 'translateY(20px)';
+  contentWrapper.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
 
-  }
-
+  /**
+   * Hides the loading screen and shows the main content.
+   */
   const hideLoader = () => {
-    // Fade out the loader
+    //Fade out the loader
     loaderWrapper.style.opacity = '0';
     loaderWrapper.style.transition = 'opacity 0.5s ease-out';
 
-    // After fade out completes, hide completely and show content
+    // After fade out, hide completely and show content
     setTimeout(() => {
       loaderWrapper.style.display = 'none';
-      document.body.style.overflow = 'visible';
+      document.body.style.overflow = 'visible'; // Enable scrolling - Customizable
 
-      // Show the main content
-      if (contentWrapper) {
-        contentWrapper.style.opacity = '1';
-        contentWrapper.style.transform = 'translateY(0)';
-      }
+      // Show main content
+      contentWrapper.style.opacity = '1'; 
+      contentWrapper.style.transform = 'translateY(0)';
 
-      // Dispatch an event to notify other scripts that loading is complete
+      // Dispatch custom event to signal loading completion
       document.dispatchEvent(new CustomEvent('loadingComplete'));
     }, 500);
   };
 
-  /*
-   * Simulate loading time or wait for actual content to load
-   * You can also use window.onload if waiting for all resources
-   * setTimeout(hideLoader, 2000); // Adjust timing as needed
-   */
-
-  // Use window.onload to wait for all content to load:
+  // Wait for window load event before hiding loader. This ensures all assets have loaded.
   window.addEventListener('load', () => {
-    setTimeout(hideLoader, 1500);
+    setTimeout(hideLoader, 1500); // Delay - Customizable
   });
 });

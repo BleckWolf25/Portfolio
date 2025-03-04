@@ -1,10 +1,39 @@
+/**
+ * projects.js - Handles the image modal functionality for project cards.
+ *
+ * This file implements a modal (popup) that displays a larger version of the
+ * project image when the user clicks on it. It also provides a caption for
+ * the image and manages the modal's opening, closing, and accessibility.
+ *
+ * Key features:
+ *
+ * 1.  **Image Modal:** Opens a modal that overlays the page, showing a larger
+ *     version of the clicked project image.
+ *
+ * 2.  **Image Caption:** Displays the `alt` attribute of the clicked image as
+ *     a caption in the modal (if present).
+ *
+ * 3.  **Scroll Management:** Stores the current scroll position before opening
+ *     the modal and restores it when the modal is closed. It also prevents
+ *     scrolling of the background page while the modal is open.
+ *
+ * 4.  **Modal Closing:** Provides multiple ways to close the modal:
+ *     -   Clicking the close button.
+ *     -   Clicking outside the modal image.
+ *     -   Pressing the `Escape` key.
+ *
+ * 5.  **Image Loading Indication:** Adds a `loaded` class to the modal image
+ *     when it has finished loading, allowing for CSS-based loading indicators.
+ * 6. **Accessibility:** Handle the accessibility, with the escape key.
+ */
+
 // Get the modal, image, close button, and caption elements
 const modal = document.getElementById('image-modal');
 const modalImg = document.getElementById('modal-image');
 const closeBtn = document.getElementById('modal-close');
 const captionText = document.getElementById('modal-caption');
 
-// Variable to store scroll position
+// Variable to store scroll position - customizable (not recommended to change it)
 let scrollY = 0;
 
 // Get all project card images
@@ -45,8 +74,14 @@ images.forEach((img) => {
   });
 });
 
-// Function to close the modal
+/**
+ * Function to close the modal.
+ *
+ * Restores body scroll, resets modal styles, and returns the user to their
+ * original scroll position.
+ */
 function closeModal() {
+
   // Restore body scroll and reset styles
   document.body.classList.remove('body-no-scroll');
   document.body.style.top = '';
@@ -62,15 +97,15 @@ function closeModal() {
 // Close modal when close button is clicked
 closeBtn.addEventListener('click', closeModal);
 
-// Close modal when clicking outside the image
+// Close modal when clicking outside the image - Customizable (you can remove this or add something else)
 window.addEventListener('click', (e) => {
   if (e.target === modal) {
     closeModal();
   }
 });
 
-// Close modal with ESC key
-document.addEventListener('keydown', (e) => {
+// Close modal with ESC key - Customizable (you can remove this or add something else)
+document.addEventListener('keydown', (e) => { 
   if (e.key === 'Escape') {
     closeModal();
   }

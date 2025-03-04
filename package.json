@@ -1,44 +1,24 @@
 {
-  "name": "bleckwolf-portfolio",
+  "name": "bleck-portfolio-template", // Change to your project name
   "version": "1.0.0",
-  "description": "BleckWolf Portfolio Website",
-  "keywords": [
-    "portfolio",
-    "website",
-    "open-source",
-    "website-portfolio"
-  ],
-  "private": true,
-  "homepage": "https://github.com/BleckWolf/Portfolio#readme",
-  "bugs": {
-    "url": "https://github.com/BleckWolf/Portfolio/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BleckWolf/Portfolio.git"
-  },
-  "license": "MIT",
-  "author": "BleckWolf",
-  "type": "module",
-  "main": "main.js",
+  "private": true,                    // Prevent accidental publication
+  "type": "module",                   // ES Modules syntax if using ES Modules (but recommended)
+  
   "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext .js",
-    "lint:fix": "eslint . --ext .js --fix"
+    "dev": "vite --host",             // Start dev server
+    "build": "vite build",            // Production build
+    "preview": "vite preview",        // Preview production build
+    "lint": "eslint . --ext .js",     // Code quality check if using ESLint
+    "lint:fix": "eslint . --fix"      // Auto-fix lint issues if using ESLint
   },
+
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "eslint": "^9.21.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "globals": "^16.0.0",
-    "terser": "^5.39.0",
-    "vite": "^6.2.0"
+    "@eslint/js": "^9.21.0",          // ESLint core if using ESLint
+    "eslint": "^9.21.0",              // JavaScript linter if using ESLint
+    "vite": "^6.2.0"                  // Build tool if using Vite
   },
+
   "dependencies": {
-    "@vercel/speed-insights": "^1.2.0",
-    "motion": "^12.4.10"
+    "motion": "^12.4.10"              // Animation library if using motion
   }
 }
