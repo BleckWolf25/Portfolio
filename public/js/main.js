@@ -1,4 +1,11 @@
-// Main.js is for vercel-related functions //
+// Main.js - Imports and vercel insights 
+import './animations.js';
+import './cursor.js';
+import './loading.js';
+import './main.js';
+import './navbar-animations.js';
+import './navbar.js';
+import './projects.js';
 import { injectSpeedInsights } from '@vercel/speed-insights';
 
 // Initialize Speed Insights //
