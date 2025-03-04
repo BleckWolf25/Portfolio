@@ -1,6 +1,6 @@
 // -------- IMPORTS -------- \\
 
-import { inView, animate } from 'motion';
+import { inView, animate } from '/node_modules/motion';
 
 // -------- FUNCTIONS -------- \\
 
