@@ -6,7 +6,7 @@ import './main.js';
 import './navbar-animations.js';
 import './navbar.js';
 import './projects.js';
-import { injectSpeedInsights } from '/node_modules/@vercel/speed-insights';
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
 // Initialize Speed Insights //
 injectSpeedInsights();
