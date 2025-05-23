@@ -1,0 +1,42 @@
+{
+	"workHistory": [
+		{
+			"company": "Dynamic Innovative Studio",
+			"position": "Founder & CEO",
+			"period": "2023 - Present",
+			"description": "Leading an innovative studio focused on community and creating high-quality games, services & products.",
+			"technologies": [
+				"Python",
+				"JavaScript",
+				"Typescript",
+				"Lua",
+				"SQL",
+				"Node.js",
+				"Vite",
+				"Firebase",
+				"React",
+				"Express.js",
+				"Electron",
+				"Framer Motion",
+				"Tailwind CSS",
+				".NET",
+				"GitHub",
+				"ESLint",
+				"Docker",
+				"npm",
+				"Yarn",
+				"VSCode",
+				"MySQLWorkbench",
+				"DBeaver",
+				"Roblox Studio",
+				"MacOS",
+				"Windows",
+				"GitHub Copilot",
+				"Claude",
+				"ChatGPT",
+				"DeepSeek",
+				"Gemini"
+			]
+		}
+	]
+}

@@ -68,13 +68,6 @@ build/Release
 node_modules/
 jspm_packages/
 
-# Data privacy files
-.csv
-*.csv
-data/
-/data
-/data/
-
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
