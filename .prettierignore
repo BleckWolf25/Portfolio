@@ -1,0 +1,12 @@
+dist/
+logs/
+node_modules/
+coverage/
+*.lock
+*.log
+*.draw
+.env
+.env.*
+public/
+.vscode/
+.github/

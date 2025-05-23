@@ -1,0 +1,55 @@
+/* ==========================================================================
+   GLOBAL DESIGN TOKENS
+   --------------------------------------------------------------------------
+   This file defines CSS custom properties (variables) for theme switching.
+   It supports both light and dark themes using `.dark` class toggling.
+	 And makes the design system more consistent and maintainable.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   DEFAULT (LIGHT THEME)
+   -------------------------------------------------------------------------- */
+:root {
+	/* === PRIMARY PALETTE === */
+	--primary-color: #f5f5f5; /* Soft white (not harsh on the eyes) */
+	--secondary-color: #2563eb; /* Elegant blue for accents/buttons */
+
+	/* === SEMANTIC COLORS === */
+	--success-color: #10b981; /* Green */
+	--danger-color: #ef4444; /* Red */
+	--warning-color: #f59e0b; /* Amber/Yellow */
+	--info-color: #2563eb; /* Same as secondary color */
+
+	/* === NEUTRALS === */
+	--light-color: #f3f4f6; /* Background surface */
+	--dark-color: #1f2937; /* Deep grey for shadows/borders */
+
+	/* === TEXT & BACKGROUND === */
+	--text-primary: #111827; /* Main text */
+	--text-secondary: #6b7280; /* Secondary text */
+	--background: #ffffff; /* Base background */
+}
+
+/* --------------------------------------------------------------------------
+   DARK THEME
+   -------------------------------------------------------------------------- */
+.dark {
+	/* === PRIMARY PALETTE === */
+	--primary-color: #0f0f0f; /* Sleek black */
+	--secondary-color: #3b82f6; /* Calming blue that works on black */
+
+	/* === SEMANTIC COLORS === */
+	--success-color: #34d399; /* Light green */
+	--danger-color: #f87171; /* Soft red */
+	--warning-color: #fbbf24; /* Light amber */
+	--info-color: #3b82f6; /* Same as secondary color */
+
+	/* === NEUTRALS === */
+	--light-color: #374151; /* Slightly lighter for UI contrast */
+	--dark-color: #111827; /* Deep grey for shadows/borders */
+
+	/* === TEXT & BACKGROUND === */
+	--text-primary: #f3f4f6; /* Light text for dark background */
+	--text-secondary: #6b7280; /* Secondary text */
+	--background: #18181b; /* Charcoal black */
+}

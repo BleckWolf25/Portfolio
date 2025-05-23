@@ -1,120 +1,158 @@
+/**
+ * @file ESLINT.CONFIG.JS
+ *
+ * @version 1.0.0
+ * @author BleckWolf25
+ * @license MIT
+ *
+ * @description
+ * This file configures ESLint for the project, specifying rules,
+ * environments, and plugins to ensure code quality and consistency.
+ */
+
+// ------------ CODE QUALITY CONFIGURATIONS (for IDEs) - do NOT change
+
+/* eslint-disable import/no-unresolved */
+
+// ------------ IMPORTS
 import globals from 'globals';
-import pluginJs from '@eslint/js';
-import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import js from '@eslint/js';
+import { defineConfig } from 'eslint/config';
+import prettier from 'eslint-config-prettier';
+import security from 'eslint-plugin-security';
+import sonarjs from 'eslint-plugin-sonarjs';
+import unicorn from 'eslint-plugin-unicorn';
+import prettierPlugin from 'eslint-plugin-prettier';
+import importPlugin from 'eslint-plugin-import';
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  // Global settings and environment
-  {
-    ignores: [
-      'dist/**',
-      'node_modules/**',
-      'coverage/**',
-    ],
-    languageOptions: {
-      ecmaVersion: 2024,
-      sourceType: 'module',
-      globals: {
-        ...globals.browser,
-        ...globals.es2021,
-      },
-    },
-  },
+// ------------ DEFINE CONFIGURATION
 
-  // Base configurations
-  pluginJs.configs.recommended,
+/**
+ * ESLint configuration for the project.
+ * Extends recommended rules and plugins for JavaScript, Prettier, security, and SonarJS.
+ * Enforces consistent code style, formatting (indentation, spacing, semicolons), and complexity limits.
+ * Includes rules for maintainability, security best practices, and import path resolution via SonarJS.
+ * Targets JavaScript files using ES module syntax, with the latest ECMAScript version and Node.js globals.
+ * Compatible with ESLint v8.0.0+ and defined using the ESLint config API.
+ * Exported as an array for potential future multi-config support.
+ * Supports JavaScript files with .js, .mjs, and .cjs extensions.
+ * Supports prettier integration for consistent code formatting.
+ */
+export default defineConfig([
+	js.configs.recommended,
+	{
+		files: ['**/*.{js,mjs,cjs}'],
+		languageOptions: {
+			ecmaVersion: 'latest',
+			sourceType: 'module',
+			globals: globals.node,
+		},
+		plugins: {
+			prettier: prettierPlugin,
+			unicorn,
+			security,
+			sonarjs,
+			import: importPlugin,
+		},
+		rules: {
+			// Formatting & style
+			'prettier/prettier': 'error',
+			indent: ['error', 'tab'],
+			'arrow-spacing': ['warn', { before: true, after: true }],
+			'brace-style': ['error', 'stroustrup', { allowSingleLine: true }],
+			'comma-dangle': ['error', 'always-multiline'],
+			'comma-spacing': 'error',
+			'comma-style': 'error',
+			curly: ['error', 'multi-line', 'consistent'],
+			'dot-location': ['error', 'property'],
+			'handle-callback-err': 'warn',
+			'keyword-spacing': 'error',
+			'max-nested-callbacks': ['error', { max: 4 }],
+			'max-statements-per-line': ['error', { max: 6 }],
+			'no-console': 'warn',
+			'no-empty-function': 'error',
+			'no-floating-decimal': 'error',
+			'no-inline-comments': 'error',
+			'no-lonely-if': 'error',
+			'no-multi-spaces': 'error',
+			'no-multiple-empty-lines': ['error', { max: 2, maxEOF: 1, maxBOF: 0 }],
+			'no-shadow': ['error', { allow: ['err', 'resolve', 'reject'] }],
+			'no-trailing-spaces': ['error'],
+			'no-var': 'error',
+			'no-undef': 'warn',
+			'no-unused-vars': 'warn',
+			'object-curly-spacing': ['error', 'always'],
+			'prefer-const': 'error',
+			quotes: ['error', 'single'],
+			semi: ['error', 'always'],
+			'space-before-blocks': 'error',
+			'space-before-function-paren': [
+				'error',
+				{
+					anonymous: 'never',
+					named: 'never',
+					asyncArrow: 'always',
+				},
+			],
+			'space-in-parens': 'error',
+			'space-infix-ops': 'error',
+			'space-unary-ops': 'error',
+			'spaced-comment': 'error',
+			yoda: 'error',
 
-  // JSX A11y Plugin Configuration
-  {
-    plugins: {
-      'jsx-a11y': pluginJsxA11y,
-    },
-  },
+			// Complexity & size limits
+			complexity: ['error', { max: 64 }],
+			'max-lines-per-function': ['error', 200],
+			'max-params': ['error', 6],
+			'max-statements': ['warn', 32],
+			'max-lines': [
+				'warn',
+				{ max: 400, skipBlankLines: true, skipComments: true },
+			],
 
-  // Project-specific rules
-  {
-    rules: {
-      // Error Prevention
-      'no-unused-vars': ['warn', { 
-        'argsIgnorePattern': '^_',
-        'varsIgnorePattern': '^_', 
-      }],
-      'no-undef': 'error',
-      'no-console': ['warn', { 
-        allow: ['warn', 'error'], 
-      }],
-      'no-debugger': 'warn',
+			// Maintainability
+			'sonarjs/cognitive-complexity': ['error', 64],
 
-      // Best Practices
-      'prefer-const': 'error',
-      'no-var': 'error',
-      'eqeqeq': ['error', 'always'],
-      'curly': ['error', 'all'],
-      'no-multi-spaces': 'error',
-      'no-multiple-empty-lines': ['error', { 
-        max: 2,
-        maxEOF: 1, 
-      }],
+			// Security
+			'security/detect-object-injection': 'error',
+			'security/detect-non-literal-fs-filename': 'error',
+			'security/detect-child-process': 'warn',
 
-      // ES6+ Features
-      'arrow-body-style': ['error', 'as-needed'],
-      'arrow-parens': ['error', 'always'],
-      'no-duplicate-imports': 'error',
-      'prefer-template': 'error',
-      'template-curly-spacing': ['error', 'never'],
+			'unicorn/prefer-ternary': 'error',
+			'unicorn/require-number-to-fixed-digits-argument': 'error',
 
-      // Style & Formatting
-      'semi': ['error', 'always'],
-      'quotes': ['error', 'single', { 
-        'avoidEscape': true,
-        'allowTemplateLiterals': true, 
-      }],
-      'indent': ['error', 2, { 
-        'SwitchCase': 1, 
-      }],
-      'comma-dangle': ['error', 'always-multiline'],
-      'object-curly-spacing': ['error', 'always'],
-
-      // Code Organization
-      'padding-line-between-statements': [
-        'error',
-        { 'blankLine': 'always', 'prev': '*', 'next': 'return' },
-        { 'blankLine': 'always', 'prev': ['const', 'let', 'var'], 'next': '*' },
-        { 'blankLine': 'any', 'prev': ['const', 'let', 'var'], 'next': ['const', 'let', 'var'] },
-      ],
-
-      // DOM & Browser
-      'no-alert': 'warn',
-      'no-script-url': 'error',
-
-      // Error Handling
-      'no-throw-literal': 'error',
-      'prefer-promise-reject-errors': 'error',
-
-      // Performance
-      'no-unused-expressions': ['error', { 
-        'allowShortCircuit': true,
-        'allowTernary': true, 
-      }],
-
-      // Accessibility (JSX A11y)
-      'jsx-a11y/alt-text': 'error',
-      'jsx-a11y/anchor-has-content': 'error',
-      'jsx-a11y/click-events-have-key-events': 'error',
-
-      // Comments
-      'multiline-comment-style': ['error', 'starred-block'],
-      'spaced-comment': ['error', 'always', {
-        'line': {
-          'markers': ['/'],
-          'exceptions': ['-', '+'],
-        },
-        'block': {
-          'markers': ['!'],
-          'exceptions': ['*'],
-          'balanced': true,
-        },
-      }],
-    },
-  },
-];
+			// Import sorting/validation
+			'import/order': ['warn', { 'newlines-between': 'always' }],
+			'import/no-unresolved': 'error',
+		},
+		settings: {
+			// SonarJS
+			'import/resolver': {
+				node: { extensions: ['.js', '.mjs', '.cjs'] },
+			},
+		},
+	},
+	// --- Test file overrides ---
+	{
+		files: ['**/tests/**/*.test.js', '**/*.test.js', '**/__tests__/**/*.js'],
+		plugins: {
+			jest: (await import('eslint-plugin-jest')).default,
+		},
+		env: {
+			jest: true,
+		},
+		rules: {
+			'max-lines-per-function': 'off',
+			'max-lines': 'off',
+			'max-statements': 'off',
+			'no-console': 'off',
+			'no-unused-vars': 'off',
+			'security/detect-object-injection': 'off',
+			'jest/no-disabled-tests': 'warn',
+			'jest/no-focused-tests': 'error',
+			'jest/no-identical-title': 'error',
+			'jest/valid-expect': 'error',
+		},
+	},
+	prettier,
+]);
