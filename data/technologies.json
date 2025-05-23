@@ -1,0 +1,378 @@
+{
+	"technologies": {
+		"languages": [
+			{
+				"name": "C",
+				"icon": "devicon:c",
+				"months": 8,
+				"color": "#A8B9CC"
+			},
+			{
+				"name": "C++",
+				"icon": "devicon:cplusplus",
+				"years": 1,
+				"months": 9,
+				"color": "#00599C"
+			},
+			{
+				"name": "C#",
+				"icon": "devicon:csharp",
+				"years": 1,
+				"color": "#239120"
+			},
+			{
+				"name": "Java",
+				"icon": "devicon:java",
+				"months": 1,
+				"color": "#007396"
+			},
+			{
+				"name": "Python",
+				"icon": "devicon:python",
+				"years": 2,
+				"months": 5,
+				"color": "#3776AB"
+			},
+			{
+				"name": "JavaScript",
+				"icon": "devicon:javascript",
+				"years": 1,
+				"color": "#F7DF1E"
+			},
+			{
+				"name": "TypeScript",
+				"icon": "devicon:typescript",
+				"months": 7,
+				"color": "#3178C6"
+			},
+			{
+				"name": "Lua",
+				"icon": "devicon:lua",
+				"years": 3,
+				"months": 11,
+				"color": "#2C2D72"
+			},
+			{
+				"name": "Swift UI",
+				"icon": "devicon:swift",
+				"days": 19,
+				"color": "#FA7343"
+			},
+			{
+				"name": "HTML5",
+				"icon": "devicon:html5",
+				"years": 3,
+				"color": "#E34F26"
+			},
+			{
+				"name": "CSS3",
+				"icon": "devicon:css3",
+				"years": 3,
+				"color": "#1572B6"
+			},
+			{
+				"name": "SQL",
+				"icon": "devicon:mysql",
+				"months": 3,
+				"color": "#4479A1"
+			},
+			{
+				"name": "PHP",
+				"icon": "devicon:php",
+				"months": 1,
+				"color": "#777BB4"
+			},
+			{
+				"name": "Shell Scripting",
+				"icon": "mdi:terminal",
+				"years": 1,
+				"color": "#0f0f0f"
+			},
+			{
+				"name": "Bash Scripting",
+				"icon": "codicon:terminal-bash",
+				"months": 4,
+				"color": "#0f0f0f"
+			}
+		],
+		"frameworks": [
+			{
+				"name": "Node.js",
+				"icon": "logos:nodejs-icon",
+				"years": 1,
+				"color": "#339933"
+			},
+			{
+				"name": "Vite",
+				"icon": "logos:vitejs",
+				"months": 8,
+				"color": "#646CFF"
+			},
+			{
+				"name": "Vue.js",
+				"icon": "devicon:vuejs",
+				"months": 7,
+				"color": "#4FC08D"
+			},
+			{
+				"name": "Firebase",
+				"icon": "devicon:firebase",
+				"months": 6,
+				"color": "#FFCA28"
+			},
+			{
+				"name": "React",
+				"icon": "devicon:react",
+				"months": 7,
+				"color": "#61DAFB"
+			},
+			{
+				"name": "Express",
+				"icon": "devicon:express",
+				"months": 11,
+				"color": "#000000"
+			},
+			{
+				"name": "Electron",
+				"icon": "devicon:electron",
+				"years": 1,
+				"color": "#47848F"
+			},
+			{
+				"name": "Nuxt.js",
+				"icon": "devicon:nuxtjs",
+				"days": 29,
+				"color": "#00DC82"
+			},
+			{
+				"name": "Framer Motion",
+				"icon": "devicon:framermotion",
+				"months": 4,
+				"color": "#0055FF"
+			},
+			{
+				"name": "Angular",
+				"icon": "devicon:angular",
+				"days": 12,
+				"color": "#DD0031"
+			},
+			{
+				"name": "Bootstrap",
+				"icon": "devicon:bootstrap",
+				"years": 1,
+				"color": "#7952B3"
+			},
+			{
+				"name": "Tailwindcss",
+				"icon": "devicon:tailwindcss",
+				"months": 8,
+				"color": "#06B6D4"
+			},
+			{
+				"name": "Next.js",
+				"icon": "devicon:nextjs",
+				"days": 28,
+				"color": "#000000"
+			},
+			{
+				"name": ".NET",
+				"icon": "logos:dotnet",
+				"months": 11,
+				"color": "#512BD4"
+			},
+			{
+				"name": "Django",
+				"icon": "logos:django",
+				"months": 1,
+				"color": "#512BD4"
+			}
+		],
+		"tools": [
+			{
+				"name": "Git",
+				"icon": "devicon:git",
+				"years": 2,
+				"color": "#F05032"
+			},
+			{
+				"name": "GitHub",
+				"icon": "skill-icons:github-light",
+				"years": 3,
+				"color": "#181717"
+			},
+			{
+				"name": "Vercel",
+				"icon": "devicon:vercel",
+				"months": 4,
+				"color": "#000000"
+			},
+			{
+				"name": "Replit",
+				"icon": "devicon:replit",
+				"years": 1,
+				"color": "#F26207"
+			},
+			{
+				"name": "ESLint",
+				"icon": "devicon:eslint",
+				"years": 1,
+				"color": "#4B32C3"
+			},
+			{
+				"name": "Prettier",
+				"icon": "vscode-icons:file-type-prettier",
+				"months": 11,
+				"color": "#F7B93E"
+			},
+			{
+				"name": "Docker",
+				"icon": "devicon:docker",
+				"months": 6,
+				"color": "#2496ED"
+			},
+			{
+				"name": "CMake",
+				"icon": "devicon:cmake",
+				"years": 1,
+				"months": 2,
+				"color": "#064F8C"
+			},
+			{
+				"name": "npm",
+				"icon": "devicon:npm",
+				"years": 2,
+				"color": "#CB3837"
+			},
+			{
+				"name": "Yarn",
+				"icon": "devicon:yarn",
+				"months": 10,
+				"color": "#2C8EBB"
+			},
+			{
+				"name": "Apache Maven",
+				"icon": "devicon:apache",
+				"months": 1,
+				"color": "#C71A36"
+			}
+		],
+		"ides": [
+			{
+				"name": "VS Code",
+				"icon": "devicon:vscode",
+				"years": 3,
+				"color": "#007ACC"
+			},
+			{
+				"name": "Visual Studio",
+				"icon": "devicon:visualstudio",
+				"months": 6,
+				"color": "#5C2D91"
+			},
+			{
+				"name": "Jetbrains IntelliJ",
+				"icon": "simple-icons:jetbrains",
+				"months": 2,
+				"color": "#000000"
+			},
+			{
+				"name": "DBeaver",
+				"icon": "devicon:dbeaver",
+				"months": 9,
+				"color": "#000000"
+			},
+			{
+				"name": "MySQL Workbench",
+				"icon": "devicon:mysql",
+				"months": 4,
+				"color": "#4479A1"
+			}
+		],
+		"gameDevelopment": [
+			{
+				"name": "Roblox Studio",
+				"icon": "material-icon-theme:roblox",
+				"years": 3,
+				"color": "#00A2FF"
+			},
+			{
+				"name": "Godot",
+				"icon": "devicon:godot",
+				"months": 1,
+				"color": "#478CBF"
+			},
+			{
+				"name": "Unreal Engine",
+				"icon": "devicon:unrealengine",
+				"months": 5,
+				"color": "#0E1128"
+			},
+			{
+				"name": "Unity",
+				"icon": "devicon:unity",
+				"months": 4,
+				"color": "#000000"
+			}
+		],
+		"operatingSystems": [
+			{
+				"name": "macOS",
+				"icon": "devicon:apple",
+				"years": 2,
+				"months": 8,
+				"color": "#000000"
+			},
+			{
+				"name": "Windows",
+				"icon": "devicon:windows8",
+				"years": 16,
+				"months": 7,
+				"color": "#0078D6"
+			},
+			{
+				"name": "Linux",
+				"icon": "devicon:linux",
+				"years": 1,
+				"color": "#FCC624"
+			}
+		],
+		"aiTools": [
+			{
+				"name": "GitHub Copilot",
+				"icon": "logos:github-copilot",
+				"months": 11,
+				"color": "#0098FF"
+			},
+			{
+				"name": "Claude",
+				"icon": "logos:claude-icon",
+				"years": 1,
+				"color": "#8C5FC4"
+			},
+			{
+				"name": "ChatGPT",
+				"icon": "logos:openai-icon",
+				"years": 2,
+				"color": "#00A67E"
+			},
+			{
+				"name": "DeepSeek",
+				"icon": "arcticons:deepseek",
+				"months": 3,
+				"color": "#3E67D5"
+			},
+			{
+				"name": "Gemini",
+				"icon": "material-icon-theme:gemini-ai",
+				"months": 4,
+				"color": "#1A73E8"
+			},
+			{
+				"name": "Grok",
+				"icon": "devicon:twitter",
+				"months": 3,
+				"color": "#1DA1F2"
+			}
+		]
+	}
+}

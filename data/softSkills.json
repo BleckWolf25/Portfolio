@@ -1,0 +1,76 @@
+{
+    "softSkills": [
+        {
+            "category": "Leadership",
+            "icon": "leadership",
+            "title": "Executive Leadership",
+            "description": "Inspiring and driving organizational success through vision and strategy",
+            "star": {
+                "situation": "Company-wide morale was low due to significant project setbacks",
+                "task": "Revitalize leadership focus, align teams with organizational goals, and reinforce a culture of excellence",
+                "action": "Launched strategic recognition initiatives, fostered executive-level engagement, and implemented cross-functional collaboration programs",
+                "result": "Improved overall team synergy, boosted morale, and enhanced operational efficiency, increasing productivity by 40%"
+            }
+        },        
+        {
+            "category": "Communication",
+            "icon": "communication",
+            "title": "Effective Communication",
+            "description": "Clear and concise communication in team environments",
+            "star": {
+                "situation": "Client misunderstood project requirements",
+                "task": "Needed to clarify expectations and align project goals",
+                "action": "Organized video calls and created detailed documentation",
+                "result": "Project delivered on time with 100% client satisfaction"
+            }
+        },
+        {
+            "category": "Problem Solving",
+            "icon": "problem-solving",
+            "title": "Analytical Problem Solving",
+            "description": "Breaking down complex problems into manageable tasks",
+            "star": {
+                "situation": "Performance bottleneck in high-traffic application",
+                "task": "Identify and resolve performance issues",
+                "action": "Conducted thorough analysis and implemented caching strategy",
+                "result": "Reduced load times by 70% and improved user retention"
+            }
+        },
+        {
+            "category": "Teamwork",
+            "icon": "teamwork",
+            "title": "Collaborative Team Player",
+            "description": "Working effectively in diverse teams to achieve common goals",
+            "star": {
+                "situation": "Cross-functional team with conflicting priorities",
+                "task": "Facilitate collaboration and ensure alignment",
+                "action": "Organized regular sync meetings and established clear roles",
+                "result": "Successfully launched product feature ahead of schedule"
+            }
+        },
+        {
+            "category": "Adaptability",
+            "icon": "adaptability",
+            "title": "Agile Adaptability",
+            "description": "Quickly adjusting to changing project requirements and environments",
+            "star": {
+                "situation": "Last-minute changes in project scope",
+                "task": "Adapt to new requirements without losing momentum",
+                "action": "Reprioritized tasks and communicated changes to the team",
+                "result": "Delivered project on time despite significant changes"
+            }
+        },
+        {
+            "category": "Creativity",
+            "icon": "creativity",
+            "title": "Creative Thinking",
+            "description": "Innovative solutions to complex problems",
+            "star": {
+                "situation": "Stagnation in product development",
+                "task": "Generate new ideas for product features",
+                "action": "Conducted brainstorming sessions and user feedback analysis",
+                "result": "Launched three new features that increased user engagement by 50%"
+            }
+        }
+    ]
+}
