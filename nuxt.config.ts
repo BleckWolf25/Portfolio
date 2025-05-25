@@ -169,7 +169,7 @@ export default defineNuxtConfig({
 			'@nuxt/ui',
 			'@headlessui/vue',
 			'@iconify/vue',
-			'@nuxt/image'
+			'@nuxt/image-edge'
 		]
 	},
 
@@ -188,7 +188,7 @@ export default defineNuxtConfig({
 			devSourcemap: true
 		},
 		ssr: {
-			noExternal: ['@nuxt/ui', '@nuxt/image']
+			noExternal: ['@nuxt/ui', '@nuxt/image-edge']
 		},
 		// Maintainance
 		define: {
@@ -223,7 +223,7 @@ export default defineNuxtConfig({
 		// Performance and assets
 		'@nuxt/fonts',
 		'@nuxt/icon',
-		'@nuxt/image',
+		'@nuxt/image-edge',
 
 		// Functionality
 		'@nuxt/scripts',
