@@ -115,34 +115,6 @@ export default defineNuxtConfig({
 		}
 	},
 
-	// Optimized image configuration
-	image: {
-		provider: 'ipx',
-		dir: 'public/images',
-		quality: 85,
-		format: ['webp', 'avif', 'jpg', 'png'],
-		// Responsive images
-		screens: {
-			xs: 320,
-			sm: 640,
-			md: 768,
-			lg: 1024,
-			xl: 1280,
-			xxl: 1536
-		},
-		// Performance optimizations
-		presets: {
-			avatar: {
-				modifiers: {
-					format: 'webp',
-					width: 150,
-					height: 150,
-					quality: 90
-				}
-			}
-		}
-	},
-
 	// Icon configuration
 	icon: {
 		mode: 'css',
