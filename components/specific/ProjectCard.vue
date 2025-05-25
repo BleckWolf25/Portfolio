@@ -17,7 +17,7 @@
 		<!-- Project Image -->
 		<template #header>
 			<div class="relative overflow-hidden rounded-t-lg">
-				<NuxtImg :src="projectImage" :alt="`Screenshot of ${project.title}`"
+				<img :src="projectImage" :alt="`Screenshot of ${project.title}`"
 					class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105" width="400"
 					height="200" loading="lazy" />
 

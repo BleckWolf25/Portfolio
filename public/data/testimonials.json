@@ -24,6 +24,30 @@
 				"author": "Nikolay",
 				"authorImage": "/images/testimonials/nikolay.png",
 				"position": "Sound Designer, Dynamic Innovative Studio"
+			},
+			{
+				"quote": "Working with Bleck has been great! Bleck is very chill and friendly. He's also very wise when it comes to making games, he even gave me advice on my studio.",
+				"author": "Baff1ed",
+				"authorImage": "/images/testimonials/baff1ed.png",
+				"position": "Voice Actor, Dynamic Innovative Studio"
+			},
+			{
+				"quote": "Working with Bleck was the best choice I ever made, he's helpful, funny, a strong leader, and always brings clarity, collaboration, and great organization to the team. I would recommend.",
+				"author": "Silver",
+				"authorImage": "/images/testimonials/silver.png",
+				"position": "Lua Scripter & Tools Programmer, Dynamic Innovative Studio"
+			},
+			{
+				"quote": "Bleck is an organized person who plans everything carefully before giving the information to others, his decisions are always clear to understand because he takes the time to research information thoroughly before sharing it with the team. He's always willing to help team members understand and he's open for feedback.",
+				"author": "Toki",
+				"authorImage": "/images/testimonials/toki.png",
+				"position": "Music Composer & Sound Designer, Dynamic Innovative Studio"
+			},
+			{
+				"quote": "Working with Bleck is fun and the communication with others, no foul language either. I would highly recommend bleck work with others to also make them happy.",
+				"author": "Anonymous",
+				"authorImage": "/images/testimonials/randomBoy1.jpg",
+				"position": "???, Dynamic Innovative Studio"
 			}
 		]
 	}

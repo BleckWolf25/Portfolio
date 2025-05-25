@@ -94,10 +94,10 @@ function getHobbyDescription(hobbyName: string): string {
 
 function getHobbyFact(hobbyName: string): string {
 	const facts: Record<string, string> = {
-		'Gaming': '🎮 Strategy & RPG enthusiast',
+		'Gaming': '🎮 Competitive FPS enthusiast',
 		'Coding': '💻 Always learning new tech',
 		'Moto Riding': '🏍️ MotoGP enthusiast',
-		'Listening to Music': '🎵 Coding soundtrack curator',
+		'Listening to Music': '🎵 Post Malone is my go-to',
 		'Gym': '💪 Consistency over intensity'
 	}
 	return facts[hobbyName] || '✨ Life enriching activity'
@@ -112,9 +112,6 @@ function handleCardClick(): void {
 			card.style.transform = ''
 		}, 150)
 	}
-
-	// Could add more interaction here, like opening a modal with more details
-	console.log(`Clicked on ${props.hobby.name} hobby card`)
 }
 </script>
 

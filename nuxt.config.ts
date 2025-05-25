@@ -13,6 +13,7 @@
 // ------------ CONFIGURATION
 export default defineNuxtConfig({
 	compatibilityDate: '2025-05-25',
+
 	future: {
 		compatibilityVersion: 4,
 	},
@@ -49,7 +50,7 @@ export default defineNuxtConfig({
 		}
 	},
 
-	// Enhanced SSR configuration for better performance
+	// SSR configuration for better performance
 	ssr: true,
 
 	// Nitro configuration for production optimization
@@ -59,7 +60,10 @@ export default defineNuxtConfig({
 		},
 		preset: 'vercel',
 		compressPublicAssets: true,
-		minify: true
+		minify: true,
+		devProxy: {},
+		// Prevent function serialization in dev logs
+		logLevel: process.env.NODE_ENV === 'development' ? 1 : 3
 	},
 
 	// Comprehensive TypeScript configuration

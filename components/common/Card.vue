@@ -17,7 +17,7 @@
 		<!-- Optional image slot/prop -->
 		<template v-if="image">
 			<div class="mb-4 overflow-hidden rounded-t-lg">
-				<NuxtImg :src="image" :alt="imageAlt" class="w-full h-auto object-cover" :width="imageWidth"
+				<img :src="image" :alt="imageAlt" class="w-full h-auto object-cover" :width="imageWidth"
 					:height="imageHeight" />
 			</div>
 		</template>

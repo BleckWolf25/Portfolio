@@ -42,4 +42,14 @@ const nextMode = computed(() => (isDark.value ? 'light' : 'dark'))
 function toggleTheme() {
 	colorMode.preference = isDark.value ? 'light' : 'dark'
 }
+
+// ------------ ENSURE PROPER HYDRATION
+// Force reactivity update on mount to ensure proper state
+onMounted(() => {
+	// This ensures the component re-renders with the correct state after hydration
+	nextTick(() => {
+		// Trigger a reactive update to ensure consistency
+		colorMode.value = colorMode.value
+	})
+})
 </script>

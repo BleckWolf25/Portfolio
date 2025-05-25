@@ -2,7 +2,7 @@
 	- @file: CONTACT.VUE
 	- @author: BleckWolf25
 	- @license: MIT
-	- @version: 1.0.0
+	- @version: 1.0.1
 
 	- @description:
 		- Modern Contact section for portfolio with contact form and social links.
@@ -118,7 +118,7 @@
 								</h4>
 							</div>
 							<p class="text-primary-700 dark:text-primary-300 text-sm">
-								I typically respond to messages within 24 hours. For urgent inquiries, feel free to
+								I typically respond to messages within 48 hours. For urgent inquiries, feel free to
 								mention it in your
 								message.
 							</p>
@@ -144,10 +144,8 @@
 						Let's Build Something Great Together
 					</h3>
 					<p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto mb-8 leading-relaxed">
-						Whether you're looking for a technical leader, a collaborative team member, or someone to bring
-						your ideas
-						to life,
-						I'm here to help. Let's discuss how we can create something extraordinary.
+						Whether you're looking for a technical Director, a collaborative team member, or someone to bring
+						your ideas to reality. I'm here to help.
 					</p>
 
 					<!-- Social Links -->
