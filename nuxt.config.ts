@@ -221,7 +221,7 @@ export default defineNuxtConfig({
 
 		// Performance and assets
 		'@nuxt/fonts',
-		'@nuxt/icon'
+		'@nuxt/icon',
 
 		// Functionality
 		'@nuxt/scripts',
