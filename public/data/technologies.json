@@ -1,0 +1,326 @@
+{
+	"technologies": {
+		"languages": [
+			{
+				"name": "C",
+				"icon": "devicon:c",
+				"months": 8
+			},
+			{
+				"name": "C++",
+				"icon": "devicon:cplusplus",
+				"years": 1,
+				"months": 9
+			},
+			{
+				"name": "C#",
+				"icon": "devicon:csharp",
+				"years": 1
+			},
+			{
+				"name": "Java",
+				"icon": "devicon:java",
+				"months": 1
+			},
+			{
+				"name": "Python",
+				"icon": "devicon:python",
+				"years": 2,
+				"months": 5
+			},
+			{
+				"name": "JavaScript",
+				"icon": "devicon:javascript",
+				"years": 1
+			},
+			{
+				"name": "TypeScript",
+				"icon": "devicon:typescript",
+				"months": 7
+			},
+			{
+				"name": "Lua",
+				"icon": "devicon:lua",
+				"years": 3,
+				"months": 11
+			},
+			{
+				"name": "Swift UI",
+				"icon": "devicon:swift",
+				"days": 19
+			},
+			{
+				"name": "HTML5",
+				"icon": "devicon:html5",
+				"years": 3
+			},
+			{
+				"name": "CSS3",
+				"icon": "devicon:css3",
+				"years": 3
+			},
+			{
+				"name": "SQL",
+				"icon": "devicon:mysql",
+				"months": 3
+			},
+			{
+				"name": "PHP",
+				"icon": "devicon:php",
+				"days": 14
+			},
+			{
+				"name": "Shell Scripting",
+				"icon": "mdi:terminal",
+				"years": 1,
+				"color": "#0f0f0f"
+			},
+			{
+				"name": "Bash Scripting",
+				"icon": "codicon:terminal-bash",
+				"months": 4,
+				"color": "#0f0f0f"
+			}
+		],
+		"frameworks": [
+			{
+				"name": "Node.js",
+				"icon": "logos:nodejs-icon",
+				"years": 1
+			},
+			{
+				"name": "Vite",
+				"icon": "logos:vitejs",
+				"months": 8
+			},
+			{
+				"name": "Vue.js",
+				"icon": "devicon:vuejs",
+				"months": 8
+			},
+			{
+				"name": "Firebase",
+				"icon": "devicon:firebase",
+				"months": 7
+			},
+			{
+				"name": "React",
+				"icon": "devicon:react",
+				"months": 8
+			},
+			{
+				"name": "Express",
+				"icon": "devicon:express",
+				"months": 11
+			},
+			{
+				"name": "Electron",
+				"icon": "devicon:electron",
+				"years": 1
+			},
+			{
+				"name": "Nuxt.js",
+				"icon": "devicon:nuxtjs",
+				"days": 29
+			},
+			{
+				"name": "Framer Motion",
+				"icon": "devicon:framermotion",
+				"months": 5
+			},
+			{
+				"name": "Angular",
+				"icon": "devicon:angular",
+				"days": 12
+			},
+			{
+				"name": "Bootstrap",
+				"icon": "devicon:bootstrap",
+				"years": 1
+			},
+			{
+				"name": "Tailwindcss",
+				"icon": "devicon:tailwindcss",
+				"months": 9
+			},
+			{
+				"name": "Next.js",
+				"icon": "devicon:nextjs",
+				"days": 24
+			},
+			{
+				"name": ".NET",
+				"icon": "logos:dotnet",
+				"months": 11
+			},
+			{
+				"name": "Django",
+				"icon": "logos:django",
+				"months": 1
+			}
+		],
+		"tools": [
+			{
+				"name": "Git",
+				"icon": "devicon:git",
+				"years": 2
+			},
+			{
+				"name": "GitHub",
+				"icon": "skill-icons:github-light",
+				"years": 3
+			},
+			{
+				"name": "Vercel",
+				"icon": "devicon:vercel",
+				"months": 4
+			},
+			{
+				"name": "Replit",
+				"icon": "devicon:replit",
+				"years": 1
+			},
+			{
+				"name": "ESLint",
+				"icon": "devicon:eslint",
+				"years": 1
+			},
+			{
+				"name": "Prettier",
+				"icon": "vscode-icons:file-type-prettier",
+				"months": 11
+			},
+			{
+				"name": "Docker",
+				"icon": "devicon:docker",
+				"months": 6
+			},
+			{
+				"name": "CMake",
+				"icon": "devicon:cmake",
+				"years": 1,
+				"months": 2
+			},
+			{
+				"name": "npm",
+				"icon": "devicon:npm",
+				"years": 2
+			},
+			{
+				"name": "Yarn",
+				"icon": "devicon:yarn",
+				"months": 10
+			},
+			{
+				"name": "Apache Maven",
+				"icon": "devicon:apache",
+				"months": 1
+			}
+		],
+		"ides": [
+			{
+				"name": "VS Code",
+				"icon": "devicon:vscode",
+				"years": 3
+			},
+			{
+				"name": "Visual Studio",
+				"icon": "devicon:visualstudio",
+				"months": 6
+			},
+			{
+				"name": "Jetbrains IntelliJ",
+				"icon": "simple-icons:jetbrains",
+				"months": 2
+			},
+			{
+				"name": "DBeaver",
+				"icon": "devicon:dbeaver",
+				"months": 9
+			},
+			{
+				"name": "MySQL Workbench",
+				"icon": "devicon:mysql",
+				"months": 4
+			}
+		],
+		"gameDevelopment": [
+			{
+				"name": "Roblox Studio",
+				"icon": "material-icon-theme:roblox",
+				"years": 3,
+				"months": 5
+			},
+			{
+				"name": "Godot",
+				"icon": "devicon:godot",
+				"months": 1
+			},
+			{
+				"name": "Unreal Engine",
+				"icon": "devicon:unrealengine",
+				"months": 5
+			},
+			{
+				"name": "Unity",
+				"icon": "devicon:unity",
+				"months": 4
+			}
+		],
+		"operatingSystems": [
+			{
+				"name": "macOS",
+				"icon": "devicon:apple",
+				"years": 3,
+				"color": "#000000"
+			},
+			{
+				"name": "Windows",
+				"icon": "devicon:windows8",
+				"years": 16,
+				"months": 7
+			},
+			{
+				"name": "Linux",
+				"icon": "devicon:linux",
+				"years": 1
+			}
+		],
+		"aiTools": [
+			{
+				"name": "GitHub Copilot",
+				"icon": "logos:github-copilot",
+				"years": 1
+			},
+			{
+				"name": "Claude",
+				"icon": "logos:claude-icon",
+				"years": 2
+			},
+			{
+				"name": "ChatGPT",
+				"icon": "logos:openai-icon",
+				"years": 3,
+				"months": 2,
+				"color": "#00A67E"
+			},
+			{
+				"name": "DeepSeek",
+				"icon": "arcticons:deepseek",
+				"months": 5,
+				"color": "#3E67D5"
+			},
+			{
+				"name": "Gemini",
+				"icon": "material-icon-theme:gemini-ai",
+				"months": 6
+			},
+			{
+				"name": "Grok",
+				"icon": "devicon:twitter",
+				"months": 5,
+				"color": "#1DA1F2"
+			}
+		]
+	}
+}

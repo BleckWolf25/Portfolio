@@ -1,4 +1,100 @@
+/*
+ * @file TSCONFIG.JSON
+ *
+ * @version 2.0.0
+ * @author BleckWolf25
+ * @license MIT
+ *
+ * @description
+ * TypeScript configuration for Nuxt 3 portfolio project
+ * Includes proper module resolution for Nuxt's virtual modules and auto-imports
+ * Follows modern TypeScript best practices with strict type checking
+ */
 {
-  // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+	"extends": "./.nuxt/tsconfig.json",
+	"compilerOptions": {
+		// Modern TypeScript configuration
+		"target": "ES2022",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"lib": [
+			"ES2022",
+			"DOM",
+			"DOM.Iterable"
+		],
+		// Strict type checking
+		"strict": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUncheckedIndexedAccess": true,
+		// Module resolution and imports
+		"allowImportingTsExtensions": false,
+		"allowJs": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+		"skipLibCheck": true,
+		"resolveJsonModule": true,
+		// Build optimizations
+		"incremental": true,
+		"declaration": false,
+		"declarationMap": false,
+		"sourceMap": true,
+		"removeComments": false,
+		"preserveConstEnums": true,
+		// Path mapping for better imports
+		"baseUrl": ".",
+		"paths": {
+			"~/*": [
+				"./*"
+			],
+			"@/*": [
+				"./*"
+			],
+			"~~/*": [
+				"./*"
+			],
+			"@@/*": [
+				"./*"
+			],
+			// Ensure Nuxt's virtual modules are recognized
+			"#imports": [
+				"./.nuxt/imports.d.ts"
+			],
+			"#app": [
+				"./.nuxt/nuxt.d.ts"
+			],
+			"#app/*": [
+				"./.nuxt/*"
+			]
+		},
+		// Type definitions
+		"types": [
+			"@types/node",
+			"@nuxt/types",
+		]
+	},
+	"include": [
+		"**/*",
+		".nuxt/**/*",
+		// Ensure all TypeScript and Vue files are included
+		"components/**/*.vue",
+		"pages/**/*.vue",
+		"layouts/**/*.vue",
+		"plugins/**/*.ts",
+		"middleware/**/*.ts",
+		"utils/**/*.ts",
+		"types/**/*.ts",
+		"server/**/*.ts"
+	],
+	"exclude": [
+		"node_modules",
+		"dist",
+		".output",
+		".nuxt/dist"
+	],
 }

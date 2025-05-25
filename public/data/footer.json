@@ -1,0 +1,18 @@
+{
+	"about": {
+		"social": [
+			{
+				"platform": "GitHub",
+				"url": "https://github.com/BleckWolf25",
+				"icon": "github"
+			},
+			{
+				"platform": "LinkedIn",
+				"url": "https://linkedin.com/in/bleckwolf25",
+				"icon": "linkedin"
+			}
+		],
+		"location": "Portugal",
+		"email": "coutinho4gaming@gmail.com"
+	}
+}

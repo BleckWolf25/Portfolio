@@ -1,0 +1,23 @@
+{
+	"about": {
+		"title": "About Me",
+		"description": "I'm a very versatille developer with the ability to adapt to almost any situation. I have a strong background in both front-end and back-end development, and I'm always looking to learn new technologies and improve my skills. I have experience in various programming languages, frameworks, and tools, and I'm comfortable working in both team environments and independently. I'm always looking for new challenges and opportunities and I'm strived to deliver high-quality software that meets the needs of users and businesses alike.",
+		"photo": "../images/profile.png",
+		"location": "Portugal",
+		"email": "coutinho4gaming@gmail.com",
+		"ctaText": "Featured Projects",
+		"ctaLink": "#about",
+		"social": [
+			{
+				"platform": "GitHub",
+				"url": "https://github.com/BleckWolf25",
+				"icon": "github"
+			},
+			{
+				"platform": "LinkedIn",
+				"url": "https://www.linkedin.com/in/bleck-wolf-827a0b328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+				"icon": "linkedin"
+			}
+		]
+	}
+}

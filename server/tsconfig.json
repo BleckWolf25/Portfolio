@@ -1,3 +1,15 @@
+/*
+ * @file TSCONFIG.JSON
+ *
+ * @version 1.0.0
+ * @author BleckWolf25
+ * @license MIT
+ *
+ * @description
+ * TypeScript configuration for the server-side of the project
+ * Extends Nuxt's default tsconfig for server-side code
+ */
+// ------------ CONFIGURATION
 {
-  "extends": "../.nuxt/tsconfig.server.json"
+	"extends": "../.nuxt/tsconfig.server.json"
 }

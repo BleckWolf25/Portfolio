@@ -1,0 +1,20 @@
+{
+	"projects": [
+		{
+			"title": "Portfolio Website v2",
+			"description": "A personal portfolio website showcasing my projects and skills.",
+			"image": "../images/projects/portfolio-v2.png",
+			"url": "https://bleckwolf25.vercel.app",
+			"github": "https://github.com/BleckWolf25/Portfolio",
+			"techStack": [
+				"Vue",
+				"Tailwind CSS",
+				"Nuxt",
+				"CSS",
+				"TypeScript",
+				"Node.js",
+				"npm"
+			]
+		}
+	]
+}
