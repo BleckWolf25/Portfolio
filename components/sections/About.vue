@@ -49,7 +49,7 @@
 
 							<!-- Image container -->
 							<div class="relative bg-white dark:bg-neutral-800 rounded-2xl p-2 shadow-xl">
-								<NuxtImg :src="profileImage" :alt="`Profile photo of ${aboutData.title.replace('About ', '')}`"
+								<img :src="profileImage" :alt="`Profile photo of ${aboutData.title.replace('About ', '')}`"
 									class="w-full h-full object-cover rounded-xl" width="400" height="400" loading="lazy" />
 							</div>
 

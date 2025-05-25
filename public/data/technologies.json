@@ -72,14 +72,12 @@
 			{
 				"name": "Shell Scripting",
 				"icon": "mdi:terminal",
-				"years": 1,
-				"color": "#0f0f0f"
+				"years": 1
 			},
 			{
 				"name": "Bash Scripting",
 				"icon": "codicon:terminal-bash",
-				"months": 4,
-				"color": "#0f0f0f"
+				"months": 4
 			}
 		],
 		"frameworks": [

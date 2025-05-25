@@ -117,6 +117,15 @@
 								Most Experienced
 							</div>
 						</div>
+						<div class="space-y-2">
+							<div
+								class="text-3xl font-bold bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">
+								{{ totalExperienceYears }}+
+							</div>
+							<div class="text-sm text-neutral-600 dark:text-neutral-400 font-medium">
+								Years Experience
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -208,6 +217,23 @@ const mostExperiencedTech = computed(() => {
 	})
 
 	return mostExperienced
+})
+
+const totalExperienceYears = computed(() => {
+	let totalMonths = 0
+
+	Object.values(technologiesData.value).forEach((category: Technology[]) => {
+		category.forEach((tech: Technology) => {
+			const years = tech.years || 0
+			const months = tech.months || 0
+			const days = tech.days || 0
+
+			totalMonths += years * 12 + months + (days / 30)
+		})
+	})
+
+	// Convert total months to years and round to nearest whole number
+	return Math.round(totalMonths / 12)
 })
 
 // ------------ LIFECYCLE
