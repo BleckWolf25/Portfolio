@@ -74,8 +74,7 @@
 		},
 		// Type definitions
 		"types": [
-			"@types/node",
-			"@nuxt/types",
+			"@types/node"
 		]
 	},
 	"include": [
