@@ -1,122 +1,122 @@
 {
-	"name": "bleckwolf25-portfolio",
-	"version": "2.0.0",
-	"description": "My portfolio website built with Nuxt 3 and Nuxt UI.",
-	"private": true,
-	"type": "module",
-	"engines": {
-		"node": "22.15.0"
-	},
-	"scripts": {
-		"dev": "nuxt dev --host",
-		"dev:https": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
-		"dev:debug": "nuxt dev --inspect",
-		"build": "nuxt build",
-		"build:production": "NODE_ENV=production nuxt build",
-		"build:prerender": "nuxt build --prerender",
-		"build:analyze": "nuxt build --analyze",
-		"generate": "nuxt generate",
-		"preview": "nuxt preview",
-		"start": "node .output/server/index.mjs",
-		"type-check": "vue-tsc --noEmit",
-		"type-check:watch": "vue-tsc --noEmit --watch",
-		"lint": "eslint . --max-warnings=0 --cache",
-		"lint:fix": "eslint . --fix --cache",
-		"format": "prettier --write . --cache",
-		"format:check": "prettier --check . --cache",
-		"validate": "npm run type-check && npm run lint && npm run format:check",
-		"validate:fix": "npm run format && npm run lint:fix && npm run type-check",
-		"ci:install": "npm ci --only=production",
-		"ci:build": "npm run validate && npm run build",
-		"ci:test": "npm run build && npm run preview",
-		"postinstall": "nuxt prepare",
-		"prepare": "node -e \"try { process.env.CI || require('husky').add('.husky/pre-commit', 'npm run pre-commit') } catch (e) { /* Husky not needed in CI */ }\"",
-		"clean": "rm -rf .nuxt .output dist node_modules/.cache",
-		"fresh": "npm run clean && npm ci && npm run postinstall",
-		"deps:update": "npx taze -w && npm install",
-		"pre-commit": "lint-staged"
-	},
-	"lint-staged": {
-		"*.{js,mjs,cjs,ts,vue}": [
-			"eslint --fix --cache",
-			"prettier --write"
-		],
-		"*.{json,md,yml,yaml,css,scss}": [
-			"prettier --write"
-		],
-		"*.vue": [
-			"vue-tsc --noEmit"
-		]
-	},
-	"commitlint": {
-		"extends": [
-			"@commitlint/config-conventional"
-		],
-		"rules": {
-			"type-enum": [
-				2,
-				"always",
-				[
-					"feat",
-					"fix",
-					"docs",
-					"style",
-					"refactor",
-					"perf",
-					"test",
-					"build",
-					"ci",
-					"chore",
-					"revert"
-				]
-			],
-			"subject-case": [
-				2,
-				"always",
-				"sentence-case"
-			]
-		}
-	},
-	"browserslist": [
-		"> 1%",
-		"last 2 versions",
-		"not dead",
-		"not ie 11"
-	],
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged",
-			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-		}
-	},
-	"dependencies": {
-		"@iconify-json/devicon": "^1.2.24",
-		"@iconify-json/heroicons": "^1.2.2",
-		"@iconify-json/mdi": "^1.2.3",
-		"@iconify-json/simple-icons": "^1.2.35",
-		"@nuxt/fonts": "^0.11.4",
-		"@nuxt/scripts": "^0.11.7",
-		"@nuxt/ui": "^3.1.2",
-		"@nuxtjs/color-mode": "^3.5.2",
-		"@unhead/vue": "^2.0.10",
-		"nuxt": "^3.17.4",
-		"typescript": "^5.8.3",
-		"vue": "^3.5.14",
-		"vue-router": "^4.5.1"
-	},
-	"devDependencies": {
-		"@nuxt/devtools": "^1.7.4",
-		"@nuxt/icon": "^1.13.0",
-		"@nuxt/types": "^2.18.1",
-		"@types/node": "^22.15.21",
-		"@typescript-eslint/eslint-plugin": "^8.32.0",
-		"@typescript-eslint/parser": "^8.32.1",
-		"eslint": "^9.27.0",
-		"eslint-config-prettier": "^9.2.0",
-		"eslint-plugin-vue": "^10.1.0",
-		"husky": "^9.1.7",
-		"lint-staged": "^16.0.0",
-		"prettier": "^3.5.3",
-		"vue-tsc": "^2.2.10"
-	}
+  "name": "bleckwolf25-portfolio",
+  "version": "2.0.0",
+  "description": "My portfolio website built with Nuxt 3 and Nuxt UI.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "22.15.0"
+  },
+  "scripts": {
+    "dev": "nuxt dev --host",
+    "dev:https": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
+    "dev:debug": "nuxt dev --inspect",
+    "build": "nuxt build",
+    "build:production": "NODE_ENV=production nuxt build",
+    "build:prerender": "nuxt build --prerender",
+    "build:analyze": "nuxt build --analyze",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "start": "node .output/server/index.mjs",
+    "type-check": "vue-tsc --noEmit",
+    "type-check:watch": "vue-tsc --noEmit --watch",
+    "lint": "eslint . --max-warnings=0 --cache",
+    "lint:fix": "eslint . --fix --cache",
+    "format": "prettier --write . --cache",
+    "format:check": "prettier --check . --cache",
+    "validate": "npm run type-check && npm run lint && npm run format:check",
+    "validate:fix": "npm run format && npm run lint:fix && npm run type-check",
+    "ci:install": "npm ci --only=production",
+    "ci:build": "npm run validate && npm run build",
+    "ci:test": "npm run build && npm run preview",
+    "postinstall": "nuxt prepare",
+    "prepare": "node -e \"try { process.env.CI || require('husky').add('.husky/pre-commit', 'npm run pre-commit') } catch (e) { /* Husky not needed in CI */ }\"",
+    "clean": "rm -rf .nuxt .output dist node_modules/.cache",
+    "fresh": "npm run clean && npm ci && npm run postinstall",
+    "deps:update": "npx taze -w && npm install",
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,mjs,cjs,ts,vue}": [
+      "eslint --fix --cache",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml,css,scss}": [
+      "prettier --write"
+    ],
+    "*.vue": [
+      "vue-tsc --noEmit"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "type-enum": [
+        2,
+        "always",
+        [
+          "feat",
+          "fix",
+          "docs",
+          "style",
+          "refactor",
+          "perf",
+          "test",
+          "build",
+          "ci",
+          "chore",
+          "revert"
+        ]
+      ],
+      "subject-case": [
+        2,
+        "always",
+        "sentence-case"
+      ]
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {
+    "@iconify-json/devicon": "^1.2.24",
+    "@iconify-json/heroicons": "^1.2.2",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/simple-icons": "^1.2.35",
+    "@nuxt/fonts": "^0.11.4",
+    "@nuxt/scripts": "^0.11.7",
+    "@nuxt/ui": "^3.1.2",
+    "@nuxtjs/color-mode": "^3.5.2",
+    "@unhead/vue": "^2.0.10",
+    "nuxt": "^3.17.4",
+    "typescript": "^5.8.3",
+    "vue": "^3.5.14",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^2.4.1",
+    "@nuxt/icon": "^1.13.0",
+    "@nuxt/types": "^2.18.1",
+    "@types/node": "^22.15.21",
+    "@typescript-eslint/eslint-plugin": "^8.32.0",
+    "@typescript-eslint/parser": "^8.32.1",
+    "eslint": "^9.27.0",
+    "eslint-config-prettier": "^9.2.0",
+    "eslint-plugin-vue": "^10.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
+    "prettier": "^3.5.3",
+    "vue-tsc": "^2.2.10"
+  }
 }
