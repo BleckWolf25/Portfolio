@@ -86,6 +86,13 @@ export default defineEventHandler(async (event): Promise<ContactResponse> => {
 			(event.node.req.socket.remoteAddress) ||
 			'unknown'
 
+		// Log request details for debugging
+		console.log(`📧 CONTACT: Request from IP ${clientIP}, Origin: ${getHeader(event, 'origin')}, User-Agent: ${getHeader(event, 'user-agent')}`)
+		console.log(`📧 CONTACT: Headers count: ${Object.keys(event.node.req.headers).length}`)
+		console.log(`📧 CONTACT: Content-Type: ${getHeader(event, 'content-type')}`)
+		console.log(`📧 CONTACT: Method: ${event.node.req.method}`)
+		console.log(`📧 CONTACT: URL: ${event.node.req.url}`)
+
 		// Check rate limit
 		const rateLimitResult = checkRateLimit(clientIP)
 		if (!rateLimitResult.allowed) {

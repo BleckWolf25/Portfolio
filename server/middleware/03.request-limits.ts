@@ -2,7 +2,7 @@
  * @file: 03.REQUEST-LIMITS.TS
  * @author: BleckWolf25
  * @license: MIT
- * @version: 1.0.0
+ * @version: 1.0.1
  *
  * @description:
  * Request limiting middleware to prevent large payload attacks and DoS attempts.
@@ -49,10 +49,10 @@ export default defineEventHandler(async (event) => {
 		}
 	}
 
-	// Header count and size limits
+	// Header count and size limits (increased for Vercel compatibility)
 	const headers = event.node.req.headers
 	const headerCount = Object.keys(headers).length
-	const MAX_HEADERS = 50
+	const MAX_HEADERS = 100 // Increased from 50 to accommodate Vercel's headers
 
 	if (headerCount > MAX_HEADERS) {
 		console.warn(`🚫 REQUEST-LIMITS: Too many headers: ${headerCount}`)
@@ -77,7 +77,7 @@ export default defineEventHandler(async (event) => {
 
 	// Request timeout (handled by Nitro, but we can log long requests)
 	const startTime = Date.now()
-	
+
 	// Add cleanup function to log request duration
 	event.node.req.on('close', () => {
 		const duration = Date.now() - startTime

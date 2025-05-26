@@ -2,7 +2,7 @@
  * @file: 07.RATE-LIMITING.TS
  * @author: BleckWolf25
  * @license: MIT
- * @version: 1.0.0
+ * @version: 1.0.1
  *
  * @description:
  * Rate limiting middleware with multiple strategies.
@@ -32,8 +32,8 @@ const GLOBAL_MAX_REQUESTS = 60 // 60 requests per minute per IP
 
 const ENDPOINT_LIMITS = {
 	'/api/contact': {
-		window: 15 * 60 * 1000, // 15 minutes
-		maxRequests: 3 // 3 requests per 15 minutes
+		window: 5 * 60 * 1000, // 5 minutes (reduced from 15)
+		maxRequests: 5 // 5 requests per 5 minutes (increased from 3)
 	},
 	'/api/data': {
 		window: 60 * 1000, // 1 minute

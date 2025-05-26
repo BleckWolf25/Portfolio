@@ -2,7 +2,7 @@
  * @file: 06.CSRF-PROTECTION.TS
  * @author: BleckWolf25
  * @license: MIT
- * @version: 1.0.0
+ * @version: 1.0.1
  *
  * @description:
  * CSRF protection middleware to prevent cross-site request forgery attacks.
@@ -21,13 +21,18 @@ export default defineEventHandler(async (event) => {
 	const referer = getHeader(event, 'referer')
 	const host = getHeader(event, 'host')
 
-	// Allowed hosts/origins
+	// Allowed hosts/origins - include all Vercel deployment patterns
 	const allowedHosts = [
 		'bleckwolf25.vercel.app',
+		'bleckwolf25-preview.vercel.app',
 		'portfolio-bleckwolf25.vercel.app',
+		'portfolio-bleckwolf25s-projects.vercel.app',
+		'portfolio-git-main-bleckwolf25s-projects.vercel.app',
+		'portfolio-git-dev-preview-bleckwolf25s-projects.vercel.app',
 		...(process.env.NODE_ENV === 'development' ? [
 			'localhost:3000',
-			'127.0.0.1:3000'
+			'127.0.0.1:3000',
+			'192.168.1.207:3000'
 		] : [])
 	]
 
@@ -38,7 +43,8 @@ export default defineEventHandler(async (event) => {
 	if (origin) {
 		try {
 			const originUrl = new URL(origin)
-			isValidOrigin = allowedHosts.includes(originUrl.host)
+			isValidOrigin = allowedHosts.includes(originUrl.host) ||
+				(originUrl.host.includes('bleckwolf25') && originUrl.host.includes('.vercel.app'))
 		} catch (error) {
 			console.warn('🚫 CSRF: Invalid origin format:', origin)
 		}
@@ -48,7 +54,8 @@ export default defineEventHandler(async (event) => {
 	if (!isValidOrigin && referer) {
 		try {
 			const refererUrl = new URL(referer)
-			isValidOrigin = allowedHosts.includes(refererUrl.host)
+			isValidOrigin = allowedHosts.includes(refererUrl.host) ||
+				(refererUrl.host.includes('bleckwolf25') && refererUrl.host.includes('.vercel.app'))
 		} catch (error) {
 			console.warn('🚫 CSRF: Invalid referer format:', referer)
 		}
@@ -56,7 +63,8 @@ export default defineEventHandler(async (event) => {
 
 	// Check host header as additional validation
 	if (!isValidOrigin && host) {
-		isValidOrigin = allowedHosts.includes(host)
+		isValidOrigin = allowedHosts.includes(host) ||
+			(host.includes('bleckwolf25') && host.includes('.vercel.app'))
 	}
 
 	// For development, be more lenient
@@ -73,7 +81,7 @@ export default defineEventHandler(async (event) => {
 			'unknown'
 
 		console.warn(`🚫 CSRF: Blocked request from unauthorized origin. IP: ${clientIP}, Origin: ${origin}, Referer: ${referer}, Host: ${host}`)
-		
+
 		throw createError({
 			statusCode: 403,
 			statusMessage: 'Forbidden: Invalid origin'
@@ -83,9 +91,13 @@ export default defineEventHandler(async (event) => {
 	// Additional check for contact form
 	if (event.node.req.url === '/api/contact') {
 		const contentType = getHeader(event, 'content-type')
-		
-		// Ensure content type is JSON for API requests
-		if (!contentType?.includes('application/json')) {
+		const userAgent = getHeader(event, 'user-agent')
+
+		// Log request details for debugging
+		console.log(`🔍 CSRF: Contact form request - Content-Type: ${contentType}, User-Agent: ${userAgent}`)
+
+		// Ensure content type is JSON for API requests (more lenient check)
+		if (contentType && !contentType.includes('application/json') && !contentType.includes('text/plain')) {
 			console.warn('🚫 CSRF: Invalid content type for contact form:', contentType)
 			throw createError({
 				statusCode: 400,
@@ -93,11 +105,10 @@ export default defineEventHandler(async (event) => {
 			})
 		}
 
-		// Check for custom header that indicates legitimate request
+		// Check for custom header that indicates legitimate request (optional)
 		const requestedWith = getHeader(event, 'x-requested-with')
 		if (!requestedWith) {
-			// This is optional but adds another layer of protection
-			console.log('ℹ️ CSRF: Request without X-Requested-With header (may be legitimate)')
+			console.log('ℹ️ CSRF: Request without X-Requested-With header (allowing for browser compatibility)')
 		}
 	}
 

@@ -2,7 +2,7 @@
  * @file: 04.INPUT-SANITIZATION.TS
  * @author: BleckWolf25
  * @license: MIT
- * @version: 1.0.0
+ * @version: 1.0.1
  *
  * @description:
  * Input sanitization middleware for preventing XSS, SQL injection, and other injection attacks.
@@ -86,21 +86,17 @@ function sanitizeObject(obj: any, depth = 0): any {
 	}
 
 	if (typeof obj === 'string') {
-		// Check for malicious patterns
+		// Check for malicious patterns but be more lenient for contact forms
 		if (detectSqlInjection(obj)) {
-			console.warn('🚫 INPUT-SANITIZATION: SQL injection attempt detected')
-			throw createError({
-				statusCode: 400,
-				statusMessage: 'Invalid input detected'
-			})
+			console.warn('🚫 INPUT-SANITIZATION: SQL injection attempt detected:', obj.substring(0, 100))
+			// Instead of throwing, just sanitize more aggressively
+			return sanitizeHtml(sanitizeString(obj.replace(/['"`;\\]/g, '')))
 		}
 
 		if (detectXssAttempt(obj)) {
-			console.warn('🚫 INPUT-SANITIZATION: XSS attempt detected')
-			throw createError({
-				statusCode: 400,
-				statusMessage: 'Invalid input detected'
-			})
+			console.warn('🚫 INPUT-SANITIZATION: XSS attempt detected:', obj.substring(0, 100))
+			// Instead of throwing, just sanitize more aggressively
+			return sanitizeHtml(sanitizeString(obj))
 		}
 
 		return sanitizeHtml(sanitizeString(obj))
@@ -142,7 +138,7 @@ export default defineEventHandler(async (event) => {
 		if (body && typeof body === 'object') {
 			// Sanitize the request body
 			const sanitizedBody = sanitizeObject(body)
-			
+
 			// Replace the body with sanitized version
 			event.context.body = sanitizedBody
 			event.context.sanitized = true
@@ -151,11 +147,16 @@ export default defineEventHandler(async (event) => {
 			console.log(`✅ INPUT-SANITIZATION: Sanitized request to ${event.node.req.url}`)
 		}
 	} catch (error) {
-		// If sanitization fails, it's likely malicious input
+		// Log the error but be more lenient
 		console.error('🚫 INPUT-SANITIZATION: Failed to sanitize input:', error)
-		throw createError({
-			statusCode: 400,
-			statusMessage: 'Invalid request format'
-		})
+
+		// Check if it's a known error type
+		if (error && typeof error === 'object' && 'statusCode' in error) {
+			throw error
+		}
+
+		// For unknown errors, try to continue without sanitization
+		console.warn('⚠️ INPUT-SANITIZATION: Continuing without sanitization due to error')
+		return
 	}
 })
