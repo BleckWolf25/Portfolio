@@ -44,7 +44,6 @@ lib-cov
 
 # yarn
 .yarn
-package-lock.json
 yarn-error.log
 yarn-debug.log
 
