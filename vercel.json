@@ -12,7 +12,7 @@
 	],
 	"functions": {
 		".output/server/index.mjs": {
-			"runtime": "nodejs22.x",
+			"runtime": "nodejs20.x",
 			"maxDuration": 30,
 			"memory": 1024
 		}
