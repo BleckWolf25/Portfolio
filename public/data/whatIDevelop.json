@@ -1,0 +1,48 @@
+{
+	"development": [
+		{
+			"category": "Web Development",
+			"title": "Web",
+			"description": "I build fast, responsive, and user-friendly web applications that perform flawlessly across all devices. Using modern frameworks and best practices, I prioritize performance, accessibility, and a seamless user experience.",
+			"features": [
+				"Single-Page Applications (SPA)",
+				"Progressive Web Apps (PWA)",
+				"E-commerce Platforms",
+				"Business and Enterprise Applications",
+				"Wikis and Knowledge Bases",
+				"Blogs and Publishing Platforms",
+				"Cross-Browser Compatibility",
+				"Web Security and Hardening",
+				"Utility and Productivity Websites"
+			]
+		},
+		{
+			"category": "Software Development",
+			"title": "Software",
+			"description": "I develop robust and efficient software applications for Windows, macOS, and Linux. I leverage modern technologies to create intuitive, high-performance solutions tailored to each platform.",
+			"features": [
+				"Native Desktop Applications",
+				"Cross-Platform Applications",
+				"Electron-Based Apps",
+				"Mobile Applications (iOS & Android)",
+				"Command-Line Tools",
+				"Custom SDKs and Libraries",
+				"API Development and Integration"
+			]
+		},
+		{
+			"category": "Game Development",
+			"title": "Game",
+			"description": "I design and develop engaging games across multiple platforms using cutting-edge tools and game engines. From prototypes to fully-featured releases, I ensure polished experiences for players.",
+			"features": [
+				"2D and 3D Game Development",
+				"Mobile, Console, and PC Games",
+				"Web-Based Games",
+				"Gameplay and Systems Design",
+				"Rapid Game Prototyping",
+				"Multiplayer and Networking",
+				"Anti-Cheat and Security Systems"
+			]
+		}
+	]
+}

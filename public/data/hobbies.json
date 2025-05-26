@@ -1,0 +1,26 @@
+{
+	"hobbies": {
+		"items": [
+			{
+				"name": "Gaming",
+				"icon": "mdi:gamepad-variant-outline"
+			},
+			{
+				"name": "Coding",
+				"icon": "mdi:laptop"
+			},
+			{
+				"name": "Moto Riding",
+				"icon": "game-icons:full-motorcycle-helmet"
+			},
+			{
+				"name": "Listening to Music",
+				"icon": "mdi:music-box-outline"
+			},
+			{
+				"name": "Gym",
+				"icon": "mdi:dumbbell"
+			}
+		]
+	}
+}

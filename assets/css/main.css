@@ -1,4 +1,14 @@
-@import '../../styles/variables.css';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ===================================== */
+/* IMPORTS                  						 */
+/* ===================================== */
+
+@import 'tailwindcss';
+@import '@nuxt/ui';
+
+/* ===================================== */
+/* BASE STYLES                 					 */
+/* ===================================== */
+
+html {
+	scroll-behavior: smooth;
+}

@@ -1,24 +1,28 @@
-<!-- app.vue -->
+<!--
+	- @file: APP.VUE
+	- @author: BleckWolf25
+	- @license: MIT
+	- @version: 1.0.0
+
+	- @description:
+		- This is the main entry point for the Nuxt.js application.
+		- It renders the NuxtPage component which is responsible for rendering the current page.
+		- It also renders the NuxtRouteAnnouncer component for accessibility.
+		- The GlobalA11yProvider component provides a global screen reader announcer.
+-->
+
+<!-- Template Section -->
 <template>
-	<div :class="{ dark: isDarkMode }" class="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200">
-		<NuxtLayout>
-			<Navbar />
+	<div>
+		<GlobalA11yProvider>
+			<NuxtRouteAnnouncer />
 			<NuxtPage />
-		</NuxtLayout>
+		</GlobalA11yProvider>
 	</div>
 </template>
 
-<script setup>
+<!-- Script Section -->
+<script setup lang="ts">
 // ------------ IMPORTS
-import { useState } from '#app'
-import Navbar from '~/components/Navbar.vue'
-
-// ------------ DARK MODE
-const isDarkMode = useState('darkMode', () => false)
-
-// ------------ TOGGLE DARK MODE
-function toggleDarkMode() {
-	isDarkMode.value = !isDarkMode.value
-	document.documentElement.classList.toggle('dark', isDarkMode.value)
-}
+import GlobalA11yProvider from './components/GlobalA11yProvider.vue';
 </script>

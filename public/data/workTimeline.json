@@ -1,0 +1,57 @@
+{
+	"workHistory": [
+		{
+			"company": "Dynamic Innovative Studio",
+			"position": "Founder & CEO",
+			"period": "2023 – Present",
+			"description": "Founded and lead a forward-thinking game studio focused on community-driven development and delivering high-quality games, digital services, and innovative products. Oversee all aspects of the studio including creative direction, technical architecture, and team leadership.",
+			"technologies": [
+				"Python",
+				"JavaScript",
+				"TypeScript",
+				"Lua",
+				"SQL",
+				"Node.js",
+				"Vite",
+				"Firebase",
+				"React",
+				"Express.js",
+				"Electron",
+				"Framer Motion",
+				"Tailwind CSS",
+				".NET",
+				"GitHub",
+				"ESLint",
+				"Docker",
+				"npm",
+				"Yarn",
+				"VSCode",
+				"MySQL Workbench",
+				"DBeaver",
+				"Roblox Studio",
+				"macOS",
+				"Windows",
+				"GitHub Copilot",
+				"Claude",
+				"ChatGPT",
+				"DeepSeek",
+				"Gemini"
+			]
+		},
+		{
+			"company": "Antonio Costa",
+			"position": "Web Developer",
+			"period": "2023 – 2023",
+			"description": "Developed and maintained a custom web application for Antonio Costa Company to streamline workshop operations, client interactions, and internal management. Implemented AI features to help with daily tasks and improve efficiency.",
+			"technologies": [
+				"Vue.js",
+				"Bootstrap 5",
+				"CSS3",
+				"Firebase",
+				"Vite",
+				"npm",
+				"Recaptcha v3"
+			]
+		}
+	]
+}

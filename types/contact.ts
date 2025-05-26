@@ -1,0 +1,161 @@
+/**
+ * @file: CONTACT.TS
+ * @author: BleckWolf25
+ * @license: MIT
+ * @version: 1.0.0
+ *
+ * @description:
+ * TypeScript type definitions for contact form and email functionality.
+ * Provides type safety for contact form data, API responses, and email operations.
+ */
+
+// ------------ CONTACT FORM TYPES
+export interface ContactFormData {
+	name: string
+	email: string
+	message: string
+}
+
+export interface ContactFormErrors {
+	name?: string
+	email?: string
+	message?: string
+	general?: string
+}
+
+export interface ContactFormState {
+	data: ContactFormData
+	errors: ContactFormErrors
+	loading: boolean
+	success: boolean
+	submitted: boolean
+}
+
+// ------------ API RESPONSE TYPES
+export interface ContactApiResponse {
+	success: boolean
+	message: string
+	error?: string
+}
+
+export interface ContactApiError {
+	statusCode: number
+	statusMessage: string
+	data?: any
+}
+
+// ------------ EMAIL SERVICE TYPES
+export interface EmailOptions {
+	to: string
+	subject: string
+	text?: string
+	html?: string
+	replyTo?: string
+}
+
+export interface EmailResponse {
+	success: boolean
+	messageId?: string
+	error?: string
+}
+
+// ------------ VALIDATION TYPES
+export interface ValidationRule {
+	required?: boolean
+	minLength?: number
+	maxLength?: number
+	pattern?: RegExp
+	custom?: (value: string) => boolean | string
+}
+
+export interface ValidationRules {
+	name: ValidationRule
+	email: ValidationRule
+	message: ValidationRule
+}
+
+// ------------ FORM CONFIGURATION TYPES
+export interface ContactFormConfig {
+	enableSpamProtection: boolean
+	enableRateLimit: boolean
+	maxSubmissionsPerHour: number
+	requiredFields: (keyof ContactFormData)[]
+	validationRules: ValidationRules
+}
+
+// ------------ RATE LIMITING TYPES
+export interface RateLimitRecord {
+	count: number
+	resetTime: number
+	firstAttempt: number
+}
+
+export interface RateLimitResult {
+	allowed: boolean
+	remaining?: number
+	resetTime?: number
+	retryAfter?: number
+}
+
+// ------------ SPAM DETECTION TYPES
+export interface SpamDetectionConfig {
+	enabled: boolean
+	patterns: RegExp[]
+	maxUrls: number
+	maxRepeatedChars: number
+	suspiciousWords: string[]
+}
+
+export interface SpamDetectionResult {
+	isSpam: boolean
+	confidence: number
+	reasons: string[]
+}
+
+// ------------ EMAIL TEMPLATE TYPES
+export interface EmailTemplateData {
+	name: string
+	email: string
+	message: string
+	timestamp: string
+	userAgent?: string
+	ipAddress?: string
+}
+
+export interface EmailTemplate {
+	subject: string
+	html: string
+	text: string
+}
+
+// ------------ NOTIFICATION TYPES
+export interface NotificationConfig {
+	email: {
+		enabled: boolean
+		recipient: string
+		template: 'default' | 'minimal' | 'detailed'
+	}
+	webhook?: {
+		enabled: boolean
+		url: string
+		secret?: string
+	}
+	slack?: {
+		enabled: boolean
+		webhookUrl: string
+		channel?: string
+	}
+}
+
+// ------------ ANALYTICS TYPES
+export interface ContactFormAnalytics {
+	totalSubmissions: number
+	successfulSubmissions: number
+	failedSubmissions: number
+	spamBlocked: number
+	rateLimitHits: number
+	averageResponseTime: number
+	lastSubmission?: Date
+}
+
+// All types are already exported individually above

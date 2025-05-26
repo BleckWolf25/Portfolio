@@ -1,0 +1,54 @@
+{
+	"testimonials": {
+		"items": [
+			{
+				"quote": "Awesome, really coordinated, always tries to help. Very friendly person, likes everything to be perfect. Really easy communication. Amazing person to work with and I recommend him.",
+				"author": "Renleaf",
+				"authorImage": "/images/testimonials/renleaf.png",
+				"position": "Social Media Manager, Dynamic Innovative Studio"
+			},
+			{
+				"quote": "Working with Bleck is a fun and supportive experience, he's a great developer, a good executive leader, and someone who communicates clearly without adding pressure.",
+				"author": "Joeh",
+				"authorImage": "/images/testimonials/joeh.png",
+				"position": "Voice Actor, Dynamic Innovative Studio"
+			},
+			{
+				"quote": "Working under Bleck is one of the best experiences I've had. He is active, understanding, and brings spectacular ideas to the table. Bleck is truly a special person who can take any project and make it better than it ever could have been. I would recommend.",
+				"author": "Rod",
+				"authorImage": "/images/testimonials/rod.png",
+				"position": "Trainee | Game Moderation, Dynamic Innovative Studio"
+			},
+			{
+				"quote": "Bleck is a chill and approachable executive leader who stays connected with the team, brings great ideas, and helps deliver quality work on time without ever adding pressure.",
+				"author": "Nikolay",
+				"authorImage": "/images/testimonials/nikolay.png",
+				"position": "Sound Designer, Dynamic Innovative Studio"
+			},
+			{
+				"quote": "Working with Bleck has been great! Bleck is very chill and friendly. He's also very wise when it comes to making games, he even gave me advice on my studio.",
+				"author": "Baff1ed",
+				"authorImage": "/images/testimonials/baff1ed.png",
+				"position": "Voice Actor, Dynamic Innovative Studio"
+			},
+			{
+				"quote": "Working with Bleck was the best choice I ever made, he's helpful, funny, a strong leader, and always brings clarity, collaboration, and great organization to the team. I would recommend.",
+				"author": "Silver",
+				"authorImage": "/images/testimonials/silver.png",
+				"position": "Lua Scripter & Tools Programmer, Dynamic Innovative Studio"
+			},
+			{
+				"quote": "Bleck is an organized person who plans everything carefully before giving the information to others, his decisions are always clear to understand because he takes the time to research information thoroughly before sharing it with the team. He's always willing to help team members understand and he's open for feedback.",
+				"author": "Toki",
+				"authorImage": "/images/testimonials/toki.png",
+				"position": "Music Composer & Sound Designer, Dynamic Innovative Studio"
+			},
+			{
+				"quote": "Working with Bleck is fun and the communication with others, no foul language either. I would highly recommend bleck work with others to also make them happy.",
+				"author": "Anonymous",
+				"authorImage": "/images/testimonials/randomBoy1.jpg",
+				"position": "???, Dynamic Innovative Studio"
+			}
+		]
+	}
+}

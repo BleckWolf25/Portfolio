@@ -15,6 +15,9 @@ lerna-debug.log*
 .pnpm-debug.log*
 bot-log.json
 
+#build
+.vercel
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
@@ -41,7 +44,6 @@ lib-cov
 
 # yarn
 .yarn
-package-lock.json
 yarn-error.log
 yarn-debug.log
 
