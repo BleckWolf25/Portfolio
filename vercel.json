@@ -1,0 +1,145 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"version": 2,
+	"name": "bleckwolf25-portfolio",
+	"framework": "nuxtjs",
+	"buildCommand": "npm run build",
+	"outputDirectory": ".output/public",
+	"installCommand": "npm ci",
+	"devCommand": "npm run dev",
+	"regions": [
+		"iad1"
+	],
+	"functions": {
+		".output/server/index.mjs": {
+			"runtime": "nodejs20.x",
+			"maxDuration": 30,
+			"memory": 1024
+		}
+	},
+	"headers": [
+		{
+			"source": "/(.*)",
+			"headers": [
+				{
+					"key": "X-Frame-Options",
+					"value": "DENY"
+				},
+				{
+					"key": "X-Content-Type-Options",
+					"value": "nosniff"
+				},
+				{
+					"key": "Referrer-Policy",
+					"value": "strict-origin-when-cross-origin"
+				},
+				{
+					"key": "X-XSS-Protection",
+					"value": "1; mode=block"
+				},
+				{
+					"key": "Permissions-Policy",
+					"value": "camera=(), microphone=(), geolocation=()"
+				},
+				{
+					"key": "Strict-Transport-Security",
+					"value": "max-age=31536000; includeSubDomains"
+				}
+			]
+		},
+		{
+			"source": "/data/(.*)",
+			"headers": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=3600"
+				},
+				{
+					"key": "Access-Control-Allow-Origin",
+					"value": "*"
+				},
+				{
+					"key": "Access-Control-Allow-Methods",
+					"value": "GET, OPTIONS"
+				},
+				{
+					"key": "Access-Control-Allow-Headers",
+					"value": "Content-Type"
+				}
+			]
+		},
+		{
+			"source": "/images/(.*)",
+			"headers": [
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=31536000, immutable"
+				},
+				{
+					"key": "Content-Security-Policy",
+					"value": "default-src 'self'"
+				}
+			]
+		},
+		{
+			"source": "/_nuxt/(.*)",
+			"headers": [
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=31536000, immutable"
+				}
+			]
+		},
+		{
+			"source": "/robots.txt",
+			"headers": [
+				{
+					"key": "Content-Type",
+					"value": "text/plain"
+				},
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=86400"
+				}
+			]
+		},
+		{
+			"source": "/favicon.ico",
+			"headers": [
+				{
+					"key": "Content-Type",
+					"value": "image/x-icon"
+				},
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=31536000, immutable"
+				}
+			]
+		}
+	],
+	"redirects": [
+		{
+			"source": "/home",
+			"destination": "/",
+			"permanent": true
+		},
+		{
+			"source": "/index.html",
+			"destination": "/",
+			"permanent": true
+		}
+	],
+	"rewrites": [
+		{
+			"source": "/api/(.*)",
+			"destination": "/api/$1"
+		}
+	],
+	"cleanUrls": true,
+	"trailingSlash": false,
+	"crons": []
+}
