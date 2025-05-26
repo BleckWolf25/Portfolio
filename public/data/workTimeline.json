@@ -37,6 +37,21 @@
 				"DeepSeek",
 				"Gemini"
 			]
+		},
+		{
+			"company": "Antonio Costa",
+			"position": "Web Developer",
+			"period": "2023 – 2023",
+			"description": "Developed and maintained a custom web application for Antonio Costa Company to streamline workshop operations, client interactions, and internal management. Implemented AI features to help with daily tasks and improve efficiency.",
+			"technologies": [
+				"Vue.js",
+				"Bootstrap 5",
+				"CSS3",
+				"Firebase",
+				"Vite",
+				"npm",
+				"Recaptcha v3"
+			]
 		}
 	]
 }

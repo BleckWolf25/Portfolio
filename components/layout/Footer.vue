@@ -18,9 +18,11 @@
 		<!-- Animated Background Elements -->
 		<div class="absolute inset-0 overflow-hidden pointer-events-none">
 			<!-- Floating gradient orbs -->
-			<div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary-200/10 to-accent-200/10 rounded-full blur-3xl animate-pulse"
+			<div
+				class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary-200/10 to-accent-200/10 rounded-full blur-3xl animate-pulse"
 				style="animation-duration: 4s" aria-hidden="true"></div>
-			<div class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-accent-300/10 to-secondary-200/10 rounded-full blur-3xl animate-pulse"
+			<div
+				class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-accent-300/10 to-secondary-200/10 rounded-full blur-3xl animate-pulse"
 				style="animation-duration: 6s; animation-delay: 2s" aria-hidden="true"></div>
 		</div>
 
@@ -50,13 +52,12 @@
 
 							<!-- Social Links -->
 							<div class="footer-social opacity-0" data-footer-element>
-								<h4
-									class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider mb-4">
+								<h4 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider mb-4">
 									Connect With Me
 								</h4>
 								<div class="flex space-x-4">
-									<a v-for="social in socialLinks" :key="social.platform" :href="social.url"
-										target="_blank" rel="noopener"
+									<a v-for="social in socialLinks" :key="social.platform" :href="social.url" target="_blank"
+										rel="noopener"
 										class="p-3 rounded-lg bg-white/50 dark:bg-neutral-800/50 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-200 hover:scale-110 hover:shadow-lg flex items-center"
 										:aria-label="`Visit ${social.platform} profile`">
 										<Icon :name="`mdi:${social.icon}`"
@@ -68,13 +69,12 @@
 
 						<!-- Quick Navigation -->
 						<div class="footer-nav opacity-0" data-footer-element>
-							<h4
-								class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider mb-4">
+							<h4 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider mb-4">
 								Quick Links
 							</h4>
 							<nav class="space-y-3" role="navigation" aria-label="Footer navigation">
-								<UButton v-for="link in quickLinks" :key="link.id" @click="scrollToSection(link.id)"
-									variant="ghost" size="sm"
+								<UButton v-for="link in quickLinks" :key="link.id" @click="scrollToSection(link.id)" variant="ghost"
+									size="sm"
 									class="block w-full justify-start p-2 text-left text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 rounded-lg transition-all duration-200"
 									:aria-label="`Navigate to ${link.label} section`">
 									{{ link.label }}
@@ -84,13 +84,12 @@
 
 						<!-- Contact & Tech Stack -->
 						<div class="footer-contact opacity-0" data-footer-element>
-							<h4
-								class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider mb-4">
+							<h4 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider mb-4">
 								Get In Touch
 							</h4>
 							<div class="space-y-3">
 								<!-- Location -->
-								<div class="flex items-center space-x-3 text-neutral-600 dark:text-neutral-400">
+								<div class="flex items-center space-x-3 p-2 text-neutral-600 dark:text-neutral-400">
 									<Icon name="mdi:map-marker" class="w-4 h-4 text-primary-500" />
 									<span class="text-sm">{{ contactInfo.location }}</span>
 								</div>
@@ -109,8 +108,7 @@
 
 							<!-- Featured Tech Stack -->
 							<div class="mt-6">
-								<h5
-									class="text-xs font-medium text-neutral-500 dark:text-neutral-500 uppercase tracking-wider mb-3">
+								<h5 class="text-xs font-medium text-neutral-500 dark:text-neutral-500 uppercase tracking-wider mb-3">
 									Built With
 								</h5>
 								<div class="flex flex-wrap gap-2">

@@ -2,7 +2,7 @@
 	- @file: TECHNOLOGIES.VUE
 	- @author: BleckWolf25
 	- @license: MIT
-	- @version: 1.0.0
+	- @version: 1.1.0
 
 	- @description:
 		- Modern Technologies section for portfolio showcasing technical skills.
@@ -33,8 +33,7 @@
 			<div class="tech-title opacity-0" data-tech-element>
 				<SectionTitle>Technologies & Skills</SectionTitle>
 				<p class="text-center text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto mb-16">
-					A comprehensive overview of the technologies, frameworks, and tools I use to build innovative
-					solutions.
+					Hover over the icons to see my experience with each technology.
 					All icons below represent my tech stack.
 				</p>
 			</div>
@@ -90,40 +89,102 @@
 				<div
 					class="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-2xl p-8 border border-neutral-200/50 dark:border-neutral-700/50">
 					<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-						<div class="space-y-2">
+						<!-- Total Technologies -->
+						<div class="space-y-2 group">
 							<div
-								class="text-3xl font-bold bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">
+								class="text-3xl font-bold bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent group-hover:from-primary-400 group-hover:to-accent-400 transition-all duration-300">
 								{{ totalTechnologies }}+
 							</div>
 							<div class="text-sm text-neutral-600 dark:text-neutral-400 font-medium">
 								Technologies
 							</div>
+							<div class="text-xs text-neutral-500 dark:text-neutral-500">
+								Across {{ categoriesCount }} categories
+							</div>
 						</div>
-						<div class="space-y-2">
+
+						<!-- Primary Language -->
+						<div class="space-y-2 group">
 							<div
-								class="text-3xl font-bold bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">
-								{{ categoriesCount }}
+								class="text-3xl font-bold bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent group-hover:from-primary-400 group-hover:to-accent-400 transition-all duration-300">
+								{{ primaryLanguage.name }}
 							</div>
 							<div class="text-sm text-neutral-600 dark:text-neutral-400 font-medium">
-								Categories
+								Primary Language
+							</div>
+							<div class="text-xs text-neutral-500 dark:text-neutral-500">
+								{{ formatExperience(primaryLanguage) }}
 							</div>
 						</div>
-						<div class="space-y-2">
+
+						<!-- Most Experienced Tech -->
+						<div class="space-y-2 group">
 							<div
-								class="text-3xl font-bold bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">
+								class="text-3xl font-bold bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent group-hover:from-primary-400 group-hover:to-accent-400 transition-all duration-300">
 								{{ mostExperiencedTech.name }}
 							</div>
 							<div class="text-sm text-neutral-600 dark:text-neutral-400 font-medium">
 								Most Experienced
 							</div>
+							<div class="text-xs text-neutral-500 dark:text-neutral-500">
+								{{ formatExperience(mostExperiencedTech) }}
+							</div>
 						</div>
-						<div class="space-y-2">
+
+						<!-- Active Projects -->
+						<div class="space-y-2 group">
 							<div
-								class="text-3xl font-bold bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">
-								{{ totalExperienceYears }}+
+								class="text-3xl font-bold bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent group-hover:from-primary-400 group-hover:to-accent-400 transition-all duration-300">
+								{{ modernFrameworks }}+
 							</div>
 							<div class="text-sm text-neutral-600 dark:text-neutral-400 font-medium">
-								Years Experience
+								Modern Frameworks
+							</div>
+							<div class="text-xs text-neutral-500 dark:text-neutral-500">
+								{{ topFramework.name }} ({{ formatExperience(topFramework) }})
+							</div>
+						</div>
+					</div>
+
+					<!-- Additional Insights Row -->
+					<div
+						class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 pt-8 border-t border-neutral-200/50 dark:border-neutral-700/50">
+						<!-- Development Focus -->
+						<div class="text-center space-y-2">
+							<div class="text-lg font-semibold text-neutral-700 dark:text-neutral-300">
+								{{ developmentFocus.area }}
+							</div>
+							<div class="text-sm text-neutral-600 dark:text-neutral-400">
+								Development Focus
+							</div>
+							<div class="text-xs text-neutral-500 dark:text-neutral-500">
+								{{ developmentFocus.technologies }} technologies
+							</div>
+						</div>
+
+						<!-- Learning Path -->
+						<div class="text-center space-y-2">
+							<div class="text-lg font-semibold text-neutral-700 dark:text-neutral-300">
+								{{ learningPath.category }}
+							</div>
+							<div class="text-sm text-neutral-600 dark:text-neutral-400">
+								Learning Focus
+							</div>
+							<div class="text-xs text-neutral-500 dark:text-neutral-500">
+								{{ learningPath.count }} recent additions
+							</div>
+						</div>
+
+						<!-- Expertise Level -->
+						<div class="text-center space-y-2">
+							<div class="text-lg font-semibold text-neutral-700 dark:text-neutral-300">
+								{{ expertiseLevel }}
+							</div>
+							<div class="text-sm text-neutral-600 dark:text-neutral-400">
+								Expertise Level
+							</div>
+							<div class="text-xs text-neutral-500 dark:text-neutral-500">
+								Based on experience diversity
 							</div>
 						</div>
 					</div>
@@ -188,6 +249,37 @@ const technologiesData = computed(() => {
 	}
 })
 
+// ------------ UTILITY FUNCTIONS
+/**
+ * Convert technology experience to total months for comparison
+ */
+function getTotalMonths(tech: Technology): number {
+	const years = tech.years || 0
+	const months = tech.months || 0
+	const days = tech.days || 0
+	return years * 12 + months + (days / 30)
+}
+
+/**
+ * Format experience into readable string
+ */
+function formatExperience(tech: Technology): string {
+	const years = tech.years || 0
+	const months = tech.months || 0
+	const days = tech.days || 0
+
+	if (years > 0) {
+		return months > 0 ? `${years}y ${months}m` : `${years} year${years > 1 ? 's' : ''}`
+	}
+	if (months > 0) {
+		return `${months} month${months > 1 ? 's' : ''}`
+	}
+	if (days > 0) {
+		return `${days} day${days > 1 ? 's' : ''}`
+	}
+	return 'New'
+}
+
 // ------------ COMPUTED PROPERTIES
 const totalTechnologies = computed(() => {
 	return Object.values(technologiesData.value).reduce((total, category) => total + category.length, 0)
@@ -197,18 +289,26 @@ const categoriesCount = computed(() => {
 	return Object.keys(technologiesData.value).length
 })
 
+/**
+ * Find most experienced technology (excluding operating systems)
+ */
 const mostExperiencedTech = computed(() => {
 	let maxExperience = 0
-	let mostExperienced = { name: 'N/A' }
+	let mostExperienced: Technology = { name: 'N/A', icon: 'mdi:help-circle', years: 0, months: 0, days: 0 }
 
-	Object.values(technologiesData.value).forEach((category: Technology[]) => {
+	// Exclude operating systems from this calculation
+	const relevantCategories = {
+		languages: technologiesData.value.languages,
+		frameworks: technologiesData.value.frameworks,
+		tools: technologiesData.value.tools,
+		ides: technologiesData.value.ides,
+		gameDevelopment: technologiesData.value.gameDevelopment,
+		aiTools: technologiesData.value.aiTools
+	}
+
+	Object.values(relevantCategories).forEach((category: Technology[]) => {
 		category.forEach((tech: Technology) => {
-			const years = tech.years || 0
-			const months = tech.months || 0
-			const days = tech.days || 0
-
-			const totalMonths = years * 12 + months + (days / 30)
-
+			const totalMonths = getTotalMonths(tech)
 			if (totalMonths > maxExperience) {
 				maxExperience = totalMonths
 				mostExperienced = tech
@@ -219,21 +319,107 @@ const mostExperiencedTech = computed(() => {
 	return mostExperienced
 })
 
-const totalExperienceYears = computed(() => {
-	let totalMonths = 0
+/**
+ * Find primary programming language (most experienced)
+ */
+const primaryLanguage = computed(() => {
+	let maxExperience = 0
+	let primary: Technology = { name: 'N/A', icon: 'mdi:help-circle', years: 0, months: 0, days: 0 }
 
-	Object.values(technologiesData.value).forEach((category: Technology[]) => {
-		category.forEach((tech: Technology) => {
-			const years = tech.years || 0
-			const months = tech.months || 0
-			const days = tech.days || 0
-
-			totalMonths += years * 12 + months + (days / 30)
-		})
+	technologiesData.value.languages.forEach((lang: Technology) => {
+		const totalMonths = getTotalMonths(lang)
+		if (totalMonths > maxExperience) {
+			maxExperience = totalMonths
+			primary = lang
+		}
 	})
 
-	// Convert total months to years and round to nearest whole number
-	return Math.round(totalMonths / 12)
+	return primary
+})
+
+/**
+ * Count modern frameworks (Vue, React, Angular, etc.)
+ */
+const modernFrameworks = computed(() => {
+	const modernFrameworkNames = [
+		'Vue.js', 'React', 'Angular', 'Next.js', 'Nuxt.js',
+		'Express', 'Node.js', 'Vite', 'Tailwindcss'
+	]
+
+	return technologiesData.value.frameworks.filter(framework =>
+		modernFrameworkNames.some(name =>
+			framework.name.toLowerCase().includes(name.toLowerCase())
+		)
+	).length
+})
+
+/**
+ * Get top framework by experience
+ */
+const topFramework = computed(() => {
+	let maxExperience = 0
+	let top: Technology = { name: 'N/A', icon: 'mdi:help-circle', years: 0, months: 0, days: 0 }
+
+	technologiesData.value.frameworks.forEach((framework: Technology) => {
+		const totalMonths = getTotalMonths(framework)
+		if (totalMonths > maxExperience) {
+			maxExperience = totalMonths
+			top = framework
+		}
+	})
+
+	return top
+})
+
+/**
+ * Determine development focus based on technology distribution
+ */
+const developmentFocus = computed(() => {
+	const webTech = technologiesData.value.frameworks.filter(f =>
+		['Vue.js', 'React', 'Angular', 'Next.js', 'Nuxt.js', 'Node.js'].includes(f.name)
+	).length
+
+	const gameTech = technologiesData.value.gameDevelopment.length
+	const toolsTech = technologiesData.value.tools.length
+
+	if (webTech >= gameTech && webTech >= toolsTech) {
+		return { area: 'Web Development', technologies: webTech }
+	} else if (gameTech >= toolsTech) {
+		return { area: 'Game Development', technologies: gameTech }
+	} else {
+		return { area: 'DevOps & Tools', technologies: toolsTech }
+	}
+})
+
+/**
+ * Identify learning path based on recent technologies (those with less experience)
+ */
+const learningPath = computed(() => {
+	const recentTech = Object.entries(technologiesData.value).map(([category, technologies]) => ({
+		category: category.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()),
+		recent: technologies.filter((tech: Technology) => getTotalMonths(tech) <= 6).length
+	})).sort((a, b) => b.recent - a.recent)
+
+	const topCategory = recentTech[0] || { category: 'Diverse', recent: 0 }
+
+	return {
+		category: topCategory.category.replace('Game Development', 'Game Dev').replace('Operating Systems', 'Systems'),
+		count: topCategory.recent
+	}
+})
+
+/**
+ * Calculate expertise level based on experience diversity and depth
+ */
+const expertiseLevel = computed(() => {
+	const allTech = Object.values(technologiesData.value).flat()
+	const experiencedTech = allTech.filter((tech: Technology) => getTotalMonths(tech) >= 12)
+	const expertTech = allTech.filter((tech: Technology) => getTotalMonths(tech) >= 24)
+
+	if (expertTech.length >= 5) return 'Expert'
+	if (experiencedTech.length >= 8) return 'Advanced'
+	if (experiencedTech.length >= 4) return 'Intermediate'
+	return 'Developing'
 })
 
 // ------------ LIFECYCLE

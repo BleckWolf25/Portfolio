@@ -173,6 +173,18 @@ export default defineNuxtConfig({
 
 	// Runtime configuration with type safety
 	runtimeConfig: {
+		// Private keys (server-side only)
+		smtpUser: process.env.SMTP_USER,
+		smtpPass: process.env.SMTP_PASS,
+		contactEmail: process.env.CONTACT_EMAIL,
+
+		// Rate limiting configuration
+		rateLimitWindowMinutes: process.env.RATE_LIMIT_WINDOW_MINUTES || '15',
+		rateLimitMaxRequests: process.env.RATE_LIMIT_MAX_REQUESTS || '3',
+
+		// Security configuration
+		enableSpamProtection: process.env.ENABLE_SPAM_PROTECTION !== 'false',
+		enableEmailInDev: process.env.ENABLE_EMAIL_IN_DEV !== 'false',
 
 		// Public keys
 		public: {

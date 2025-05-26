@@ -19,7 +19,8 @@
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 			<div>
-				<label class="block mb-1 text-sm font-medium text-neutral-700 dark:text-neutral-300" for="name">Name</label>
+				<label class="block mb-1 text-sm font-medium text-neutral-700 dark:text-neutral-300"
+					for="name">Name</label>
 				<UInput id="name" v-model="form.name" required type="text" :aria-invalid="!!errors.name"
 					:aria-describedby="errors.name ? 'name-error' : undefined" color="primary" class="w-full"
 					:class="{ 'border-red-500': errors.name }" />
@@ -28,7 +29,8 @@
 			</div>
 
 			<div>
-				<label class="block mb-1 text-sm font-medium text-neutral-700 dark:text-neutral-300" for="email">Email</label>
+				<label class="block mb-1 text-sm font-medium text-neutral-700 dark:text-neutral-300"
+					for="email">Email</label>
 				<UInput id="email" v-model="form.email" required type="email" :aria-invalid="!!errors.email"
 					:aria-describedby="errors.email ? 'email-error' : undefined" color="primary" class="w-full"
 					:class="{ 'border-red-500': errors.email }" />
@@ -39,10 +41,11 @@
 		</div>
 
 		<div>
-			<label class="block mb-1 text-sm font-medium text-neutral-700 dark:text-neutral-300" for="message">Message</label>
+			<label class="block mb-1 text-sm font-medium text-neutral-700 dark:text-neutral-300"
+				for="message">Message</label>
 			<UTextarea id="message" v-model="form.message" required :rows="5" :aria-invalid="!!errors.message"
-				:aria-describedby="errors.message ? 'message-error' : undefined" color="primary" class="w-full resize-none"
-				:class="{ 'border-red-500': errors.message }" />
+				:aria-describedby="errors.message ? 'message-error' : undefined" color="primary"
+				class="w-full resize-none" :class="{ 'border-red-500': errors.message }" />
 			<p v-if="errors.message" id="message-error" class="mt-1 text-red-500 text-sm" aria-live="polite">{{
 				errors.message
 			}}</p>
@@ -120,7 +123,7 @@ function validate() {
 const announce = inject<(msg: string) => void>('announce', () => { })
 
 // ------------ SUBMIT HANDLER
-function handleSubmit() {
+async function handleSubmit() {
 	success.value = false
 	error.value = false
 
@@ -131,19 +134,46 @@ function handleSubmit() {
 
 	loading.value = true
 
-	// Simulate async request
-	setTimeout(() => {
-		const isSuccess = Math.random() > 0.2 // fake 80% success rate
-		loading.value = false
-		success.value = isSuccess
-		error.value = isSuccess ? false : 'Something went wrong. Please try again.'
+	try {
+		// Send form data to API endpoint
+		const response = await $fetch('/api/contact', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'X-Requested-With': 'XMLHttpRequest'
+			},
+			body: {
+				name: form.value.name,
+				email: form.value.email,
+				message: form.value.message
+			}
+		})
 
-		if (isSuccess) {
+		if (response.success) {
+			success.value = true
 			form.value = { name: '', email: '', message: '' }
-			if (announce) announce('Your message has been sent!')
+			if (announce) announce('Your message has been sent successfully!')
 		} else {
+			error.value = response.message || 'Something went wrong. Please try again.'
 			if (announce) announce('Message sending failed. Please try again.')
 		}
-	}, 1500)
+	} catch (err: any) {
+		console.error('Contact form submission error:', err)
+
+		// Handle different types of errors
+		if (err.statusCode === 429) {
+			error.value = 'Too many requests. Please wait a few minutes before trying again.'
+		} else if (err.statusCode === 400) {
+			error.value = err.statusMessage || 'Please check your input and try again.'
+		} else if (err.statusCode >= 500) {
+			error.value = 'Server error. Please try again later or contact me directly.'
+		} else {
+			error.value = 'Failed to send message. Please try again or contact me directly.'
+		}
+
+		if (announce) announce(`Message sending failed: ${error.value}`)
+	} finally {
+		loading.value = false
+	}
 }
 </script>

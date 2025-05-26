@@ -2,7 +2,7 @@
 	- @file: PROJECT CARD.VUE
 	- @author: BleckWolf25
 	- @license: MIT
-	- @version: 1.0.0
+	- @version: 1.1.0
 
 	- @description:
 		- Project card component for displaying individual projects.
@@ -14,12 +14,12 @@
 <template>
 	<UCard
 		class="group relative h-full bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm border border-neutral-200/50 dark:border-neutral-700/50 hover:border-primary-300 dark:hover:border-primary-600 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 hover:-translate-y-2 overflow-hidden">
-		<!-- Project Image -->
+		<!-- Project Image with click handler -->
 		<template #header>
 			<div class="relative overflow-hidden rounded-t-lg">
 				<img :src="projectImage" :alt="`Screenshot of ${project.title}`"
-					class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105" width="400"
-					height="200" loading="lazy" />
+					class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+					width="400" height="200" loading="lazy" @click="openImageModal" />
 
 				<!-- Overlay on hover -->
 				<div
@@ -29,12 +29,13 @@
 				<!-- Quick action buttons overlay -->
 				<div
 					class="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-					<a v-if="project.url" :href="project.url" target="_blank" rel="noopener"
+					<a v-if="project.url && project.url !== 'confidential'" :href="project.url" target="_blank" rel="noopener"
 						class="shadow-lg backdrop-blur-sm inline-flex items-center justify-center px-2 py-1 rounded bg-primary-500 text-white hover:bg-primary-600 transition"
 						:aria-label="`View ${project.title} live demo`">
 						<Icon name="mdi:open-in-new" class="w-4 h-4" />
 					</a>
-					<a v-if="project.github" :href="project.github" target="_blank" rel="noopener"
+					<a v-if="project.github && project.github !== 'confidential'" :href="project.github" target="_blank"
+						rel="noopener"
 						class="shadow-lg backdrop-blur-sm inline-flex items-center justify-center px-2 py-1 rounded bg-neutral-700 text-white hover:bg-neutral-800 transition"
 						:aria-label="`View ${project.title} source code`">
 						<Icon name="mdi:github" class="w-4 h-4" />
@@ -71,18 +72,30 @@
 
 			<!-- Action Buttons -->
 			<div class="flex flex-col sm:flex-row gap-3">
-				<a v-if="project.url" :href="project.url" target="_blank" rel="noopener"
+				<a v-if="project.url && project.url !== 'confidential'" :href="project.url" target="_blank" rel="noopener"
 					class="flex-1 justify-center font-semibold transition-all duration-300 hover:scale-105 inline-flex items-center px-4 py-2 rounded bg-primary-600 text-white hover:bg-primary-700"
 					:aria-label="`View ${project.title} live demo`">
 					<Icon name="mdi:open-in-new" class="w-4 h-4 mr-2" />
 					Live Demo
 				</a>
-				<a v-if="project.github" :href="project.github" target="_blank" rel="noopener"
+				<span v-else-if="project.url === 'confidential'"
+					class="flex-1 justify-center font-semibold inline-flex items-center px-4 py-2 rounded bg-neutral-500 text-white cursor-not-allowed">
+					<Icon name="mdi:lock" class="w-4 h-4 mr-2" />
+					Confidential
+				</span>
+
+				<a v-if="project.github && project.github !== 'confidential'" :href="project.github" target="_blank"
+					rel="noopener"
 					class="flex-1 justify-center font-semibold border border-primary-300 dark:border-primary-600 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-300 inline-flex items-center px-4 py-2 rounded"
 					:aria-label="`View ${project.title} source code`">
 					<Icon name="mdi:github" class="w-4 h-4 mr-2" />
 					Source Code
 				</a>
+				<span v-else-if="project.github === 'confidential'"
+					class="flex-1 justify-center font-semibold border border-neutral-300 dark:border-neutral-600 text-neutral-600 dark:text-neutral-400 inline-flex items-center px-4 py-2 rounded cursor-not-allowed">
+					<Icon name="mdi:lock" class="w-4 h-4 mr-2" />
+					Confidential
+				</span>
 			</div>
 		</div>
 
@@ -91,6 +104,20 @@
 			class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-accent-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
 		</div>
 	</UCard>
+
+	<!-- Image Modal -->
+	<UModal v-model:open="isImageModalOpen" :title="`${project.title} - Project Screenshot`">
+		<template #body>
+			<div class="p-4">
+				<img :src="projectImage" :alt="`Screenshot of ${project.title}`" class="w-full h-auto rounded-lg" />
+			</div>
+		</template>
+		<template #footer>
+			<div class="flex justify-end">
+				<UButton @click="isImageModalOpen = false" color="neutral" variant="soft">Close</UButton>
+			</div>
+		</template>
+	</UModal>
 </template>
 
 <!-- Script Section -->
@@ -110,9 +137,17 @@ const props = defineProps<{
 	project: Project
 }>()
 
+// ------------ REACTIVE STATE
+const isImageModalOpen = ref(false)
+
 const projectImage = computed(() => {
 	return (!props.project.image || props.project.image === '1x' || props.project.image === '/1x')
 		? '/images/project-placeholder.jpg'
 		: props.project.image
 })
+
+// ------------ METHODS
+function openImageModal() {
+	isImageModalOpen.value = true
+}
 </script>

@@ -2,18 +2,56 @@
 	"projects": [
 		{
 			"title": "Portfolio Website v2",
-			"description": "A personal portfolio website showcasing my projects and skills.",
+			"description": "A modern and responsive portfolio website to highlight my development skills, projects, and technical expertise. Built with performance, accessibility, and SEO in mind.",
 			"image": "../images/projects/portfolio-v2.png",
 			"url": "https://bleckwolf25.vercel.app",
 			"github": "https://github.com/BleckWolf25/Portfolio",
 			"techStack": [
-				"Vue",
+				"Nuxt.js",
+				"Vue.js",
 				"Tailwind CSS",
-				"Nuxt",
-				"CSS",
 				"TypeScript",
 				"Node.js",
-				"npm"
+				"npm",
+				"Vercel",
+				"Prettier",
+				"ESLint",
+				"CSS3"
+			]
+		},
+		{
+			"title": "Antonio Costa Workshop PWA",
+			"description": "A custom web application designed for Antonio Costa Company to streamline workshop operations, client interactions, and internal management. It contains AI features to help with daily tasks.",
+			"image": "../images/projects/acwp.png",
+			"url": "https://oficina-apocar.web.app/",
+			"github": "https://github.com/BleckWolf25/",
+			"techStack": [
+				"Vue.js",
+				"Bootstrap 5",
+				"CSS3",
+				"Firebase",
+				"Vite",
+				"npm",
+				"Recaptcha v3"
+			]
+		},
+		{
+			"title": "Dynamic Innovative Studio Website",
+			"description": "A website for Dynamic Innovative Studio.",
+			"image": "../images/projects/dis.png",
+			"url": "https://dynamic-innovative-studio.firebaseapp.com",
+			"github": "https://github.com/Dynamic-Innovative-Studio/",
+			"techStack": [
+				"React",
+				"Tailwind CSS",
+				"CSS3",
+				"MySQL v8+",
+				"Firebase (old)",
+				"Vite",
+				"npm",
+				"ESLint",
+				"Prettier",
+				"Recapcha v3"
 			]
 		}
 	]

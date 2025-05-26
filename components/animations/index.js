@@ -62,7 +62,6 @@ export { heroLoadAnimation } from './page/heroLoadAnimation.js'
 
 // Modal Animations - Dialog and modal-specific animations
 export { modalFadeIn } from './modals/modalFadeIn.js'
-export { tooltipSlideIn } from './modals/tooltipSlideIn.js'
 
 
 // ------------ FUNCTIONALITY EXPORTS
