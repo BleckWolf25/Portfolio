@@ -18,9 +18,11 @@
 		<!-- Background Decorative Elements -->
 		<div class="absolute inset-0 overflow-hidden pointer-events-none">
 			<!-- Subtle gradient orbs -->
-			<div class="absolute top-60 -right-60 w-96 h-96 bg-gradient-to-br from-primary-200/6 to-accent-200/6 rounded-full blur-3xl animate-pulse"
+			<div
+				class="absolute top-60 -right-60 w-96 h-96 bg-gradient-to-br from-primary-200/6 to-accent-200/6 rounded-full blur-3xl animate-pulse"
 				style="animation-duration: 18s" aria-hidden="true"></div>
-			<div class="absolute -bottom-60 -left-60 w-96 h-96 bg-gradient-to-tr from-accent-300/6 to-secondary-200/6 rounded-full blur-3xl animate-pulse"
+			<div
+				class="absolute -bottom-60 -left-60 w-96 h-96 bg-gradient-to-tr from-accent-300/6 to-secondary-200/6 rounded-full blur-3xl animate-pulse"
 				style="animation-duration: 22s; animation-delay: 7s" aria-hidden="true"></div>
 		</div>
 
@@ -50,8 +52,7 @@
 						<div class="relative flex flex-col lg:flex-row lg:items-center">
 
 							<!-- Timeline Dot -->
-							<div
-								class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2">
+							<div class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2">
 								<div
 									class="w-6 h-6 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full border-4 border-white dark:border-neutral-900 shadow-lg z-10 relative">
 									<div

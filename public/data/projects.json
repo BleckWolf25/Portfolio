@@ -23,8 +23,8 @@
 			"title": "Antonio Costa Workshop PWA",
 			"description": "A custom web application designed for Antonio Costa Company to streamline workshop operations, client interactions, and internal management. It contains AI features to help with daily tasks.",
 			"image": "../images/projects/acwp.png",
-			"url": "https://oficina-apocar.web.app/",
-			"github": "https://github.com/BleckWolf25/",
+			"url": "confidential",
+			"github": "confidential",
 			"techStack": [
 				"Vue.js",
 				"Bootstrap 5",
@@ -40,7 +40,7 @@
 			"description": "A website for Dynamic Innovative Studio.",
 			"image": "../images/projects/dis.png",
 			"url": "https://dynamic-innovative-studio.firebaseapp.com",
-			"github": "https://github.com/Dynamic-Innovative-Studio/",
+			"github": "confidential",
 			"techStack": [
 				"React",
 				"Tailwind CSS",

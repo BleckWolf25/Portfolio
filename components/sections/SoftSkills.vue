@@ -18,9 +18,11 @@
 		<!-- Background Decorative Elements -->
 		<div class="absolute inset-0 overflow-hidden pointer-events-none">
 			<!-- Subtle gradient orbs -->
-			<div class="absolute top-40 -left-40 w-96 h-96 bg-gradient-to-br from-primary-200/8 to-accent-200/8 rounded-full blur-3xl animate-pulse"
+			<div
+				class="absolute top-40 -left-40 w-96 h-96 bg-gradient-to-br from-primary-200/8 to-accent-200/8 rounded-full blur-3xl animate-pulse"
 				style="animation-duration: 20s" aria-hidden="true"></div>
-			<div class="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tr from-accent-300/8 to-secondary-200/8 rounded-full blur-3xl animate-pulse"
+			<div
+				class="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tr from-accent-300/8 to-secondary-200/8 rounded-full blur-3xl animate-pulse"
 				style="animation-duration: 24s; animation-delay: 8s" aria-hidden="true"></div>
 		</div>
 

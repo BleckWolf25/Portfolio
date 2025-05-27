@@ -1,7 +1,7 @@
 /**
  * @file BUTTON HOVER EFFECT.JS
  *
- * @version 1.0.0
+ * @version 1.0.1
  * @author BleckWolf25
  * @license MIT
  *
@@ -21,38 +21,33 @@
  */
 export function buttonHoverEffect(buttonEl, options = {}) {
 	// Default options
-  const duration = options.duration ?? 120
+	const duration = options.duration ?? 120;
 
-  if (!buttonEl || !buttonEl.style) {
-    console.warn('[buttonHoverEffect] Invalid element provided:', buttonEl)
-    return
-  }
-
-  // Set initial styles
-  buttonEl.style.transition = `transform ${duration}ms cubic-bezier(0.4,0,0.2,1), box-shadow ${duration}ms cubic-bezier(0.4,0,0.2,1)`
+	// Set initial styles
+	buttonEl.style.transition = `transform ${duration}ms cubic-bezier(0.4,0,0.2,1), box-shadow ${duration}ms cubic-bezier(0.4,0,0.2,1)`;
 
 	// Define hover effects
-  const onEnter = () => {
-    buttonEl.style.transform = 'scale(1.045)'
-    buttonEl.style.boxShadow = '0 4px 16px 0 rgba(0,0,0,0.10)'
-  }
+	const onEnter = () => {
+		buttonEl.style.transform = 'scale(1.045)';
+		buttonEl.style.boxShadow = '0 4px 16px 0 rgba(0,0,0,0.10)';
+	};
 
 	// Define hover out effects
-  const onLeave = () => {
-    buttonEl.style.transform = ''
-    buttonEl.style.boxShadow = ''
-  }
+	const onLeave = () => {
+		buttonEl.style.transform = '';
+		buttonEl.style.boxShadow = '';
+	};
 
 	// Add event listeners
-  buttonEl.addEventListener('mouseenter', onEnter)
-  buttonEl.addEventListener('mouseleave', onLeave)
+	buttonEl.addEventListener('mouseenter', onEnter);
+	buttonEl.addEventListener('mouseleave', onLeave);
 
-  // Cleanup utility
-  buttonEl._buttonHoverCleanup = () => {
-    buttonEl.removeEventListener('mouseenter', onEnter)
-    buttonEl.removeEventListener('mouseleave', onLeave)
-    buttonEl.style.transition = ''
-    buttonEl.style.transform = ''
-    buttonEl.style.boxShadow = ''
-  }
+	// Cleanup utility
+	buttonEl._buttonHoverCleanup = () => {
+		buttonEl.removeEventListener('mouseenter', onEnter);
+		buttonEl.removeEventListener('mouseleave', onLeave);
+		buttonEl.style.transition = '';
+		buttonEl.style.transform = '';
+		buttonEl.style.boxShadow = '';
+	};
 }

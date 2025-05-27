@@ -16,11 +16,10 @@
 		class="group relative h-full bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm border border-neutral-200/50 dark:border-neutral-700/50 hover:border-primary-300 dark:hover:border-primary-600 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 hover:-translate-y-2 overflow-hidden">
 		<!-- Project Image with click handler -->
 		<template #header>
-			<div class="relative overflow-hidden rounded-t-lg">
+			<div class="relative overflow-hidden rounded-t-lg" @click="openImageModal">
 				<img :src="projectImage" :alt="`Screenshot of ${project.title}`"
 					class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer"
-					width="400" height="200" loading="lazy" @click="openImageModal" />
-
+					width="400" height="200" loading="lazy" />
 				<!-- Overlay on hover -->
 				<div
 					class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -106,22 +105,15 @@
 	</UCard>
 
 	<!-- Image Modal -->
-	<UModal v-model:open="isImageModalOpen" :title="`${project.title} - Project Screenshot`">
-		<template #body>
-			<div class="p-4">
-				<img :src="projectImage" :alt="`Screenshot of ${project.title}`" class="w-full h-auto rounded-lg" />
-			</div>
-		</template>
-		<template #footer>
-			<div class="flex justify-end">
-				<UButton @click="isImageModalOpen = false" color="neutral" variant="soft">Close</UButton>
-			</div>
-		</template>
-	</UModal>
+	<ImageModal :is-open="isImageModalOpen" :image-src="projectImage" :title="project.title"
+		:description="`Project screenshot for ${project.title}`" @close="isImageModalOpen = false" />
 </template>
 
 <!-- Script Section -->
 <script setup lang="ts">
+// ------------ IMPORTS
+import ImageModal from '../common/ImageModal.vue'
+
 // ------------ TYPES
 interface Project {
 	title: string
@@ -148,6 +140,10 @@ const projectImage = computed(() => {
 
 // ------------ METHODS
 function openImageModal() {
+	console.log('openImageModal called') // Debug log
+	console.log('Current isImageModalOpen:', isImageModalOpen.value) // Debug log
 	isImageModalOpen.value = true
+	console.log('Set isImageModalOpen to:', isImageModalOpen.value) // Debug log
 }
+
 </script>

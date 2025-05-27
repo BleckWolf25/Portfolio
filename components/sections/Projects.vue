@@ -18,9 +18,11 @@
 		<!-- Background Decorative Elements -->
 		<div class="absolute inset-0 overflow-hidden pointer-events-none">
 			<!-- Subtle gradient orbs -->
-			<div class="absolute top-80 -left-80 w-96 h-96 bg-gradient-to-br from-primary-200/8 to-accent-200/8 rounded-full blur-3xl animate-pulse"
+			<div
+				class="absolute top-80 -left-80 w-96 h-96 bg-gradient-to-br from-primary-200/8 to-accent-200/8 rounded-full blur-3xl animate-pulse"
 				style="animation-duration: 16s" aria-hidden="true"></div>
-			<div class="absolute -bottom-80 -right-80 w-96 h-96 bg-gradient-to-tr from-accent-300/8 to-secondary-200/8 rounded-full blur-3xl animate-pulse"
+			<div
+				class="absolute -bottom-80 -right-80 w-96 h-96 bg-gradient-to-tr from-accent-300/8 to-secondary-200/8 rounded-full blur-3xl animate-pulse"
 				style="animation-duration: 20s; animation-delay: 6s" aria-hidden="true"></div>
 		</div>
 
@@ -31,15 +33,16 @@
 			<div class="projects-title opacity-0" data-projects-element>
 				<SectionTitle>Featured Projects</SectionTitle>
 				<p class="text-center text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto mb-16">
-					A showcase of my recent work and personal projects. Each project represents a unique challenge
-					and demonstrates different aspects of my technical expertise and problem-solving abilities.
+					A showcase of my recent work, including both client, enterprise projects and personal endeavors.
+					Each project represents a unique challenge and demonstrates different aspects of my technical expertise
+					and problem-solving abilities. Click or tap on the images to open Image Modal. Some projects are
+					works in progress or/and confidential.
 				</p>
 			</div>
 
 			<!-- Projects Grid -->
 			<div v-if="projectsData.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-				<div v-for="project in projectsData" :key="project.title" class="project-card opacity-0"
-					data-projects-element>
+				<div v-for="project in projectsData" :key="project.title" class="project-card opacity-0" data-projects-element>
 					<ProjectCard :project="project" />
 				</div>
 			</div>

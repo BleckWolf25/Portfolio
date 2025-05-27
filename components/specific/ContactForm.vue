@@ -19,8 +19,7 @@
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 			<div>
-				<label class="block mb-1 text-sm font-medium text-neutral-700 dark:text-neutral-300"
-					for="name">Name</label>
+				<label class="block mb-1 text-sm font-medium text-neutral-700 dark:text-neutral-300" for="name">Name</label>
 				<UInput id="name" v-model="form.name" required type="text" :aria-invalid="!!errors.name"
 					:aria-describedby="errors.name ? 'name-error' : undefined" color="primary" class="w-full"
 					:class="{ 'border-red-500': errors.name }" />
@@ -29,8 +28,7 @@
 			</div>
 
 			<div>
-				<label class="block mb-1 text-sm font-medium text-neutral-700 dark:text-neutral-300"
-					for="email">Email</label>
+				<label class="block mb-1 text-sm font-medium text-neutral-700 dark:text-neutral-300" for="email">Email</label>
 				<UInput id="email" v-model="form.email" required type="email" :aria-invalid="!!errors.email"
 					:aria-describedby="errors.email ? 'email-error' : undefined" color="primary" class="w-full"
 					:class="{ 'border-red-500': errors.email }" />
@@ -41,11 +39,10 @@
 		</div>
 
 		<div>
-			<label class="block mb-1 text-sm font-medium text-neutral-700 dark:text-neutral-300"
-				for="message">Message</label>
+			<label class="block mb-1 text-sm font-medium text-neutral-700 dark:text-neutral-300" for="message">Message</label>
 			<UTextarea id="message" v-model="form.message" required :rows="5" :aria-invalid="!!errors.message"
-				:aria-describedby="errors.message ? 'message-error' : undefined" color="primary"
-				class="w-full resize-none" :class="{ 'border-red-500': errors.message }" />
+				:aria-describedby="errors.message ? 'message-error' : undefined" color="primary" class="w-full resize-none"
+				:class="{ 'border-red-500': errors.message }" />
 			<p v-if="errors.message" id="message-error" class="mt-1 text-red-500 text-sm" aria-live="polite">{{
 				errors.message
 			}}</p>

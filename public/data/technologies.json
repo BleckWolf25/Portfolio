@@ -171,12 +171,12 @@
 			{
 				"name": "Vercel",
 				"icon": "devicon:vercel",
-				"months": 4
+				"months": 6
 			},
 			{
 				"name": "Replit",
 				"icon": "devicon:replit",
-				"years": 1
+				"months": 4
 			},
 			{
 				"name": "ESLint",

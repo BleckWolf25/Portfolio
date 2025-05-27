@@ -2,7 +2,7 @@
  * @file: CONTACT.POST.TS
  * @author: BleckWolf25
  * @license: MIT
- * @version: 1.0.0
+ * @version: 1.0.1
  *
  * @description:
  * API endpoint for handling contact form submissions.
@@ -10,8 +10,8 @@
  * Includes rate limiting and security measures to prevent spam.
  */
 
-import { sendContactFormEmail } from './services/mail'
-import type { ContactFormData, EmailResponse } from './services/mail'
+import { sendContactFormEmail } from './services/mail-brevo'
+import type { ContactFormData, EmailResponse } from './services/mail-brevo'
 
 // ------------ TYPES
 interface ContactRequest {
@@ -106,8 +106,7 @@ export default defineEventHandler(async (event): Promise<ContactResponse> => {
 		}
 
 		// Parse and validate request body
-		// Use sanitized body from input sanitization middleware if available
-		const body = event.context.sanitized ? event.context.body : await readBody<ContactRequest>(event)
+		const body = await readBody<ContactRequest>(event)
 
 		if (!body || typeof body !== 'object') {
 			throw createError({

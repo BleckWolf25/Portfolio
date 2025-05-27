@@ -1,7 +1,7 @@
 /**
  * @file TIMERS.JS
  *
- * @version 1.0.0
+ * @version 2.0.0
  * @author BleckWolf25
  * @license MIT
  *
@@ -9,6 +9,8 @@
  * High-performance animation timing utilities
  * Provides frame-accurate timing and cleanup for smooth animations
  */
+
+/* eslint-disable no-undef */
 
 /**
  * RequestAnimationFrame-based timer with built-in cleanup
@@ -18,50 +20,50 @@
  * @param {Function} easing - Easing function (optional)
  * @returns {Object} Animation control object with stop method
  */
-export function createAnimationTimer(callback, duration, easing = t => t) {
-  let startTime = null
-  let animationId = null
-  let isRunning = false
+export function createAnimationTimer(callback, duration, easing = (t) => t) {
+	let startTime = null;
+	let animationId = null;
+	let isRunning = false;
 
-  const animate = (currentTime) => {
-    if (!startTime) startTime = currentTime
+	const animate = (currentTime) => {
+		if (!startTime) startTime = currentTime;
 
-    const elapsed = currentTime - startTime
-    const progress = Math.min(elapsed / duration, 1)
-    const easedProgress = easing(progress)
+		const elapsed = currentTime - startTime;
+		const progress = Math.min(elapsed / duration, 1);
+		const easedProgress = easing(progress);
 
-    callback(easedProgress, progress, elapsed)
+		callback(easedProgress, progress, elapsed);
 
-    if (progress < 1 && isRunning) {
-      animationId = requestAnimationFrame(animate)
-    } else {
-      isRunning = false
-    }
-  }
+		if (progress < 1 && isRunning) {
+			animationId = requestAnimationFrame(animate);
+		} else {
+			isRunning = false;
+		}
+	};
 
-  return {
-    start() {
-      if (!isRunning) {
-        isRunning = true
-        startTime = null
-        animationId = requestAnimationFrame(animate)
-      }
-      return this
-    },
+	return {
+		start() {
+			if (!isRunning) {
+				isRunning = true;
+				startTime = null;
+				animationId = requestAnimationFrame(animate);
+			}
+			return this;
+		},
 
-    stop() {
-      if (animationId) {
-        cancelAnimationFrame(animationId)
-        animationId = null
-      }
-      isRunning = false
-      return this
-    },
+		stop() {
+			if (animationId) {
+				cancelAnimationFrame(animationId);
+				animationId = null;
+			}
+			isRunning = false;
+			return this;
+		},
 
-    get isRunning() {
-      return isRunning
-    }
-  }
+		get isRunning() {
+			return isRunning;
+		},
+	};
 }
 
 /**
@@ -75,50 +77,46 @@ export function createAnimationTimer(callback, duration, easing = t => t) {
  * @returns {Object} Control object for the staggered animation
  */
 export function createStaggeredTimer(elements, animateElement, options = {}) {
-  const {
-    stagger = 100,
-    duration = 500,
-    easing = t => t
-  } = options
+	const { stagger = 100, duration = 500, easing = (t) => t } = options;
 
-  const timers = []
-  let isRunning = false
+	const timers = [];
+	let isRunning = false;
 
-  return {
-    start() {
-      if (isRunning) return this
-      isRunning = true
+	return {
+		start() {
+			if (isRunning) return this;
+			isRunning = true;
 
-      elements.forEach((element, index) => {
-        const delay = index * stagger
+			elements.forEach((element, index) => {
+				const delay = index * stagger;
 
-        const timer = setTimeout(() => {
-          const animTimer = createAnimationTimer(
-            (progress) => animateElement(element, progress, index),
-            duration,
-            easing
-          )
-          animTimer.start()
-          timers.push(animTimer)
-        }, delay)
+				const timer = setTimeout(() => {
+					const animTimer = createAnimationTimer(
+						(progress) => animateElement(element, progress, index),
+						duration,
+						easing,
+					);
+					animTimer.start();
+					timers.push(animTimer);
+				}, delay);
 
-        timers.push({ stop: () => clearTimeout(timer) })
-      })
+				timers.push({ stop: () => clearTimeout(timer) });
+			});
 
-      return this
-    },
+			return this;
+		},
 
-    stop() {
-      timers.forEach(timer => timer.stop())
-      timers.length = 0
-      isRunning = false
-      return this
-    },
+		stop() {
+			timers.forEach((timer) => timer.stop());
+			timers.length = 0;
+			isRunning = false;
+			return this;
+		},
 
-    get isRunning() {
-      return isRunning
-    }
-  }
+		get isRunning() {
+			return isRunning;
+		},
+	};
 }
 
 /**
@@ -130,29 +128,29 @@ export function createStaggeredTimer(elements, animateElement, options = {}) {
  * @returns {Function} Debounced function
  */
 export function debounce(func, wait, immediate = false) {
-  let timeout
-  let result
+	let timeout;
+	let result;
 
-  const debounced = function executedFunction(...args) {
-    const later = () => {
-      timeout = null
-      if (!immediate) result = func.apply(this, args)
-    }
+	const debounced = function executedFunction(...args) {
+		const later = () => {
+			timeout = null;
+			if (!immediate) result = func.apply(this, args);
+		};
 
-    const callNow = immediate && !timeout
-    clearTimeout(timeout)
-    timeout = setTimeout(later, wait)
+		const callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
 
-    if (callNow) result = func.apply(this, args)
-    return result
-  }
+		if (callNow) result = func.apply(this, args);
+		return result;
+	};
 
-  debounced.cancel = function() {
-    clearTimeout(timeout)
-    timeout = null
-  }
+	debounced.cancel = function () {
+		clearTimeout(timeout);
+		timeout = null;
+	};
 
-  return debounced
+	return debounced;
 }
 
 /**
@@ -163,17 +161,17 @@ export function debounce(func, wait, immediate = false) {
  * @returns {Function} Throttled function
  */
 export function throttle(func, limit) {
-  let inThrottle
-  let lastResult
+	let inThrottle;
+	let lastResult;
 
-  return function executedFunction(...args) {
-    if (!inThrottle) {
-      lastResult = func.apply(this, args)
-      inThrottle = true
-      setTimeout(() => inThrottle = false, limit)
-    }
-    return lastResult
-  }
+	return function executedFunction(...args) {
+		if (!inThrottle) {
+			lastResult = func.apply(this, args);
+			inThrottle = true;
+			setTimeout(() => (inThrottle = false), limit);
+		}
+		return lastResult;
+	};
 }
 
 /**
@@ -186,76 +184,73 @@ export function throttle(func, limit) {
  * @returns {Object} Animation loop control object
  */
 export function createAnimationLoop(update, options = {}) {
-  const {
-    targetFPS = 60,
-    adaptive = true
-  } = options
+	const { targetFPS = 60, adaptive = true } = options;
 
-  const targetFrameTime = 1000 / targetFPS
-  let animationId = null
-  let lastTime = 0
-  let deltaTime = 0
-  let isRunning = false
-  let frameCount = 0
-  let fpsHistory = []
+	const targetFrameTime = 1000 / targetFPS;
+	let animationId = null;
+	let lastTime = 0;
+	let deltaTime = 0;
+	let isRunning = false;
+	let frameCount = 0;
+	let fpsHistory = [];
 
-  const loop = (currentTime) => {
-    deltaTime = currentTime - lastTime
-    lastTime = currentTime
+	const loop = (currentTime) => {
+		deltaTime = currentTime - lastTime;
+		lastTime = currentTime;
 
-    // Adaptive frame rate adjustment
-    if (adaptive) {
-      fpsHistory.push(1000 / deltaTime)
-      if (fpsHistory.length > 60) fpsHistory.shift()
+		// Adaptive frame rate adjustment
+		if (adaptive) {
+			fpsHistory.push(1000 / deltaTime);
+			if (fpsHistory.length > 60) fpsHistory.shift();
 
-      const avgFPS = fpsHistory.reduce((a, b) => a + b, 0) / fpsHistory.length
+			const avgFPS = fpsHistory.reduce((a, b) => a + b, 0) / fpsHistory.length;
 
-      // Skip frame if performance is poor
-      if (avgFPS < targetFPS * 0.8 && frameCount % 2 === 0) {
-        animationId = requestAnimationFrame(loop)
-        return
-      }
-    }
+			// Skip frame if performance is poor
+			if (avgFPS < targetFPS * 0.8 && frameCount % 2 === 0) {
+				animationId = requestAnimationFrame(loop);
+				return;
+			}
+		}
 
-    update(deltaTime, currentTime, frameCount)
-    frameCount++
+		update(deltaTime, currentTime, frameCount);
+		frameCount++;
 
-    if (isRunning) {
-      animationId = requestAnimationFrame(loop)
-    }
-  }
+		if (isRunning) {
+			animationId = requestAnimationFrame(loop);
+		}
+	};
 
-  return {
-    start() {
-      if (!isRunning) {
-        isRunning = true
-        lastTime = performance.now()
-        animationId = requestAnimationFrame(loop)
-      }
-      return this
-    },
+	return {
+		start() {
+			if (!isRunning) {
+				isRunning = true;
+				lastTime = performance.now();
+				animationId = requestAnimationFrame(loop);
+			}
+			return this;
+		},
 
-    stop() {
-      if (animationId) {
-        cancelAnimationFrame(animationId)
-        animationId = null
-      }
-      isRunning = false
-      frameCount = 0
-      fpsHistory = []
-      return this
-    },
+		stop() {
+			if (animationId) {
+				cancelAnimationFrame(animationId);
+				animationId = null;
+			}
+			isRunning = false;
+			frameCount = 0;
+			fpsHistory = [];
+			return this;
+		},
 
-    get isRunning() {
-      return isRunning
-    },
+		get isRunning() {
+			return isRunning;
+		},
 
-    get fps() {
-      return fpsHistory.length > 0
-        ? fpsHistory.reduce((a, b) => a + b, 0) / fpsHistory.length
-        : 0
-    }
-  }
+		get fps() {
+			return fpsHistory.length > 0
+				? fpsHistory.reduce((a, b) => a + b, 0) / fpsHistory.length
+				: 0;
+		},
+	};
 }
 
 /**
@@ -263,7 +258,7 @@ export function createAnimationLoop(update, options = {}) {
  * @param {number} ms - Delay in milliseconds
  * @returns {Promise} Promise that resolves after delay
  */
-export const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+export const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /**
  * Cleanup utility for all timer types
@@ -271,11 +266,11 @@ export const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms))
  * @param {...Object} timers - Timer objects to cleanup
  */
 export function cleanupTimers(...timers) {
-  timers.forEach(timer => {
-    if (timer && typeof timer.stop === 'function') {
-      timer.stop()
-    } else if (timer && typeof timer.cancel === 'function') {
-      timer.cancel()
-    }
-  })
+	timers.forEach((timer) => {
+		if (timer && typeof timer.stop === 'function') {
+			timer.stop();
+		} else if (timer && typeof timer.cancel === 'function') {
+			timer.cancel();
+		}
+	});
 }

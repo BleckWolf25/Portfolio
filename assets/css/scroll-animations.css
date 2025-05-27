@@ -1,0 +1,216 @@
+/**
+ * @file SCROLL-ANIMATIONS.CSS
+ *
+ * @version 1.0.0
+ * @author BleckWolf25
+ * @license MIT
+ *
+ * @description
+ * CSS styles for scroll animations to prevent FOUC and provide smooth transitions
+ * These styles ensure elements are properly hidden before JavaScript initializes
+ */
+
+/* ============================================================================
+   ANIMATION ELEMENT BASE STYLES
+   ============================================================================ */
+
+/**
+ * Base styles for elements that will be animated on scroll
+ * Prevents flash of unstyled content (FOUC)
+ */
+.fade-animation-element {
+	/* Ensure smooth transitions */
+	transition-property: opacity, transform;
+	transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+	/* Optimize for animations */
+	will-change: opacity, transform;
+
+	/* Prevent layout shifts */
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+}
+
+/**
+ * Enhanced styling for elements awaiting animation
+ * Creates a premium, sophisticated look
+ */
+.fade-scroll-element:not(.fade-scroll-completed) {
+	/* Subtle blur effect for non-animated elements */
+	filter: blur(0.5px);
+
+	/* Slightly reduced contrast for premium effect */
+	opacity: 0;
+
+	/* Smooth transition when animation starts */
+	transition:
+		filter 0.3s ease-out,
+		opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/**
+ * Clear styling once animation is complete
+ */
+.fade-scroll-completed {
+	filter: none !important;
+	opacity: 1 !important;
+}
+
+/* ============================================================================
+   PRELOAD STATES - PREVENT FOUC
+   ============================================================================ */
+
+/**
+ * Hide elements before JavaScript loads to prevent FOUC
+ * These classes should be added via CSS and removed by JavaScript
+ * Full transparency for a more premium, "expensive" look
+ */
+.scroll-animate-fade {
+	opacity: 0;
+	transform: translateY(15px);
+}
+
+/* ============================================================================
+   REDUCED MOTION SUPPORT
+   ============================================================================ */
+
+/**
+ * Respect user's motion preferences
+ * Disable animations for users who prefer reduced motion
+ */
+@media (prefers-reduced-motion: reduce) {
+	.fade-animation-element {
+		transition: none !important;
+		animation: none !important;
+		will-change: auto !important;
+	}
+
+	.scroll-animate-fade {
+		opacity: 1 !important;
+		transform: none !important;
+	}
+}
+
+/* ============================================================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================================================ */
+
+/**
+ * GPU acceleration for smooth animations
+ * Only applied during active animations
+ */
+.animating {
+	transform: translateZ(0);
+	will-change: opacity, transform;
+}
+
+/**
+ * Reset performance optimizations after animation
+ */
+.animation-complete {
+	will-change: auto;
+	transform: none;
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+/**
+ * Utility classes for common animation states
+ * Full transparency for premium look
+ */
+.fade-in-ready {
+	opacity: 0;
+	transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade-in-visible {
+	opacity: 1;
+}
+
+/* ============================================================================
+   STAGGER ANIMATION SUPPORT
+   ============================================================================ */
+
+/**
+ * Classes for staggered animations
+ * Applied dynamically by JavaScript
+ */
+.stagger-item {
+	transition-delay: var(--stagger-delay, 0ms);
+}
+
+.stagger-item:nth-child(1) {
+	--stagger-delay: 0ms;
+}
+.stagger-item:nth-child(2) {
+	--stagger-delay: 100ms;
+}
+.stagger-item:nth-child(3) {
+	--stagger-delay: 200ms;
+}
+.stagger-item:nth-child(4) {
+	--stagger-delay: 300ms;
+}
+.stagger-item:nth-child(5) {
+	--stagger-delay: 400ms;
+}
+.stagger-item:nth-child(6) {
+	--stagger-delay: 500ms;
+}
+.stagger-item:nth-child(7) {
+	--stagger-delay: 600ms;
+}
+.stagger-item:nth-child(8) {
+	--stagger-delay: 700ms;
+}
+.stagger-item:nth-child(9) {
+	--stagger-delay: 800ms;
+}
+.stagger-item:nth-child(10) {
+	--stagger-delay: 900ms;
+}
+
+/* ============================================================================
+   LOADING STATE IMPROVEMENTS
+   ============================================================================ */
+
+/**
+ * Improved loading states to prevent jarring transitions
+ */
+.scroll-animations-loading .fade-animation-element {
+	transition: none;
+	opacity: 0.1;
+}
+
+.scroll-animations-ready .fade-animation-element {
+	transition-property: opacity, transform;
+	transition-duration: 0.8s;
+	transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ============================================================================
+   BROWSER-SPECIFIC OPTIMIZATIONS
+   ============================================================================ */
+
+/**
+ * Safari-specific optimizations
+ */
+@supports (-webkit-backdrop-filter: blur(1px)) {
+	.fade-animation-element {
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+	}
+}
+
+/**
+ * Firefox-specific optimizations
+ */
+@-moz-document url-prefix() {
+	.fade-animation-element {
+		transform: translateZ(0);
+	}
+}

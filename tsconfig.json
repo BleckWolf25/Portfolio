@@ -85,7 +85,6 @@
 		"pages/**/*.vue",
 		"layouts/**/*.vue",
 		"plugins/**/*.ts",
-		"middleware/**/*.ts",
 		"utils/**/*.ts",
 		"types/**/*.ts",
 		"server/**/*.ts"

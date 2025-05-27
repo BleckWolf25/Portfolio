@@ -74,44 +74,6 @@ export interface ValidationRules {
 	message: ValidationRule
 }
 
-// ------------ FORM CONFIGURATION TYPES
-export interface ContactFormConfig {
-	enableSpamProtection: boolean
-	enableRateLimit: boolean
-	maxSubmissionsPerHour: number
-	requiredFields: (keyof ContactFormData)[]
-	validationRules: ValidationRules
-}
-
-// ------------ RATE LIMITING TYPES
-export interface RateLimitRecord {
-	count: number
-	resetTime: number
-	firstAttempt: number
-}
-
-export interface RateLimitResult {
-	allowed: boolean
-	remaining?: number
-	resetTime?: number
-	retryAfter?: number
-}
-
-// ------------ SPAM DETECTION TYPES
-export interface SpamDetectionConfig {
-	enabled: boolean
-	patterns: RegExp[]
-	maxUrls: number
-	maxRepeatedChars: number
-	suspiciousWords: string[]
-}
-
-export interface SpamDetectionResult {
-	isSpam: boolean
-	confidence: number
-	reasons: string[]
-}
-
 // ------------ EMAIL TEMPLATE TYPES
 export interface EmailTemplateData {
 	name: string
@@ -145,17 +107,6 @@ export interface NotificationConfig {
 		webhookUrl: string
 		channel?: string
 	}
-}
-
-// ------------ ANALYTICS TYPES
-export interface ContactFormAnalytics {
-	totalSubmissions: number
-	successfulSubmissions: number
-	failedSubmissions: number
-	spamBlocked: number
-	rateLimitHits: number
-	averageResponseTime: number
-	lastSubmission?: Date
 }
 
 // All types are already exported individually above

@@ -1,7 +1,7 @@
 /**
  * @file OBSERVERS.JS
  *
- * @version 1.0.0
+ * @version 2.0.0
  * @author BleckWolf25
  * @license MIT
  *
@@ -20,27 +20,28 @@
  * @returns {IntersectionObserver} Configured observer instance
  */
 export function createScrollObserver(callback, options = {}) {
-  const defaultOptions = {
-    rootMargin: '0px',
-    threshold: 0.1,
-    root: null
-  }
+	const defaultOptions = {
+		rootMargin: '0px',
+		threshold: 0.1,
+		root: null,
+	};
 
-  const config = { ...defaultOptions, ...options }
+	const config = { ...defaultOptions, ...options };
 
-  // Performance optimization: debounce callback to avoid excessive calls
-  let timeoutId = null
-  const debouncedCallback = (entries, observer) => {
-    if (timeoutId) {
-      clearTimeout(timeoutId)
-    }
+	// Performance optimization: debounce callback to avoid excessive calls
+	let timeoutId = null;
+	const debouncedCallback = (entries, observer) => {
+		if (timeoutId) {
+			clearTimeout(timeoutId);
+		}
 
-    timeoutId = setTimeout(() => {
-      callback(entries, observer)
-    }, 16) // ~60fps throttling
-  }
+		timeoutId = setTimeout(() => {
+			callback(entries, observer);
+			// ~60fps throttling
+		}, 16);
+	};
 
-  return new IntersectionObserver(debouncedCallback, config)
+	return new IntersectionObserver(debouncedCallback, config);
 }
 
 /**
@@ -52,16 +53,18 @@ export function createScrollObserver(callback, options = {}) {
  * @returns {IntersectionObserver} The observer instance
  */
 export function observeElements(elements, callback, options = {}) {
-  const observer = createScrollObserver(callback, options)
+	const observer = createScrollObserver(callback, options);
 
-  // Convert NodeList to Array if needed and filter valid elements
-  const elementsArray = Array.from(elements).filter(el => el instanceof Element)
+	// Convert NodeList to Array if needed and filter valid elements
+	const elementsArray = Array.from(elements).filter(
+		(el) => el instanceof Element,
+	);
 
-  elementsArray.forEach(element => {
-    observer.observe(element)
-  })
+	elementsArray.forEach((element) => {
+		observer.observe(element);
+	});
 
-  return observer
+	return observer;
 }
 
 /**
@@ -74,25 +77,25 @@ export function observeElements(elements, callback, options = {}) {
  * @returns {IntersectionObserver} The observer instance
  */
 export function observeElement(element, { onEnter, onExit }, options = {}) {
-  if (!element || !(element instanceof Element)) {
-    console.warn('observeElement: Invalid element provided')
-    return null
-  }
+	if (!element || !(element instanceof Element)) {
+		console.warn('observeElement: Invalid element provided');
+		return null;
+	}
 
-  const callback = (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && onEnter) {
-        onEnter(entry)
-      } else if (!entry.isIntersecting && onExit) {
-        onExit(entry)
-      }
-    })
-  }
+	const callback = (entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting && onEnter) {
+				onEnter(entry);
+			} else if (!entry.isIntersecting && onExit) {
+				onExit(entry);
+			}
+		});
+	};
 
-  const observer = createScrollObserver(callback, options)
-  observer.observe(element)
+	const observer = createScrollObserver(callback, options);
+	observer.observe(element);
 
-  return observer
+	return observer;
 }
 
 /**
@@ -105,19 +108,23 @@ export function observeElement(element, { onEnter, onExit }, options = {}) {
  * @returns {IntersectionObserver} The observer instance
  */
 export function observeOnce(elements, callback, options = {}) {
-  const observer = createScrollObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        callback(entry)
-        obs.unobserve(entry.target) // Stop observing after first trigger
-      }
-    })
-  }, options)
+	const observer = createScrollObserver((entries, obs) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				callback(entry);
 
-  const elementsArray = Array.from(elements).filter(el => el instanceof Element)
-  elementsArray.forEach(element => observer.observe(element))
+				// Stop observing after first trigger
+				obs.unobserve(entry.target);
+			}
+		});
+	}, options);
 
-  return observer
+	const elementsArray = Array.from(elements).filter(
+		(el) => el instanceof Element,
+	);
+	elementsArray.forEach((element) => observer.observe(element));
+
+	return observer;
 }
 
 /**
@@ -126,9 +133,9 @@ export function observeOnce(elements, callback, options = {}) {
  * @param {...IntersectionObserver} observers - Observer instances to cleanup
  */
 export function cleanupObservers(...observers) {
-  observers.forEach(observer => {
-    if (observer && typeof observer.disconnect === 'function') {
-      observer.disconnect()
-    }
-  })
+	observers.forEach((observer) => {
+		if (observer && typeof observer.disconnect === 'function') {
+			observer.disconnect();
+		}
+	});
 }

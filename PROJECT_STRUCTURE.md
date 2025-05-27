@@ -19,9 +19,7 @@ This is my portfolio's website project structure, built with Nuxt 3, Vue.js, and
 │   │   ├── page # Page transition animations
 │   │   │   └── heroLoadAnimation.js # Hero section load animation
 │   │   └── scroll # Scroll-triggered animations
-│       │   ├── counterUpOnScroll.js # Counter animation triggered by scroll
 │       │   ├── fadeInOnScroll.js # Fade-in animation triggered by scroll
-│       │   └── slideInOnScroll.js # Slide-in animation triggered by scroll
 │   ├── common # Common/Shared Components - Highly reusable, generic UI elements
 │   │   ├── Button.vue # Reusable Button Component
 │   │   ├── Card.vue # Reusable Card Component
@@ -98,9 +96,8 @@ This is my portfolio's website project structure, built with Nuxt 3, Vue.js, and
 │   │   │   ├── whatIDevelop.json.get.ts # What I Develop data API endpoint
 │   │   │   └── workTimeline.json.get.ts # Work Timeline data API endpoint
 │   │   └── services # Server-side services
-│   │   │   └── mail.ts # Mail service for sending emails
+│   │   │   └── mail-brevo.ts # Mail service for sending emails
 │   │   └── contact.post.ts # Contact form API endpoint
-│   ├── middleware # Server Middleware
 │   └── tsconfig.json # TypeScript Configuration for server-side code
 ├── tailwind.config.js # Tailwind CSS Configuration
 ├── tsconfig.json # TypeScript Configuration for the client-side

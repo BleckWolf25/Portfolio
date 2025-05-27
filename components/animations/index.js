@@ -1,7 +1,7 @@
 /**
  * @file INDEX.JS
  *
- * @version 1.0.0
+ * @version 2.0.0
  * @author BleckWolf25
  * @license MIT
  *
@@ -11,58 +11,69 @@
  * Provides clean imports and consistent API across the application
  */
 
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+
 // ------------ ANIMATION SYSTEM MODULES EXPORTS
 export {
-  createScrollObserver,
-  observeElements,
-  observeElement,
-  observeOnce,
-  cleanupObservers
-} from '../../utils/observers.js'
+	createScrollObserver,
+	observeElements,
+	observeElement,
+	observeOnce,
+	cleanupObservers,
+} from '../../utils/observers.js';
 
 export {
-  linear,
-  quad,
-  cubic,
-  quart,
-  expo,
-  circ,
-  back,
-  elastic,
-  bounce,
-  material,
-  presets,
-  createCubicBezier
-} from '../../utils/easing.js'
+	linear,
+	quad,
+	cubic,
+	quart,
+	expo,
+	circ,
+	back,
+	elastic,
+	bounce,
+	material,
+	presets,
+	createCubicBezier,
+} from '../../utils/easing.js';
 
 export {
-  createAnimationTimer,
-  createStaggeredTimer,
-  createAnimationLoop,
-  debounce,
-  throttle,
-  delay,
-  cleanupTimers
-} from '../../utils/timers.js'
-
+	createAnimationTimer,
+	createStaggeredTimer,
+	createAnimationLoop,
+	debounce,
+	throttle,
+	delay,
+	cleanupTimers,
+} from '../../utils/timers.js';
 
 // ------------ ANIMATION EFFECTS EXPORTS
 
 // Scroll Animations - Effects triggered by viewport intersection
-export { fadeInOnScroll } from './scroll/fadeInOnScroll.js'
-export { slideInOnScroll } from './scroll/slideInOnScroll.js'
-export { counterUpOnScroll } from './scroll/counterUpOnScroll.js'
+export {
+	fadeInOnScroll,
+	quickFadeIn,
+	staggeredFadeIn,
+} from './scroll/fadeInOnScroll.js';
+
+// Improved Scroll Animation System - Smooth, accessible, and non-intrusive
+export {
+	initScrollAnimations,
+	initAccessibleScrollAnimations,
+	smoothScrollPresets,
+	prefersReducedMotion,
+} from './scroll/scrollAnimationInit.js';
 
 // Hover Animations - Interactive hover effects
-export { buttonHoverEffect } from './hover/buttonHoverEffect.js'
-export { cardLiftEffect } from './hover/cardLiftEffect.js'
+export { buttonHoverEffect } from './hover/buttonHoverEffect.js';
+export { cardLiftEffect } from './hover/cardLiftEffect.js';
 
 // Page Animations - Page load and transition effects
-export { heroLoadAnimation } from './page/heroLoadAnimation.js'
+export { heroLoadAnimation } from './page/heroLoadAnimation.js';
 
 // Modal Animations - Dialog and modal-specific animations
-export { modalFadeIn } from './modals/modalFadeIn.js'
-
+export { modalFadeIn } from './modals/modalFadeIn.js';
 
 // ------------ FUNCTIONALITY EXPORTS
 /**
@@ -76,43 +87,44 @@ export { modalFadeIn } from './modals/modalFadeIn.js'
  * @returns {Object} Cleanup function and configuration
  */
 export function initAnimationSystem(options = {}) {
-  const config = {
-    reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
-    globalThreshold: 0.1,
-    globalRootMargin: '0px 0px -50px 0px',
-    ...options
-  }
+	const config = {
+		reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)')
+			.matches,
+		globalThreshold: 0.1,
+		globalRootMargin: '0px 0px -50px 0px',
+		...options,
+	};
 
-  // Global performance optimizations
-  const performanceObserver = new PerformanceObserver((list) => {
-    for (const entry of list.getEntries()) {
-      if (entry.entryType === 'measure' && entry.name.includes('animation')) {
-        // Log slow animations for debugging
-        if (entry.duration > 16.67) { // Slower than 60fps
-          console.warn(`Slow animation detected: ${entry.name} took ${entry.duration}ms`)
-        }
-      }
-    }
-  })
+	// Global performance optimizations
+	const performanceObserver = new PerformanceObserver((list) => {
+		for (const entry of list.getEntries()) {
+			if (entry.entryType === 'measure' && entry.name.includes('animation')) {
+				// Log slow animations for debugging
+				if (entry.duration > 16.67) {
+					// Slower than 60fps
+				}
+			}
+		}
+	});
 
-  try {
-    performanceObserver.observe({ entryTypes: ['measure'] })
-  } catch (error) {
-    // Performance Observer not supported, continue silently
-  }
+	try {
+		performanceObserver.observe({ entryTypes: ['measure'] });
+	} catch (error) {
+		// Performance Observer not supported, continue silently
+	}
 
-  // Global cleanup function
-  const cleanup = () => {
-    performanceObserver.disconnect?.()
-  }
+	// Global cleanup function
+	const cleanup = () => {
+		performanceObserver.disconnect?.();
+	};
 
-  // Add cleanup to window beforeunload for better memory management
-  window.addEventListener('beforeunload', cleanup)
+	// Add cleanup to window beforeunload for better memory management
+	window.addEventListener('beforeunload', cleanup);
 
-  return {
-    config,
-    cleanup
-  }
+	return {
+		config,
+		cleanup,
+	};
 }
 
 /**
@@ -120,7 +132,7 @@ export function initAnimationSystem(options = {}) {
  * @returns {boolean} True if animations should be reduced
  */
 export function shouldReduceMotion() {
-  return window.matchMedia('(prefers-reduced-motion: reduce)').matches
+	return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
 /**
@@ -129,12 +141,16 @@ export function shouldReduceMotion() {
  * @param {Function} animationFunction - Animation function to apply
  * @param {Function} reducedMotionFallback - Fallback for reduced motion
  */
-export function applyAnimation(element, animationFunction, reducedMotionFallback = null) {
-  if (shouldReduceMotion() && reducedMotionFallback) {
-    reducedMotionFallback(element)
-  } else if (!shouldReduceMotion()) {
-    animationFunction(element)
-  }
+export function applyAnimation(
+	element,
+	animationFunction,
+	reducedMotionFallback = null,
+) {
+	if (shouldReduceMotion() && reducedMotionFallback) {
+		reducedMotionFallback(element);
+	} else if (!shouldReduceMotion()) {
+		animationFunction(element);
+	}
 }
 
 /**
@@ -144,23 +160,24 @@ export function applyAnimation(element, animationFunction, reducedMotionFallback
  * @param {Function} onComplete - Optional completion callback
  */
 export function batchAnimations(animations, onComplete = null) {
-  requestAnimationFrame(() => {
-    // Read phase - collect all measurements
-    const measurements = animations.map(anim =>
-      anim.measure ? anim.measure() : null
-    ).filter(Boolean)
+	requestAnimationFrame(() => {
+		// Read phase - collect all measurements
+		const measurements = animations
+			.map((anim) => (anim.measure ? anim.measure() : null))
+			.filter(Boolean);
 
-    // Write phase - apply all mutations
-    requestAnimationFrame(() => {
-      animations.forEach((anim, index) => {
-        if (anim.animate) {
-          anim.animate(measurements[index])
-        }
-      })
+		// Write phase - apply all mutations
+		requestAnimationFrame(() => {
+			animations.forEach((anim, index) => {
+				if (anim.animate) {
+					// eslint-disable-next-line security/detect-object-injection
+					anim.animate(measurements[index] || null);
+				}
+			});
 
-      if (onComplete) {
-        onComplete()
-      }
-    })
-  })
+			if (onComplete) {
+				onComplete();
+			}
+		});
+	});
 }

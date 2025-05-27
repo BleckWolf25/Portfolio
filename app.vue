@@ -18,6 +18,7 @@
 			<NuxtRouteAnnouncer />
 			<NuxtPage />
 		</GlobalA11yProvider>
+		<Analytics />
 	</div>
 </template>
 
@@ -25,4 +26,5 @@
 <script setup lang="ts">
 // ------------ IMPORTS
 import GlobalA11yProvider from './components/GlobalA11yProvider.vue';
+import { Analytics } from '@vercel/analytics/nuxt'
 </script>

@@ -18,9 +18,11 @@
 		<!-- Background Decorative Elements -->
 		<div class="absolute inset-0 overflow-hidden pointer-events-none">
 			<!-- Subtle gradient orbs -->
-			<div class="absolute top-40 -left-40 w-96 h-96 bg-gradient-to-br from-primary-200/8 to-accent-200/8 rounded-full blur-3xl animate-pulse"
+			<div
+				class="absolute top-40 -left-40 w-96 h-96 bg-gradient-to-br from-primary-200/8 to-accent-200/8 rounded-full blur-3xl animate-pulse"
 				style="animation-duration: 12s" aria-hidden="true"></div>
-			<div class="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tr from-accent-300/8 to-secondary-200/8 rounded-full blur-3xl animate-pulse"
+			<div
+				class="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tr from-accent-300/8 to-secondary-200/8 rounded-full blur-3xl animate-pulse"
 				style="animation-duration: 15s; animation-delay: 4s" aria-hidden="true"></div>
 		</div>
 
@@ -38,8 +40,8 @@
 
 			<!-- Development Categories Grid -->
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-				<div v-for="(category, index) in developmentData" :key="category.category"
-					class="develop-card opacity-0" data-develop-element>
+				<div v-for="(category, index) in developmentData" :key="category.category" class="develop-card opacity-0"
+					data-develop-element>
 					<UCard
 						class="group relative h-full bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm border border-neutral-200/50 dark:border-neutral-700/50 hover:border-primary-300 dark:hover:border-primary-600 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 hover:-translate-y-2">
 						<!-- Card Header -->
@@ -75,8 +77,7 @@
 
 							<!-- Features List -->
 							<div class="space-y-4">
-								<h4
-									class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider">
+								<h4 class="text-sm font-semibold text-neutral-800 dark:text-neutral-200 uppercase tracking-wider">
 									What I Build
 								</h4>
 
@@ -89,13 +90,11 @@
 									</div>
 
 									<!-- Show More/Less Button -->
-									<UButton v-if="category.features.length > 4" @click="toggleFeatures(index)"
-										variant="ghost" size="sm"
+									<UButton v-if="category.features.length > 4" @click="toggleFeatures(index)" variant="ghost" size="sm"
 										class="mt-3 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 p-0 h-auto font-medium">
 										{{ expandedCards.includes(index) ? 'Show Less' : `Show
 										${category.features.length - 4} More` }}
-										<Icon
-											:name="expandedCards.includes(index) ? 'mdi:chevron-up' : 'mdi:chevron-down'"
+										<Icon :name="expandedCards.includes(index) ? 'mdi:chevron-up' : 'mdi:chevron-down'"
 											class="w-4 h-4 ml-1 transition-transform duration-200" />
 									</UButton>
 								</div>
