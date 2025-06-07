@@ -1,6 +1,23 @@
 {
 	"projects": [
 		{
+			"title": "The Great Calculator v3",
+			"description": "A modern, high-performant, accessible, advanced and responsive calculator. Built to be used by anyone, anywhere, anytime.",
+			"image": "../images/projects/tgc-v3.png",
+			"url": "https://thegreatcalculator.vercel.app/",
+			"github": "https://github.com/BleckWolf25/TheGreatCalculator",
+			"techStack": [
+				"Vite",
+				"HTML3",
+				"CSS3",
+				"JavaScript",
+				"npm",
+				"Vercel",
+				"Prettier",
+				"ESLint"
+			]
+		},
+		{
 			"title": "Portfolio Website v2",
 			"description": "A modern and responsive portfolio website to highlight my development skills, projects, and technical expertise. Built with performance, accessibility, and SEO in mind.",
 			"image": "../images/projects/portfolio-v2.png",
@@ -25,6 +42,22 @@
 			"image": "../images/projects/acwp.png",
 			"url": "confidential",
 			"github": "confidential",
+			"techStack": [
+				"Vue.js",
+				"Bootstrap 5",
+				"CSS3",
+				"Firebase",
+				"Vite",
+				"npm",
+				"Recaptcha v3"
+			]
+		},
+		{
+			"title": "Code Pulse v2",
+			"description": "Code Pulse is an extension to keep track of your productivity and coding patterns to help you out. It provides smart insights, trends, complexity, and more to improve your coding standards and quality.",
+			"image": "../images/projects/re-working.png",
+			"url": "confidential",
+			"github": "https://github.com/BleckWolf25/CodePulse",
 			"techStack": [
 				"Vue.js",
 				"Bootstrap 5",
