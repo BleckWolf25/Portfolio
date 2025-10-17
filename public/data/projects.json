@@ -86,6 +86,29 @@
 				"Prettier",
 				"Recapcha v3"
 			]
+		},
+		{
+			"title": "TaskTitan",
+			"description": "TaskTitan - A project management desktop application with local-first design, built using Electron, Next.js, NestJS, PostgreSQL, and TypeScript.",
+			"image": "../images/projects/re-working.png",
+			"url": "confidential",
+			"techStack": [
+				"Next.js",
+				"Electron.",
+				"Tailwind CSS",
+				"CSS3",
+				"Prisma",
+				"NestJS",
+				"PostgreSQL",
+				"Docker",
+				"Node.js",
+				"Express.js",
+				"ESLint",
+				"Prettier",
+				"Editorconfig",
+				"turbo monorepo",
+				"TypeScript"
+			]
 		}
 	]
 }

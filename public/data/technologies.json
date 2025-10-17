@@ -26,17 +26,18 @@
 				"name": "Python",
 				"icon": "devicon:python",
 				"years": 2,
-				"months": 5
+				"months": 6
 			},
 			{
 				"name": "JavaScript",
 				"icon": "devicon:javascript",
-				"years": 1
+				"years": 1,
+				"months": 3
 			},
 			{
 				"name": "TypeScript",
 				"icon": "devicon:typescript",
-				"months": 7
+				"years": 1
 			},
 			{
 				"name": "Lua",
@@ -47,84 +48,85 @@
 			{
 				"name": "Swift UI",
 				"icon": "devicon:swift",
-				"days": 19
+				"days": 21
 			},
 			{
 				"name": "HTML5",
 				"icon": "devicon:html5",
-				"years": 3
+				"years": 4
 			},
 			{
 				"name": "CSS3",
 				"icon": "devicon:css3",
-				"years": 3
+				"years": 4
 			},
 			{
 				"name": "SQL",
 				"icon": "devicon:mysql",
-				"months": 3
+				"months": 6
 			},
 			{
 				"name": "PHP",
 				"icon": "devicon:php",
-				"days": 14
+				"months": 2
 			},
 			{
 				"name": "Shell Scripting",
 				"icon": "mdi:terminal",
-				"years": 1
+				"years": 2
 			},
 			{
 				"name": "Bash Scripting",
 				"icon": "codicon:terminal-bash",
-				"months": 4
+				"months": 5
 			}
 		],
 		"frameworks": [
 			{
 				"name": "Node.js",
 				"icon": "logos:nodejs-icon",
-				"years": 1
+				"years": 2
 			},
 			{
 				"name": "Vite",
 				"icon": "logos:vitejs",
-				"months": 8
+				"months": 11
 			},
 			{
 				"name": "Vue.js",
 				"icon": "devicon:vuejs",
-				"months": 8
+				"months": 10
 			},
 			{
 				"name": "Firebase",
 				"icon": "devicon:firebase",
-				"months": 7
+				"months": 9
 			},
 			{
 				"name": "React",
 				"icon": "devicon:react",
-				"months": 8
+				"months": 11
 			},
 			{
 				"name": "Express",
 				"icon": "devicon:express",
-				"months": 11
+				"years": 1
 			},
 			{
 				"name": "Electron",
 				"icon": "devicon:electron",
-				"years": 1
+				"years": 1,
+				"months": 2
 			},
 			{
 				"name": "Nuxt.js",
 				"icon": "devicon:nuxtjs",
-				"days": 29
+				"months": 2
 			},
 			{
 				"name": "Framer Motion",
 				"icon": "devicon:framermotion",
-				"months": 5
+				"months": 6
 			},
 			{
 				"name": "Angular",
@@ -139,12 +141,22 @@
 			{
 				"name": "Tailwindcss",
 				"icon": "devicon:tailwindcss",
-				"months": 9
+				"months": 11
 			},
 			{
 				"name": "Next.js",
 				"icon": "devicon:nextjs",
-				"days": 24
+				"months": 3
+			},
+			{
+				"name": "NestJS",
+				"icon": "devicon:nestjs",
+				"months": 2
+			},
+			{
+				"name": "Prisma",
+				"icon": "devicon:prisma",
+				"months": 2
 			},
 			{
 				"name": ".NET",
@@ -154,24 +166,35 @@
 			{
 				"name": "Django",
 				"icon": "logos:django",
-				"months": 1
+				"months": 2
 			}
 		],
 		"tools": [
 			{
 				"name": "Git",
 				"icon": "devicon:git",
-				"years": 2
+				"years": 3
 			},
 			{
 				"name": "GitHub",
 				"icon": "skill-icons:github-light",
-				"years": 3
+				"years": 4
+			},
+			{
+				"name": "GitLab",
+				"icon": "skill-icons:gitlab-light",
+				"months": 2
+			},
+			{
+				"name": "EditorConfig",
+				"icon": "simple-icons:editorconfig",
+				"years": 1,
+				"months": 6
 			},
 			{
 				"name": "Vercel",
 				"icon": "devicon:vercel",
-				"months": 6
+				"months": 8
 			},
 			{
 				"name": "Replit",
@@ -181,17 +204,17 @@
 			{
 				"name": "ESLint",
 				"icon": "devicon:eslint",
-				"years": 1
+				"years": 2
 			},
 			{
 				"name": "Prettier",
 				"icon": "vscode-icons:file-type-prettier",
-				"months": 11
+				"years": 1
 			},
 			{
 				"name": "Docker",
 				"icon": "devicon:docker",
-				"months": 6
+				"months": 7
 			},
 			{
 				"name": "CMake",
@@ -202,24 +225,35 @@
 			{
 				"name": "npm",
 				"icon": "devicon:npm",
-				"years": 2
+				"years": 3
 			},
 			{
 				"name": "Yarn",
 				"icon": "devicon:yarn",
-				"months": 10
+				"months": 11
+			},
+			{
+				"name": "pnpm",
+				"icon": "devicon:pnpm",
+				"months": 3
 			},
 			{
 				"name": "Apache Maven",
 				"icon": "devicon:apache",
-				"months": 1
+				"months": 1,
+				"days": 15
+			},
+			{
+				"name": "Turbo Repo",
+				"icon": "material-icon-theme:turborepo",
+				"months": 2
 			}
 		],
 		"ides": [
 			{
 				"name": "VS Code",
 				"icon": "devicon:vscode",
-				"years": 3
+				"years": 4
 			},
 			{
 				"name": "Visual Studio",
@@ -239,7 +273,7 @@
 			{
 				"name": "MySQL Workbench",
 				"icon": "devicon:mysql",
-				"months": 4
+				"months": 6
 			}
 		],
 		"gameDevelopment": [
@@ -269,55 +303,98 @@
 			{
 				"name": "macOS",
 				"icon": "devicon:apple",
-				"years": 3,
+				"years": 4,
 				"color": "#000000"
 			},
 			{
 				"name": "Windows",
 				"icon": "devicon:windows8",
 				"years": 16,
-				"months": 7
+				"months": 9
 			},
 			{
 				"name": "Linux",
 				"icon": "devicon:linux",
-				"years": 1
+				"years": 1,
+				"months": 1
 			}
 		],
 		"aiTools": [
 			{
 				"name": "GitHub Copilot",
 				"icon": "logos:github-copilot",
-				"years": 1
+				"years": 2
 			},
 			{
 				"name": "Claude",
 				"icon": "logos:claude-icon",
-				"years": 2
+				"years": 3
 			},
 			{
 				"name": "ChatGPT",
 				"icon": "logos:openai-icon",
 				"years": 3,
-				"months": 2,
+				"months": 7,
 				"color": "#00A67E"
+			},
+			{
+				"name": "Tabnine",
+				"icon": "mingcute:ai-line",
+				"months": 9
 			},
 			{
 				"name": "DeepSeek",
 				"icon": "arcticons:deepseek",
-				"months": 5,
+				"months": 9,
 				"color": "#3E67D5"
 			},
 			{
 				"name": "Gemini",
 				"icon": "material-icon-theme:gemini-ai",
-				"months": 6
+				"months": 8
 			},
 			{
 				"name": "Grok",
 				"icon": "devicon:twitter",
-				"months": 5,
+				"months": 7,
 				"color": "#1DA1F2"
+			},
+			{
+				"name": "Microsoft Copilot",
+				"icon": "arcticons:microsoft-copilot",
+				"months": 3
+			},
+			{
+				"name": "Augment AI",
+				"icon": "mingcute:ai-line",
+				"months": 3
+			},
+			{
+				"name": "Amazon Q",
+				"icon": "devicon:amazonwebservices",
+				"months": 2
+			},
+			{
+				"name": "Cline",
+				"icon": "material-icon-theme:cline",
+				"months": 1,
+				"color": "#000000"
+			},
+			{
+				"name": "Continue",
+				"icon": "mingcute:ai-line",
+				"months": 1,
+				"color": "#000000"
+			},
+			{
+				"name": "Qodo AI (formerly Codium)",
+				"icon": "simple-icons:qodo",
+				"days": 10
+			},
+			{
+				"name": "Phind AI",
+				"icon": "mdi:letter-p-box",
+				"days": 5
 			}
 		]
 	}
