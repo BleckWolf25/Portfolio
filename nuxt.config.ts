@@ -219,10 +219,8 @@ export default defineNuxtConfig({
     },
   },
 
-  // Nuxt Security module configuration to disable the default Content Security Policy
   security: {
     headers: {
-      contentSecurityPolicy: false,
     },
   },
 
