@@ -74,7 +74,7 @@ useSeoMeta({
   twitterDescription: 'Software Engineer Portfolio',
 })
 
-useHead(() => ({
+useHead({
   link: [
     {
       rel: 'icon',
@@ -84,18 +84,20 @@ useHead(() => ({
   ],
   style: [
     {
-      textContent: `
+      textContent: computed(
+        () => `
         :root {
           --theme-accent-light: ${themeColors.value.light};
           --theme-accent-dark: ${themeColors.value.dark};
           --theme-accent-dim-light: color-mix(in srgb, ${themeColors.value.light} 15%, transparent);
           --theme-accent-dim-dark: color-mix(in srgb, ${themeColors.value.dark} 15%, transparent);
         }
-      `,
+      `
+      ),
     },
   ],
   bodyAttrs: {
-    class: showStartup.value ? 'overflow-hidden' : '',
+    class: computed(() => (showStartup.value ? 'overflow-hidden' : '')),
   },
-}))
+})
 </script>
