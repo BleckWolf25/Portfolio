@@ -1,0 +1,208 @@
+{
+  "skipLink": "Skip to main content",
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "expertise": "Expertise",
+    "tech": "Technologies",
+    "projects": "Projects",
+    "timeline": "Experience",
+    "skills": "Skills",
+    "hobbies": "Hobbies",
+    "contact": "Contact",
+    "toggleLanguage": "Toggle Language",
+    "toggleMenu": "Toggle Mobile Menu",
+    "mainNavigation": "Main Navigation",
+    "customizeTheme": "Customize theme color",
+    "toggleTheme": "Toggle theme",
+    "mobileNavigation": "Mobile Navigation",
+    "themes": {
+      "emerald": "Emerald",
+      "blue": "Blue",
+      "indigo": "Indigo",
+      "rose": "Rose",
+      "amber": "Amber"
+    }
+  },
+  "hero": {
+    "greeting": "Hello, world! I am",
+    "tagline": "Software Engineer",
+    "description": "I build robust software solutions and lead small, high-performing teams, blending deep technical expertise with practical execution.",
+    "cta": "Let's Build Something",
+    "secondaryCta": "View My Work"
+  },
+  "about": {
+    "title": "About Me",
+    "p1": "I am a passionate software engineer with a deep appreciation for the intricate logic of code. I thrive on architecting scalable back-end systems and building high-performance applications.",
+    "p2": "Throughout my career, I've had the opportunity to work on a diverse array of projects, ranging from robust web platforms to custom software tools. I pride myself on technical excellence and clear, honest communication.",
+    "p3": "Whether I'm writing C++ for a custom game engine or defining the architecture for a bespoke CRM, my goal is the same: to create solutions that solve real problems efficiently and elegantly."
+  },
+  "whatIBuild": {
+    "title": "What I Build",
+    "webDev": {
+      "title": "Web Development",
+      "description": "High-performance, accessible, and responsive web applications using modern frameworks like Vue, Nuxt, and React."
+    },
+    "softwareDev": {
+      "title": "Software Development",
+      "description": "Scalable back-end systems, bespoke CRMs, and internal tools engineered for reliability and maintainability."
+    },
+    "gameDev": {
+      "title": "Game Development",
+      "description": "Custom engines and game prototypes with an emphasis on performance, ECS architecture, and immersive logic."
+    }
+  },
+  "technologies": {
+    "title": "Technologies & Skills",
+    "showcase": "// Core Stack Showcase"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "filterAll": "All",
+    "filterSystems": "Systems & Engines",
+    "filterFrontend": "Frontend & Web",
+    "filterFullstack": "Fullstack & Backend",
+    "list": {
+      "great-calculator": {
+        "name": "The Great Calculator v3",
+        "description": "A modern, high-performant, accessible, advanced and responsive calculator. Built to be used by anyone, anywhere, anytime."
+      },
+      "portfolio-v3": {
+        "name": "Portfolio Website v3",
+        "description": "A modern, fully server-side rendered portfolio built with Nuxt 4 and Vue 3. Features scroll-based animations, i18n (EN/PT), WCAG 2.1 AA compliance, Nuxt UI, Tailwind CSS v4, and a fully data-driven content architecture."
+      },
+      "antonio-costa-workshop": {
+        "name": "Antonio Costa Workshop",
+        "description": "A custom web application designed for Antonio Costa Company to streamline workshop operations, client interactions, and internal management. It contains AI features to help with daily tasks."
+      },
+      "code-pulse-v2": {
+        "name": "Code Pulse v2",
+        "description": "Code Pulse is an extension to keep track of your productivity and coding patterns to help you out. It provides smart insights, trends, complexity, and more to improve your coding standards and quality."
+      },
+      "dis-website": {
+        "name": "Dynamic Innovative Studio Website",
+        "description": "A website for Dynamic Innovative Studio, a creative agency. Built with React, Tailwind CSS, and Firebase, featuring a modern design with AI-powered features."
+      },
+      "task-titan": {
+        "name": "TaskTitan",
+        "description": "A project management desktop application with local-first design, built using Electron, Next.js, NestJS, PostgreSQL, and TypeScript in a Turborepo monorepo."
+      }
+    }
+  },
+  "project": {
+    "openSource": "Open Source",
+    "confidential": "Confidential",
+    "liveDemo": "Live Demo",
+    "viewRepository": "Source Code"
+  },
+  "timeline": {
+    "title": "Professional Experience",
+    "present": "Present",
+    "jobs": {
+      "founder-selkira": {
+        "role": "Founder & Lead Developer",
+        "organisation": "Selkira Inc",
+        "description": "Envisioned and spearheaded the development of few unannounced indie game projects, managing a medium-sized (35 members), multi-disciplinary team of developers and asset artists. Designed and architected high-performance core systems, utilizing C++ for gameplay mechanics and state management. Established team development standards, including automated workflows, version control strategy via GitHub, and centralized technical documentation. Handled business operations, pitch deck creation, and investor relations until winding down operations due to lack of external seed funding."
+      },
+      "web-dev-antonio": {
+        "role": "Web Developer",
+        "organisation": "Antonio Costa",
+        "description": "Designed and developed a professional web presence for a private client, covering requirements gathering, UI/UX design, front-end implementation, and deployment. Delivered a responsive, accessible site on time and within scope."
+      }
+    }
+  },
+  "softSkills": {
+    "title": "Soft Skills"
+  },
+  "softSkill": {
+    "situation": "Situation",
+    "task": "Task",
+    "action": "Action",
+    "result": "Result"
+  },
+  "hobbies": {
+    "title": "Hobbies & Interests",
+    "gaming": {
+      "title": "Gaming",
+      "description": "Exploring virtual worlds and analyzing game mechanics, which fuels my passion for game development."
+    },
+    "music": {
+      "title": "Music",
+      "description": "Listening to a wide variety of genres to stay focused and inspired while writing code."
+    },
+    "moto": {
+      "title": "Moto Riding",
+      "description": "Seeking adrenaline on the open road and exploring new places on two wheels."
+    },
+    "coding": {
+      "title": "Coding",
+      "description": "Writing code as a hobby and constantly learning new technologies."
+    }
+  },
+  "contact": {
+    "subtitle": "What's Next?",
+    "title": "Let's Build Something Together",
+    "description": "My inbox is always open. Whether you have a question, a project proposal, or just want to say hi, I'll try my best to get back to you!",
+    "emailBtn": "Say Hello",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "programming-languages": "Programming Languages",
+  "automation-scripting": "Automation & Scripting",
+  "frameworks-libraries": "Frameworks & Libraries",
+  "design-styling": "Design & Styling",
+  "dev-tools": "Dev Tools",
+  "databases-backend": "Databases & Backend",
+  "runtimes-environments": "Runtimes & Environments",
+  "ides": "IDEs",
+  "agentic-dev-environments": "Agentic Dev Environments",
+  "game-dev": "Game Dev",
+  "os": "Operating Systems",
+  "ai-productivity": "AI & Productivity",
+  "communication": "Communication",
+  "problem-solving": "Problem Solving",
+  "teamwork": "Teamwork",
+  "adaptability": "Adaptability",
+  "creative-thinking": "Creative Thinking",
+  "softSkillsList": {
+    "communication": {
+      "situation": "A stalled project left a client frustrated because they couldn’t clearly explain what they wanted.",
+      "task": "I needed to translate their business goals into clear steps that the development team could actually build.",
+      "action": "I ran a kickoff session to map out their ideas visually, creating a quick prototype so they could see and approve the direction early.",
+      "result": "The project restarted smoothly, revision cycles dropped, and we delivered exactly what the client expected on time."
+    },
+    "problem-solving": {
+      "situation": "Two days before a product presentation, a major performance issue slowed down the project down to an unusable speed.",
+      "task": "I had to find the root cause, fix it safely under a tight deadline.",
+      "action": "I isolated both frontend and backend bottlenecks, optimized the slowest elements, and sped up data loading.",
+      "result": "Software loading times dropped significantly, the product presentation was delivered right on schedule, and the presentation was well-received."
+    },
+    "teamwork": {
+      "situation": "Our cross-functional team was working across different time zones with a tight three-week deadline.",
+      "task": "I needed to coordinate tasks so design, backend, and frontend work synced up without anyone getting blocked.",
+      "action": "I set up a shared board for clear tracking, managed daily asynchronous updates, and stepped in to cover design tasks.",
+      "result": "We hit the deadline without cutting corners, and the client liked the final product."
+    },
+    "adaptability": {
+      "situation": "Midway through development, the client completely shifted their product goals and requested a feature that wasn't possible with the current technology stack.",
+      "task": "I had to quickly pivot the plan, learn the new tools, and keep the project moving forward without losing momentum.",
+      "action": "I spent a weekend rebuilding the project foundations using the new approach, and transparently adjusted the timeline.",
+      "result": "We completed the transition with minimal delay, and the new setup actually made the final product faster and easier to maintain."
+    },
+    "creative-thinking": {
+      "situation": "A client needed a dynamic, interactive product catalog but had zero budget for complex backend systems or platforms.",
+      "task": "I needed to build something polished and easy for them to update, without expensive infrastructure costs.",
+      "action": "I designed a lightweight solution that generated the site automatically from a single, simple data file.",
+      "result": "The client could easily update their content for free, the site loaded instantly, and they were happy enough to refer new business."
+    }
+  },
+  "skills": {
+    "levels": {
+      "proficient": "Proficient",
+      "familiar": "Familiar",
+      "learning": "Learning"
+    },
+    "levelLabel": "{level} level"
+  }
+}

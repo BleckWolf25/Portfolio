@@ -1,0 +1,25 @@
+/**
+ * @file main.css
+ *
+ * @version 1.0.0
+ * @author Bleckwolf25
+ * @license MIT
+ *
+ * @summary Main entry point for the application CSS.
+ *
+ * @description
+ * Main entry point for the application CSS. Imports Tailwind, Nuxt UI,
+ * and modularized custom CSS configurations.
+ *
+ * @since 10/05/2026
+ * @updated 20/05/2026
+ */
+/* ---------- PACKAGE IMPORTS ---------- */
+@import 'tailwindcss';
+@import '@nuxt/ui';
+
+/* ---------- MODULARIZED CSS ---------- */
+@import './_fonts.css';
+@import './_variables.css';
+@import './_theme.css';
+@import './_base.css';

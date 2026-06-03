@@ -1,0 +1,208 @@
+{
+  "skipLink": "Saltar para o conteúdo principal",
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "expertise": "Especialidade",
+    "tech": "Tecnologias",
+    "projects": "Projetos",
+    "timeline": "Experiência",
+    "skills": "Competências",
+    "hobbies": "Passatempos",
+    "contact": "Contacto",
+    "toggleLanguage": "Mudar Idioma",
+    "toggleMenu": "Alternar Menu Mobile",
+    "mainNavigation": "Navegação Principal",
+    "customizeTheme": "Personalizar cor do tema",
+    "toggleTheme": "Alternar tema escuro/claro",
+    "mobileNavigation": "Navegação Mobile",
+    "themes": {
+      "emerald": "Esmeralda",
+      "blue": "Azul",
+      "indigo": "Índigo",
+      "rose": "Rosa",
+      "amber": "Âmbar"
+    }
+  },
+  "hero": {
+    "greeting": "Hello World! Eu sou",
+    "tagline": "Engenheiro de Software",
+    "description": "Construo soluções de software robustas e lidero pequenas equipas de alto desempenho, combinando conhecimento técnico profundo com foco na execução.",
+    "cta": "Vamos Construir Algo",
+    "secondaryCta": "Ver o Meu Trabalho"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "p1": "Sou um engenheiro de software apaixonado pela lógica intrincada do código. Destaco-me a projetar sistemas de back-end escaláveis e a construir aplicações de alto desempenho.",
+    "p2": "Ao longo da minha carreira, tive a oportunidade de trabalhar numa gama diversificada de projetos, desde plataformas web robustas a ferramentas de software personalizadas. Orgulho-me da excelência técnica e da comunicação clara e honesta.",
+    "p3": "Quer esteja a escrever em C++ para um motor de jogo personalizado ou a definir a arquitetura para um CRM feito à medida, o meu objetivo é sempre o mesmo: criar soluções que resolvam problemas reais de forma eficiente e elegante."
+  },
+  "whatIBuild": {
+    "title": "O Que Construo",
+    "webDev": {
+      "title": "Desenvolvimento Web",
+      "description": "Aplicações web responsivas, acessíveis e de alto desempenho utilizando frameworks modernas como Vue, Nuxt e React."
+    },
+    "softwareDev": {
+      "title": "Desenvolvimento de Software",
+      "description": "Sistemas back-end escaláveis, CRMs à medida e ferramentas internas concebidas para máxima fiabilidade e manutenibilidade."
+    },
+    "gameDev": {
+      "title": "Desenvolvimento de Jogos",
+      "description": "Motores personalizados e protótipos de jogos com ênfase no desempenho, arquitetura ECS e lógica imersiva."
+    }
+  },
+  "technologies": {
+    "title": "Tecnologias e Competências",
+    "showcase": "// Mostruário Core Stack"
+  },
+  "projects": {
+    "title": "Projetos em Destaque",
+    "filterAll": "Todos",
+    "filterSystems": "Sistemas e Motores",
+    "filterFrontend": "Frontend e Web",
+    "filterFullstack": "Fullstack e Backend",
+    "list": {
+      "great-calculator": {
+        "name": "A Grande Calculadora v3",
+        "description": "Uma calculadora moderna, de alto desempenho, acessível, avançada e responsiva. Construída para ser usada por qualquer pessoa, em qualquer lugar e a qualquer momento."
+      },
+      "portfolio-v3": {
+        "name": "Portfólio Website v3",
+        "description": "Um Portfólio moderno com renderização do lado do servidor construído com Nuxt 4 e Vue 3. Inclui animações baseadas em scroll, i18n (EN/PT), conformidade WCAG 2.1 AA, Nuxt UI, Tailwind CSS v4 e uma arquitetura de conteúdo totalmente baseada em dados."
+      },
+      "antonio-costa-workshop": {
+        "name": "Oficina António Costa",
+        "description": "Uma aplicação web personalizada para a empresa António Costa que simplifica as operações de oficina, interações com clientes e gestão interna. Inclui funcionalidades de IA para auxiliar nas tarefas diárias."
+      },
+      "code-pulse-v2": {
+        "name": "Code Pulse v2",
+        "description": "O Code Pulse é uma extensão para acompanhar a sua produtividade e padrões de codificação. Fornece insights inteligentes, tendências, complexidade e muito mais para melhorar os seus padrões e qualidade de código."
+      },
+      "dis-website": {
+        "name": "Website Dynamic Innovative Studio",
+        "description": "Um website para o Dynamic Innovative Studio, uma agência criativa. Construído com React, Tailwind CSS e Firebase, com um design moderno e funcionalidades com inteligência artificial."
+      },
+      "task-titan": {
+        "name": "TaskTitan",
+        "description": "Uma aplicação de gestão de projetos para desktop com design local-first, construída com Electron, Next.js, NestJS, PostgreSQL e TypeScript num monorepo Turborepo."
+      }
+    }
+  },
+  "project": {
+    "openSource": "Código Aberto",
+    "confidential": "Confidencial",
+    "liveDemo": "Demo ao Vivo",
+    "viewRepository": "Código Fonte"
+  },
+  "timeline": {
+    "title": "Experiência Profissional",
+    "present": "Presente",
+    "jobs": {
+      "founder-selkira": {
+        "role": "Fundador e Programador Principal",
+        "organisation": "Selkira Inc",
+        "description": "Idealizei e liderei o desenvolvimento de alguns jogos independente não anunciados, gerindo uma equipa de tamanho médio (35 membros), multidisciplinar de programadores e artistas. Desenhei e projetei sistemas centrais de alto desempenho, utilizando C++ para mecânicas de jogo e gestão de estado. Estabeleci padrões de desenvolvimento da equipa, incluindo fluxos de trabalho automatizados, estratégia de controlo de versões via GitHub e documentação técnica centralizada. Geri as operações de negócio, criação de pitch decks e relações com investidores até ao encerramento das operações por falta de financiamento semente externo."
+      },
+      "web-dev-antonio": {
+        "role": "Programador Web",
+        "organisation": "António Costa",
+        "description": "Concebi e desenvolvi uma presença web profissional para um cliente privado, abrangendo a recolha de requisitos, design de UI/UX, implementação de front-end e deployment. Entreguei um site responsivo e acessível dentro do prazo e do âmbito definidos."
+      }
+    }
+  },
+  "softSkills": {
+    "title": "Competências Interpessoais"
+  },
+  "softSkill": {
+    "situation": "Situação",
+    "task": "Tarefa",
+    "action": "Ação",
+    "result": "Resultado"
+  },
+  "hobbies": {
+    "title": "Passatempos e Interesses",
+    "gaming": {
+      "title": "Jogos",
+      "description": "Explorar mundos virtuais e analisar mecânicas de jogo, o que alimenta a minha paixão pelo desenvolvimento de jogos."
+    },
+    "music": {
+      "title": "Música",
+      "description": "Ouvir uma grande variedade de géneros para manter o foco e a inspiração enquanto programo."
+    },
+    "moto": {
+      "title": "Motociclismo",
+      "description": "Procurar adrenalina na estrada e explorar novos lugares sobre duas rodas."
+    },
+    "coding": {
+      "title": "Programar",
+      "description": "Escrever código como passatempo e aprender constantemente novas tecnologias."
+    }
+  },
+  "contact": {
+    "subtitle": "O Que se Segue?",
+    "title": "Vamos Construir Algo Juntos",
+    "description": "A minha caixa de entrada está sempre aberta. Quer tenha uma dúvida, uma proposta de projeto ou pretenda apenas dizer olá, farei o meu melhor para responder!",
+    "emailBtn": "Dizer Olá",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "programming-languages": "Linguagens de Programação",
+  "automation-scripting": "Automação e Scripting",
+  "frameworks-libraries": "Frameworks e Bibliotecas",
+  "design-styling": "Design e Estilização",
+  "dev-tools": "Ferramentas de Desenvolvimento",
+  "databases-backend": "Bases de Dados e Back-end",
+  "runtimes-environments": "Runtimes e Ambientes",
+  "ides": "IDEs",
+  "agentic-dev-environments": "Ambientes de Desenvolvimento Autónomos",
+  "game-dev": "Desenvolvimento de Jogos",
+  "os": "Sistemas Operativos",
+  "ai-productivity": "IA e Produtividade",
+  "communication": "Comunicação",
+  "problem-solving": "Resolução de Problemas",
+  "teamwork": "Trabalho em Equipa",
+  "adaptability": "Adaptabilidade",
+  "creative-thinking": "Pensamento Criativo",
+  "softSkillsList": {
+    "communication": {
+      "situation": "Um projeto estagnado deixou um cliente frustrado porque não conseguia explicar claramente o que queria.",
+      "task": "Eu precisava de traduzir os seus objetivos de negócio em passos claros que a equipa de desenvolvimento pudesse realmente construir.",
+      "action": "Conduzi uma sessão de planeamento para mapear as suas ideias visualmente, criando um protótipo rápido para que pudessem ver e aprovar a direção o mais cedo possível.",
+      "result": "O projeto recomeçou sem problemas, os ciclos de revisão diminuíram e entregámos exatamente o que o cliente esperava dentro do prazo."
+    },
+    "problem-solving": {
+      "situation": "Dois dias antes de uma apresentação de produto, um grande problema de desempenho desacelerou o projeto para uma velocidade inutilizável.",
+      "task": "Tive de encontrar a causa principal e resolvê-la de forma segura sob um prazo apertado.",
+      "action": "Isolei os estrangulamentos de desempenho tanto no frontend como no backend, otimizei os elementos mais lentos e acelerei o carregamento de dados.",
+      "result": "Os tempos de carregamento do software diminuíram significativamente, a apresentação do produto foi entregue exatamente no prazo agendado e foi muito bem recebida."
+    },
+    "teamwork": {
+      "situation": "A nossa equipa interfuncional estava a trabalhar em diferentes fusos horários com um prazo apertado de três semanas.",
+      "task": "Precisava de coordenar as tarefas para que o trabalho de design, backend e frontend se sincronizassem sem que ninguém ficasse bloqueado.",
+      "action": "Criei um quadro partilhado para um acompanhamento claro, geri atualizações diárias assíncronas e intervim para cobrir tarefas de design.",
+      "result": "Cumprimos o prazo sem cortar atalhos e o cliente gostou do produto final."
+    },
+    "adaptability": {
+      "situation": "A meio do desenvolvimento, o cliente mudou completamente os objetivos do produto e solicitou uma funcionalidade que não era possível com a tecnologia atual.",
+      "task": "Tive de adaptar rapidamente o plano, aprender novas ferramentas e manter o projeto a avançar sem perder o ímpeto.",
+      "action": "Passei um fim de semana a reconstruir as bases do projeto usando a nova abordagem e ajustei o cronograma de forma transparente.",
+      "result": "Concluímos a transição com um atraso mínimo, e a nova configuração tornou o produto final mais rápido e fácil de manter."
+    },
+    "creative-thinking": {
+      "situation": "Um cliente precisava de um catálogo de produtos dinâmico e interativo, mas não tinha orçamento para sistemas ou plataformas de backend complexos.",
+      "task": "Tinha de construir algo polido e fácil para eles atualizarem, sem custos de infraestrutura caros.",
+      "action": "Concebi uma solução leve que gerava o site automaticamente a partir de um único e simples ficheiro de dados.",
+      "result": "O cliente pôde atualizar o seu conteúdo de forma fácil e gratuita, o site carregava instantaneamente e ficaram satisfeitos o suficiente para indicar novos negócios."
+    }
+  },
+  "skills": {
+    "levels": {
+      "proficient": "Proficiente",
+      "familiar": "Familiar",
+      "learning": "A aprender"
+    },
+    "levelLabel": "Nível {level}"
+  }
+}

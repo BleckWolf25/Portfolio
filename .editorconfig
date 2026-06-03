@@ -1,5 +1,9 @@
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs.
+# https://editorconfig.org
 root = true
 
+# Global defaults
 [*]
 charset = utf-8
 indent_style = space
@@ -8,3 +12,18 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 max_line_length = 100
+
+# Vue Single File Components (SFCs), TS, and JS
+[*.{vue,js,ts,jsx,tsx}]
+indent_style = space
+indent_size = 2
+max_line_length = 100
+
+# Markdown (Preserve trailing whitespace for line breaks)
+[*.md]
+trim_trailing_whitespace = false
+
+# Web Assets and Configurations
+[*.{json,json5,yaml,yml,html,css,scss}]
+indent_style = space
+indent_size = 2

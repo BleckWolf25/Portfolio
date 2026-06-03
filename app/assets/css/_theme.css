@@ -1,0 +1,63 @@
+/**
+ * @file _theme.css
+ *
+ * @version 1.0.0
+ * @author Bleckwolf25
+ * @license MIT
+ *
+ * @summary Tailwind 4 theme configurations, variables etc.
+ *
+ * @description
+ * Defines Tailwind 4 theme configurations, mapping CSS variables to
+ * Tailwind utility classes.
+ *
+ * @since 11/05/2026
+ * @updated 12/06/2026
+ */
+/* ---------- TAILWIND THEME ---------- */
+@theme {
+  /* Colours */
+  --color-background: var(--bg-color);
+  --color-accent: var(--accent-color);
+  --color-accent-dim: var(--accent-dim-color);
+  --color-surface: var(--surface-color);
+  --color-border: var(--border-color);
+  --color-text-primary: var(--text-primary-color);
+  --color-text-secondary: var(--text-secondary-color);
+
+  /* Typography */
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* Spacing scale */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  /* Animation */
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-slow: 400ms;
+  --easing-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 30s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes marquee-reverse {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+/**
+ * @file _fonts.css
+ *
+ * @version 1.0.0
+ * @author Bleckwolf25
+ * @license MIT
+ *
+ * @description
+ * Defines the custom fonts used throughout the portfolio.
+ *
+ * @since 10/05/2026
+ * @updated 10/05/2026
+ */
+/* ---------- FONTS ---------- */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-subset.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

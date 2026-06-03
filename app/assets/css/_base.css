@@ -1,0 +1,31 @@
+/**
+ * @file _base.css
+ *
+ * @version 1.0.0
+ * @author Bleckwolf25
+ * @license MIT
+ *
+ * @description
+ * Defines the core HTML and Body styles, and global accessibility styles.
+ *
+ * @since 10/05/2026
+ * @updated 02/06/2026
+ */
+/* ---------- BASE STYLES ---------- */
+html {
+  background-color: var(--color-background);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+}
+
+/* Accessibility: visible focus ring for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}

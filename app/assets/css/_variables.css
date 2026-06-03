@@ -1,0 +1,36 @@
+/**
+ * @file _variables.css
+ *
+ * @version 1.0.0
+ * @author Bleckwolf25
+ * @license MIT
+ *
+ * @description
+ * Defines the core CSS custom properties for color palettes in both light and dark modes.
+ *
+ * @since 11/05/2026
+ * @updated 20/05/2026
+ */
+/* ---------- LIGHT MODE ---------- */
+:root {
+  /* Light Mode Colours */
+  --bg-color: #f8f9fa;
+  --accent-color: var(--theme-accent-light, #007b99);
+  --accent-dim-color: var(--theme-accent-dim-light, rgba(0, 150, 180, 0.15));
+  --surface-color: #ffffff;
+  --border-color: rgba(0, 150, 180, 0.2);
+  --text-primary-color: #1f2937;
+  --text-secondary-color: #4b5563;
+}
+
+/* ---------- DARK MODE ---------- */
+.dark {
+  /* Dark Mode Colours */
+  --bg-color: #0a0a0f;
+  --accent-color: var(--theme-accent-dark, #00d4ff);
+  --accent-dim-color: var(--theme-accent-dim-dark, rgba(0, 212, 255, 0.15));
+  --surface-color: #12121a;
+  --border-color: rgba(0, 212, 255, 0.2);
+  --text-primary-color: #e8e8f0;
+  --text-secondary-color: #8888a8;
+}

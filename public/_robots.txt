@@ -1,0 +1,33 @@
+# robots.txt - João Costa Portfolio
+# https://joaoccosta.vercel.app
+#
+# Policy: open to all legitimate crawlers. AI training scrapers are blocked.
+# Sitemap is declared for search engine discovery.
+
+# Search Engines
+User-agent: *
+Allow: /
+
+# AI Training Scrapers
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Disallow: /
+
+# Google AI (Bard / Vertex)
+User-agent: Google-Extended
+Disallow: /
+
+# Common Crawl (used by many LLM datasets)
+User-agent: CCBot
+Disallow: /
+
+# Anthropic
+User-agent: anthropic-ai
+Disallow: /
+
+# Cohere
+User-agent: cohere-ai
+Disallow: /
+
+# Sitemap
+Sitemap: https://joaoccosta.vercel.app/sitemap.xml

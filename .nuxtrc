@@ -1,0 +1,9 @@
+# Nuxt Configuration overrides
+
+# Enable Nuxt DevTools
+
+devtools.enabled=true
+
+# Disable Nuxt Telemetry
+
+telemetry.enabled=false

@@ -1,0 +1,10 @@
+# Ignore test files
+**/*.test.ts
+**/*.spec.ts
+
+# Ignore markdown files inside app directory
+app/**/*.md
+
+# Ignore temporary or local files
+*.local
+.env.*
