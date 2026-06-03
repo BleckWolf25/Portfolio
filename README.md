@@ -25,7 +25,7 @@ Personal portfolio website built with **Nuxt 4** and **Vue 3**. Used as a living
 
 ### Live Demo
 
-**[https://joaoccosta.vercel.app](https://joaoccosta.vercel.app)**
+**[Portfolio Preview](https://joaocosta-portfolio.vercel.app/)**
 
 ---
 
