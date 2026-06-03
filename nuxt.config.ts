@@ -37,6 +37,9 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   ssr: true,
+  experimental: {
+    payloadExtraction: false,
+  },
 
   // Comprehensive TypeScript configuration
   typescript: {

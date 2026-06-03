@@ -91,9 +91,11 @@ useHead(() => ({
           --theme-accent-dim-light: color-mix(in srgb, ${themeColors.value.light} 15%, transparent);
           --theme-accent-dim-dark: color-mix(in srgb, ${themeColors.value.dark} 15%, transparent);
         }
-        ${showStartup.value ? 'body { overflow: hidden !important; }' : ''}
       `,
     },
   ],
+  bodyAttrs: {
+    class: showStartup.value ? 'overflow-hidden' : '',
+  },
 }))
 </script>
