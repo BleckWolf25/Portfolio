@@ -25,15 +25,12 @@
 import { describe, it, expect } from 'vitest'
 import * as fc from 'fast-check'
 import {
-  projects,
-  type Project,
-  type ProjectStatus,
-  type ProjectCategory,
+  projects
 } from '../../../data/projects'
 
 // ---------- HELPERS
-const VALID_STATUSES: ProjectStatus[] = ['open-source', 'confidential']
-const VALID_CATEGORIES: ProjectCategory[] = ['systems', 'frontend', 'fullstack']
+const VALID_STATUSES = ['open-source', 'confidential'] as const
+const VALID_CATEGORIES = ['systems', 'frontend', 'fullstack'] as const
 
 function isNonEmptyString(value: unknown): value is string {
   return typeof value === 'string' && value.trim().length > 0
@@ -48,7 +45,7 @@ function isValidUrl(value: string): boolean {
   }
 }
 
-function assertProjectInvariants(project: Project): void {
+function assertProjectInvariants(project: typeof projects[number]): void {
   expect(
     isNonEmptyString(project.id),
     `id must be a non-empty string (got: ${JSON.stringify(project.id)})`
@@ -154,12 +151,12 @@ const validUrl = fc
 /**
  * Arbitrary for a well-formed open-source Project (repositoryUrl always defined).
  */
-const openSourceProject: fc.Arbitrary<Project> = fc.record({
+const openSourceProject = fc.record({
   id: nonEmptyString,
   name: nonEmptyString,
   descriptionKey: nonEmptyString,
   techStack: nonEmptyStringArray,
-  status: fc.constant('open-source' as ProjectStatus),
+  status: fc.constant('open-source' as const),
   category: fc.constantFrom(...VALID_CATEGORIES),
   repositoryUrl: validUrl,
 })
@@ -167,12 +164,12 @@ const openSourceProject: fc.Arbitrary<Project> = fc.record({
 /**
  * Arbitrary for a well-formed confidential Project (repositoryUrl always absent).
  */
-const confidentialProject: fc.Arbitrary<Project> = fc.record({
+const confidentialProject = fc.record({
   id: nonEmptyString,
   name: nonEmptyString,
   descriptionKey: nonEmptyString,
   techStack: nonEmptyStringArray,
-  status: fc.constant('confidential' as ProjectStatus),
+  status: fc.constant('confidential' as const),
   category: fc.constantFrom(...VALID_CATEGORIES),
 })
 
