@@ -66,7 +66,9 @@ const globalOptions = {
   },
   stubs: {
     UIcon: true,
+    UDropdown: true,
     UDropdownMenu: true,
+    UNavigationMenu: true,
     ClientOnly: true,
   },
 }
