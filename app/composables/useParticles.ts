@@ -88,6 +88,17 @@ export function createParticle(width: number, height: number): Particle {
 export function useParticles(canvas: Ref<HTMLCanvasElement | null>): void {
   let animationFrameId: number
   let particles: Particle[] = []
+  let accentColorCache = '#00d4ff'
+  let observer: MutationObserver | null = null
+
+  /**
+   * Updates the cached accent color by reading the CSS custom property.
+   */
+  function updateAccentColor() {
+    accentColorCache =
+      getComputedStyle(document.documentElement).getPropertyValue('--accent-color').trim() ||
+      '#00d4ff'
+  }
 
   /**
    * Populate the `particles` array with density-scaled random particles.
@@ -113,12 +124,9 @@ export function useParticles(canvas: Ref<HTMLCanvasElement | null>): void {
    */
   function drawParticles(ctx: CanvasRenderingContext2D, width: number, height: number): void {
     ctx.clearRect(0, 0, width, height)
-    // Read the current accent colour from the CSS custom property so particles
-    // are visible in both dark mode (cyan) and light mode (teal).
-    const accentColor =
-      getComputedStyle(document.documentElement).getPropertyValue('--accent-color').trim() ||
-      '#00d4ff'
-    ctx.fillStyle = accentColor
+    // Use the cached accent colour so particles are visible in both dark mode (cyan)
+    // and light mode (teal), avoiding a costly getComputedStyle call per frame.
+    ctx.fillStyle = accentColorCache
 
     particles.forEach((p) => {
       // Advance position
@@ -161,6 +169,14 @@ export function useParticles(canvas: Ref<HTMLCanvasElement | null>): void {
 
   // Lifecycle: Start the animation when the canvas element is bound
   onMounted(() => {
+    // Initial read and setup observer for dynamic theme changes
+    updateAccentColor()
+    observer = new MutationObserver(updateAccentColor)
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class', 'style'],
+    })
+
     const init = (newCanvas: HTMLCanvasElement) => {
       newCanvas.width = window.innerWidth
       newCanvas.height = window.innerHeight
@@ -185,6 +201,9 @@ export function useParticles(canvas: Ref<HTMLCanvasElement | null>): void {
 
   // Lifecycle: Cancel the animation frame on unmount to prevent memory leaks
   onUnmounted(() => {
+    if (observer) {
+      observer.disconnect()
+    }
     cancelAnimationFrame(animationFrameId)
   })
 }
