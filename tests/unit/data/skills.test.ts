@@ -14,7 +14,7 @@
 // ---------- IMPORTS
 import { describe, it, expect } from 'vitest'
 import * as fc from 'fast-check'
-import { skillCategories, type Skill, type SkillCategory } from '../../../data/skills'
+import { skillCategories } from '../../../data/skills'
 
 // ---------- HELPERS
 const REQUIRED_CATEGORY_IDS = [
