@@ -66,7 +66,7 @@ const globalOptions = {
   },
   stubs: {
     UIcon: true,
-    UDropdown: true,
+    UDropdownMenu: true,
     ClientOnly: true,
   },
 }
@@ -75,7 +75,7 @@ const globalOptions = {
 describe('AppNavbar', () => {
   it('renders all 9 anchor links in desktop nav', () => {
     const wrapper = mount(AppNavbar, { global: globalOptions })
-    const desktopNav = wrapper.find('nav[aria-label="Main Navigation"]')
+    const desktopNav = wrapper.find('nav[aria-label="nav.mainNavigation"]')
     const links = desktopNav.findAll('a')
     expect(links.length).toBe(9)
   })
