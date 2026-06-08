@@ -100,7 +100,7 @@ export default defineNuxtConfig({
     '/favicon.ico': { headers: { 'cache-control': 'public, max-age=86400' } },
 
     // API responses caching if applicable
-    '/api/**': { cors: true, headers: { 'cache-control': 'max-age=60' } },
+    '/api/**': { headers: { 'access-control-allow-origin': 'https://joaoccosta.vercel.app', 'cache-control': 'max-age=60' } },
   },
 
   // Nuxt modules
