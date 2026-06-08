@@ -84,33 +84,38 @@ export function useScrollSpy(sectionIds: string[]): { activeSection: Ref<number>
     return { activeSection }
   }
 
-  // Offsets are now calculated dynamically in handleScroll
+  let cachedOffsets: number[] = []
 
-  function handleScroll(): void {
-    // Dynamically calculate offsets to prevent stale data if the layout changes
-    const currentOffsets = sectionIds.map((id) => {
+  function updateOffsets(): void {
+    cachedOffsets = sectionIds.map((id) => {
       const el = document.getElementById(id)
       return el ? el.offsetTop : 0
     })
+  }
 
+  function handleScroll(): void {
     const isAtBottom =
       window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50
 
-    if (isAtBottom && currentOffsets.length > 0) {
-      activeSection.value = currentOffsets.length - 1
+    if (isAtBottom && cachedOffsets.length > 0) {
+      activeSection.value = cachedOffsets.length - 1
     } else {
-      activeSection.value = getActiveSection(currentOffsets, window.scrollY + 100)
+      activeSection.value = getActiveSection(cachedOffsets, window.scrollY + 100)
     }
   }
 
   onMounted(() => {
+    // Initial offset calculation
+    updateOffsets()
     // Set the initial active section based on the current scroll position
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', updateOffsets, { passive: true })
   })
 
   onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll)
+    window.removeEventListener('resize', updateOffsets)
   })
 
   return { activeSection }
