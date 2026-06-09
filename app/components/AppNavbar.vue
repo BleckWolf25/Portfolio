@@ -151,7 +151,8 @@
  * @updated 02/06/2026
  */
 // ---------- IMPORTS
-import { ref, computed, type Ref } from 'vue'
+
+import { ref, computed } from 'vue'
 import { useScrollSpy } from '~/composables/useScrollSpy'
 import { useI18n } from '#imports'
 
