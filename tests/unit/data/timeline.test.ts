@@ -25,7 +25,7 @@
 // ---------- IMPORTS
 import { describe, it, expect } from 'vitest'
 import * as fc from 'fast-check'
-import { timeline, type TimelineItem } from '../../../data/timeline'
+import { timeline } from '../../../data/timeline'
 
 // ---------- HELPERS
 const EU_DATE_RE = /^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/
@@ -42,7 +42,7 @@ function isValidEndDate(value: string): boolean {
   return value === 'present' || isValidEuDate(value)
 }
 
-function assertTimelineItemInvariants(item: TimelineItem): void {
+function assertTimelineItemInvariants(item: (typeof timeline)[number]): void {
   expect(
     isNonEmptyString(item.id),
     `id must be a non-empty string (got: ${JSON.stringify(item.id)})`
@@ -84,7 +84,7 @@ function parseDateToSortKey(dateStr: string): string {
  * Sort comparator that mirrors the expected TimelineSection sort order:
  * 'present' entries first, then by startDate descending.
  */
-function sortReverseChronological(items: TimelineItem[]): TimelineItem[] {
+function sortReverseChronological(items: (typeof timeline)[number][]): (typeof timeline)[number][] {
   return [...items].sort((a, b) => {
     const aStart = parseDateToSortKey(a.startDate)
     const bStart = parseDateToSortKey(b.startDate)
@@ -168,7 +168,7 @@ const nonEmptyString = fc.string({ minLength: 1 }).filter((s) => s.trim().length
 /**
  * Arbitrary for a well-formed TimelineItem.
  */
-const timelineItemArb: fc.Arbitrary<TimelineItem> = fc.record({
+const timelineItemArb: fc.Arbitrary<(typeof timeline)[number]> = fc.record({
   id: nonEmptyString,
   role: nonEmptyString,
   organisation: nonEmptyString,
