@@ -37,10 +37,6 @@ describe('Build outputs', () => {
     // Check only if the directory exists (to prevent dev-time failures)
     if (targetPath) {
       expect(fs.existsSync(path.join(targetPath, 'index.html'))).toBe(true)
-    } else {
-      console.log(
-        'Skipping build test because neither .output/public nor .vercel/output/static exists yet.'
-      )
     }
   })
 })
