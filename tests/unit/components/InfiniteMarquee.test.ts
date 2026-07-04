@@ -101,26 +101,27 @@ describe('InfiniteMarquee', () => {
       global: globalOptions,
     })
 
-    const firstPill = wrapper.findAll('.skill-pill')[0]
+    const firstPill = wrapper.findAll('.skill-pill')[0]!
+    const vm = wrapper.vm as unknown as { activeTooltipIndex: string | null }
 
     // Initially activeTooltipIndex is null
-    expect((wrapper.vm as any).activeTooltipIndex).toBe(null)
+    expect(vm.activeTooltipIndex).toBe(null)
 
     // Mouse enter triggers tooltip open
     await firstPill.trigger('mouseenter')
-    expect((wrapper.vm as any).activeTooltipIndex).toBe('a-0')
+    expect(vm.activeTooltipIndex).toBe('a-0')
 
     // Mouse leave triggers tooltip close
     await firstPill.trigger('mouseleave')
-    expect((wrapper.vm as any).activeTooltipIndex).toBe(null)
+    expect(vm.activeTooltipIndex).toBe(null)
 
     // Focus triggers tooltip open
     await firstPill.trigger('focus')
-    expect((wrapper.vm as any).activeTooltipIndex).toBe('a-0')
+    expect(vm.activeTooltipIndex).toBe('a-0')
 
     // Blur triggers tooltip close
     await firstPill.trigger('blur')
-    expect((wrapper.vm as any).activeTooltipIndex).toBe(null)
+    expect(vm.activeTooltipIndex).toBe(null)
   })
 
   it('updates tooltip state and calls focus on click', async () => {
@@ -131,15 +132,16 @@ describe('InfiniteMarquee', () => {
       global: globalOptions,
     })
 
-    const firstPill = wrapper.findAll('.skill-pill')[0]
+    const firstPill = wrapper.findAll('.skill-pill')[0]!
+    const vm = wrapper.vm as unknown as { activeTooltipIndex: string | null }
 
     // Setup a spy on the element's focus method
-    const focusSpy = vi.spyOn(firstPill.element, 'focus')
+    const focusSpy = vi.spyOn(firstPill.element as HTMLElement, 'focus')
 
     // Click triggers both updating state and focusing element
     await firstPill.trigger('click')
 
     expect(focusSpy).toHaveBeenCalled()
-    expect((wrapper.vm as any).activeTooltipIndex).toBe('a-0')
+    expect(vm.activeTooltipIndex).toBe('a-0')
   })
 })

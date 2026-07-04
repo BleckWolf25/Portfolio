@@ -14,7 +14,7 @@
 // ---------- IMPORTS
 import { describe, it, expect } from 'vitest'
 import * as fc from 'fast-check'
-import { skillCategories } from '../../../data/skills'
+import { skillCategories, type Skill, type SkillCategory } from '../../../data/skills'
 
 // ---------- HELPERS
 const REQUIRED_CATEGORY_IDS = [
@@ -225,7 +225,7 @@ describe('SkillCategory interface - property-based', () => {
   it('every skill in a category has a non-empty name', () => {
     fc.assert(
       fc.property(skillCategoryArb, (category) => {
-        return category.skills.every((skill) => isNonEmptyString(skill.name))
+        return category.skills.every((skill: Skill) => isNonEmptyString(skill.name))
       }),
       { numRuns: 100 }
     )
@@ -234,7 +234,7 @@ describe('SkillCategory interface - property-based', () => {
   it('skill icon, when present, is always a non-empty string', () => {
     fc.assert(
       fc.property(skillCategoryArb, (category) => {
-        return category.skills.every((skill) => {
+        return category.skills.every((skill: Skill) => {
           if (skill.icon !== undefined) {
             return isNonEmptyString(skill.icon)
           }

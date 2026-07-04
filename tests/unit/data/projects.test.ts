@@ -24,9 +24,7 @@
 // ---------- IMPORTS
 import { describe, it, expect } from 'vitest'
 import * as fc from 'fast-check'
-import {
-  projects
-} from '../../../data/projects'
+import { projects } from '../../../data/projects'
 
 // ---------- HELPERS
 const VALID_STATUSES = ['open-source', 'confidential'] as const
@@ -45,7 +43,7 @@ function isValidUrl(value: string): boolean {
   }
 }
 
-function assertProjectInvariants(project: typeof projects[number]): void {
+function assertProjectInvariants(project: (typeof projects)[number]): void {
   expect(
     isNonEmptyString(project.id),
     `id must be a non-empty string (got: ${JSON.stringify(project.id)})`
@@ -202,7 +200,10 @@ describe('Project interface - property-based (Property 13)', () => {
   it('confidential projects never have a repositoryUrl', () => {
     fc.assert(
       fc.property(confidentialProject, (project) => {
-        return project.status === 'confidential' && project.repositoryUrl === undefined
+        return (
+          project.status === 'confidential' &&
+          (project as unknown as { repositoryUrl?: string }).repositoryUrl === undefined
+        )
       }),
       { numRuns: 100 }
     )
@@ -219,7 +220,8 @@ describe('Project interface - property-based (Property 13)', () => {
 
     fc.assert(
       fc.property(anyProject, (project) => {
-        const hasUrl = project.repositoryUrl !== undefined
+        const hasUrl =
+          (project as unknown as { repositoryUrl?: string }).repositoryUrl !== undefined
         const isOpenSource = project.status === 'open-source'
         // iff: hasUrl ↔ isOpenSource
         return hasUrl === isOpenSource
