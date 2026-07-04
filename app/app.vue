@@ -15,7 +15,7 @@
     * canvas particles.
     *
     * @since 01/05/2026
-    * @updated 02/06/2026
+    * @updated 04/07/2026
     */
 
     Renders the persistent layout:
@@ -43,15 +43,23 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import StartupScene from '~/components/ui/StartupScene.vue'
 
 const seenIntroCookie = useCookie('seen-intro')
-const showStartup = ref(!seenIntroCookie.value)
+const showStartup = ref(false)
+
+onMounted(() => {
+  if (!seenIntroCookie.value) {
+    showStartup.value = true
+    document.body.classList.add('overflow-hidden')
+  }
+})
 
 function onStartupFinished() {
   seenIntroCookie.value = 'true'
   showStartup.value = false
+  document.body.classList.remove('overflow-hidden')
 }
 
 const appConfig = useAppConfig()
@@ -96,8 +104,5 @@ useHead({
       ),
     },
   ],
-  bodyAttrs: {
-    class: computed(() => (showStartup.value ? 'overflow-hidden' : '')),
-  },
 })
 </script>

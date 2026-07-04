@@ -86,6 +86,18 @@
       "task-titan": {
         "name": "TaskTitan",
         "description": "A project management desktop application with local-first design, built using Electron, Next.js, NestJS, PostgreSQL, and TypeScript in a Turborepo monorepo."
+      },
+      "aitoolkit": {
+        "name": "AI Toolkit",
+        "description": "A systemic prompt engineering and evaluation framework. Features advanced meta-cognitive agent personas, few-shot dynamic context injection, schema-validated test assertions, and an interactive CLI playground powered by LiteLLM."
+      },
+      "aetasferrealib": {
+        "name": "Aetas Ferrea Lib",
+        "description": "Aetas Ferrea Lib is a Minecraft mod that makes minecraft mechanics more realistic and immersive for a medieval modpack, with compatability to other mods, but does not require any other mods to work."
+      },
+      "aetasferrea": {
+        "name": "Aetas Ferrea",
+        "description": "An unforgiving iron age. Experience a brutal and photorealistic survival simulation, featuring thirst mechanics, localized injuries, and strict inventory limits in a hardcore medieval world. All configured and compatible to run at +60FPS on modern PCs."
       }
     }
   },

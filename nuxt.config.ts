@@ -281,7 +281,7 @@ export default defineNuxtConfig({
     devtools: true,
     features: {
       hydration: true,
-      lazyLoad: true,
+      lazyLoad: false,
       webVitals: true,
       thirdPartyScripts: false,
       htmlValidate: true,
@@ -310,7 +310,7 @@ export default defineNuxtConfig({
       drop: process.env.NODE_ENV === 'production' ? ['console', 'debugger'] : [],
     },
     optimizeDeps: {
-      include: ['animejs'],
+      include: ['animejs', '@unhead/schema-org/vue'],
     },
   },
 })

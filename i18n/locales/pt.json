@@ -49,7 +49,7 @@
     },
     "gameDev": {
       "title": "Desenvolvimento de Jogos",
-      "description": "Motores personalizados e protótipos de jogos com ênfase no desempenho, arquitetura ECS e lógica imersiva."
+      "description": "Engines personalizados e protótipos de jogos com ênfase no desempenho, arquitetura ECS e lógica imersiva."
     }
   },
   "technologies": {
@@ -59,7 +59,7 @@
   "projects": {
     "title": "Projetos em Destaque",
     "filterAll": "Todos",
-    "filterSystems": "Sistemas e Motores",
+    "filterSystems": "Sistemas e Engines",
     "filterFrontend": "Frontend e Web",
     "filterFullstack": "Fullstack e Backend",
     "list": {
@@ -86,13 +86,25 @@
       "task-titan": {
         "name": "TaskTitan",
         "description": "Uma aplicação de gestão de projetos para desktop com design local-first, construída com Electron, Next.js, NestJS, PostgreSQL e TypeScript num monorepo Turborepo."
+      },
+      "aitoolkit": {
+        "name": "AI Toolkit",
+        "description": "Um framework sistémico de engenharia e avaliação de prompts. Inclui personas avançadas de agentes meta-cognitivos, injeção dinâmica de contexto few-shot, validação de esquemas para testes e um playground CLI interativo feito com LiteLLM."
+      },
+      "aetasferrealib": {
+        "name": "Aetas Ferrea Lib",
+        "description": "Aetas Ferrea Lib é um mod de Minecraft que torna as mecânicas do jogo mais realistas e imersivas para um modpack medieval, com compatibilidade com outros mods, mas não requer nenhum outro mod para funcionar."
+      },
+      "aetasferrea": {
+        "name": "Aetas Ferrea",
+        "description": "Uma implacável idade do ferro. Experimente uma simulação de sobrevivência brutal e fotorrealista, apresentando mecânicas de sede, lesões localizadas e limites estritos de inventário num mundo medieval hardcore. Tudo configurado e compatível para correr a +60FPS em PCs modernos."
       }
     }
   },
   "project": {
     "openSource": "Código Aberto",
     "confidential": "Confidencial",
-    "liveDemo": "Demo ao Vivo",
+    "liveDemo": "Demo",
     "viewRepository": "Código Fonte"
   },
   "timeline": {

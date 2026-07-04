@@ -40,10 +40,10 @@
  * - Shrinks and fades out the entire screen upon completion.
  *
  * @since 02/06/2026
- * @updated 02/06/2026
+ * @updated 04/07/2026
  */
 // ---------- IMPORTS
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { createTimeline, animate } from 'animejs'
 
 // ---------- EMITS
@@ -129,5 +129,9 @@ onMounted(() => {
       emit('finished')
     })
   })
+})
+
+onUnmounted(() => {
+  document.body.classList.remove('overflow-hidden')
 })
 </script>

@@ -23,3 +23,5 @@ peerDependencyRules:
   allowedVersions:
     vue-router: '*'
     '@tiptap/y-tiptap': '*'
+overrides:
+  esbuild: '>=0.28.1'
