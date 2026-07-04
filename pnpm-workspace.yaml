@@ -25,3 +25,4 @@ peerDependencyRules:
     '@tiptap/y-tiptap': '*'
 overrides:
   esbuild: '>=0.28.1'
+  h3: '^1.15.11'
