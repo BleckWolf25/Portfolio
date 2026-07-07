@@ -184,6 +184,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'JetBrains', icon: 'i-devicon-jetbrains', level: 'Familiar' },
       { name: 'VS Code', icon: 'i-devicon-vscode', level: 'Proficient' },
+      { name: 'VS Codium', icon: 'i-devicon-vscodium', level: 'Proficient' },
       { name: 'Visual Studio', icon: 'i-devicon-visualstudio', level: 'Familiar' },
       { name: 'Replit IDE', icon: 'i-devicon-replit', level: 'Familiar' },
       { name: 'Zed', icon: 'i-devicon-zed', level: 'Proficient' },
@@ -195,6 +196,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'Antigravity IDE', icon: 'i-devicon-google', level: 'Proficient' },
       { name: 'Cursor', icon: 'i-devicon-cursor', level: 'Familiar' },
+      { name: 'Devin', icon: 'simple-icons-robotframework', level: 'Familiar' },
       { name: 'Kiro', icon: 'i-devicon-amazonwebservices', level: 'Proficient' },
     ],
   },
