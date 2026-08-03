@@ -14,7 +14,7 @@
     <div ref="contactRef" class="w-full max-w-2xl mx-auto px-6 lg:px-8">
       <!-- Section label -->
       <p class="contact-element text-accent font-mono mb-4 text-sm tracking-widest uppercase">
-        08. {{ $t('contact.subtitle') }}
+        07. {{ $t('contact.subtitle') }}
       </p>
 
       <!-- Section heading -->
@@ -76,7 +76,7 @@
  * from the data module and can be tested in isolation.
  *
  * @since 22/05/2026
- * @updated 22/05/2026
+ * @updated 03/08/2026
  */
 // ---------- IMPORTS
 import { ref } from 'vue'

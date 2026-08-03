@@ -1,15 +1,27 @@
 /**
  * @file StartupScene.test.ts
  *
- * @summary Unit tests for the StartupScene UI component.
+ * @version 1.0.0
+ * @author Bleckwolf25
+ * @license MIT
+ *
+ * @summary Unit tests for the StartupScene component.
+ *
+ * @description
+ * Tests for the StartupScene component. Covers:
+ * - Initial rendering of the overlay and characters
+ * - Completion of the animation, hiding the overlay, and emitting the 'finished' event
+ *
+ * @since 30/05/2026
+ * @updated 02/06/2026
  */
-
+// ---------- IMPORTS
 import { describe, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import StartupScene from '../../../app/components/ui/StartupScene.vue'
 import { nextTick } from 'vue'
 
-// Mock animejs
+// ---------- TESTS
 vi.mock('animejs', () => {
   return {
     createTimeline: vi.fn(() => ({

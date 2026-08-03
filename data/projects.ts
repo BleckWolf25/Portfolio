@@ -13,7 +13,7 @@
  * be localised without modifying this module.
  *
  * @since 12/05/2026
- * @updated 27/05/2026
+ * @updated 03/08/2026
  */
 // ---------- TYPES
 /**
@@ -77,83 +77,6 @@ export interface Project {
  */
 export const projects: Project[] = [
   {
-    id: 'great-calculator',
-    name: 'The Great Calculator v3',
-    descriptionKey: 'projects.list.great-calculator.description',
-    techStack: [
-      'Vite',
-      'HTML5',
-      'CSS3',
-      'JavaScript',
-      'npm',
-      'Vercel',
-      'EditorConfig',
-      'Prettier',
-      'ESLint',
-    ],
-    status: 'open-source',
-    category: 'frontend',
-    liveUrl: 'https://thegreatcalculator.vercel.app/',
-    repositoryUrl: 'https://github.com/BleckWolf25/TheGreatCalculator',
-  },
-
-  {
-    id: 'portfolio-v3',
-    name: 'Portfolio Website v3',
-    descriptionKey: 'projects.list.portfolio-v3.description',
-    techStack: [
-      'Nuxt',
-      'Vue 3',
-      'Tailwind CSS',
-      'TypeScript',
-      'Node.js',
-      'pnpm',
-      'Vercel',
-      'Prettier',
-      'ESLint',
-      'Git',
-      'EditorConfig',
-      'CSS3',
-    ],
-    status: 'open-source',
-    category: 'frontend',
-    liveUrl: 'https://joaoccosta.vercel.app',
-    repositoryUrl: 'https://github.com/BleckWolf25/portfolio',
-  },
-
-  {
-    id: 'antonio-costa-workshop',
-    name: 'Antonio Costa Workshop Software',
-    descriptionKey: 'projects.list.antonio-costa-workshop.description',
-    techStack: [
-      'Angular',
-      'Rust',
-      'Typescript',
-      'HTML',
-      'CSS',
-      'Tauri',
-      'pnpm',
-      'Prettier',
-      'ESLint',
-      'Git',
-      'Docker',
-      'EditorConfig',
-    ],
-    status: 'confidential',
-    category: 'fullstack',
-  },
-
-  {
-    id: 'code-pulse-v2',
-    name: 'Code Pulse v2',
-    descriptionKey: 'projects.list.code-pulse-v2.description',
-    techStack: ['TypeScript', 'EditorConfig', 'Git', 'Prettier', 'ESLint'],
-    status: 'open-source',
-    category: 'fullstack',
-    repositoryUrl: 'https://github.com/BleckWolf25/CodePulse',
-  },
-
-  {
     id: 'task-titan',
     name: 'TaskTitan',
     descriptionKey: 'projects.list.task-titan.description',
@@ -168,44 +91,101 @@ export const projects: Project[] = [
       'Docker',
       'Node.js',
       'Express.js',
-      'ESLint',
-      'Prettier',
       'TypeScript',
       'Turborepo',
-      'EditorConfig',
-      'Git',
     ],
     status: 'confidential',
     category: 'systems',
   },
 
   {
+    id: 'antonio-costa-workshop',
+    name: 'Antonio Costa Workshop Software',
+    descriptionKey: 'projects.list.antonio-costa-workshop.description',
+    techStack: ['Angular', 'Rust', 'Typescript', 'HTML', 'CSS', 'Tauri', 'Docker'],
+    status: 'confidential',
+    category: 'fullstack',
+  },
+
+  {
     id: 'aitoolkit',
     name: 'AI Toolkit',
     descriptionKey: 'projects.list.aitoolkit.description',
-    techStack: ['Python', 'LiteLLM', 'Git', 'EditorConfig'],
+    techStack: ['Python', 'LiteLLM'],
     status: 'open-source',
     category: 'systems',
     repositoryUrl: 'https://github.com/BleckWolf25/AIToolkit',
   },
 
   {
-    id: 'aetasferrealib',
-    name: 'Aetas Ferrea Lib',
-    descriptionKey: 'projects.list.aetasferrealib.description',
-    techStack: ['Java', 'Minecraft Forge', 'Git', 'EditorConfig', 'Gradle'],
+    id: 'code-pulse-v2',
+    name: 'Code Pulse v2',
+    descriptionKey: 'projects.list.code-pulse-v2.description',
+    techStack: ['TypeScript', 'VSCode'],
     status: 'open-source',
     category: 'fullstack',
-    repositoryUrl: 'https://github.com/BleckWolf25/AetasFerreaMod',
+    repositoryUrl: 'https://github.com/BleckWolf25/CodePulse',
   },
 
   {
-    id: 'aetasferrea',
-    name: 'Aetas Ferrea',
-    descriptionKey: 'projects.list.aetasferrea.description',
-    techStack: ['Java', 'Minecraft Forge', 'Aetas Ferrea Lib', 'Git', 'packwiz'],
+    id: 'portfolio-v3',
+    name: 'Portfolio Website v3',
+    descriptionKey: 'projects.list.portfolio-v3.description',
+    techStack: ['Nuxt', 'Vue 3', 'Tailwind CSS', 'TypeScript', 'Vercel', 'CSS3'],
+    status: 'open-source',
+    category: 'frontend',
+    liveUrl: 'https://joaoccosta.vercel.app',
+    repositoryUrl: 'https://github.com/BleckWolf25/portfolio',
+  },
+
+  {
+    id: 'daily-dash',
+    name: 'DailyDash',
+    descriptionKey: 'projects.list.daily-dash.description',
+    techStack: ['JavaFX', 'Java', 'Gradle', 'Desktop'],
     status: 'open-source',
     category: 'systems',
-    repositoryUrl: 'https://github.com/BleckWolf25/Aetas-Ferrea',
+    repositoryUrl: 'https://github.com/BleckWolf25/DailyDash',
+  },
+
+  {
+    id: 'freechatium',
+    name: 'FreeChatium',
+    descriptionKey: 'projects.list.freechatium.description',
+    techStack: ['TypeScript', 'Puter.js', 'OpenRouter', 'PWA', 'Edge AI'],
+    status: 'open-source',
+    category: 'fullstack',
+    repositoryUrl: 'https://github.com/BleckWolf25/FreeChatium',
+  },
+
+  {
+    id: 'evara-ui',
+    name: 'Evara-UI',
+    descriptionKey: 'projects.list.evara-ui.description',
+    techStack: ['TypeScript', 'UI Library', 'Design System', 'Accessibility', 'SEO'],
+    status: 'open-source',
+    category: 'frontend',
+    repositoryUrl: 'https://github.com/BleckWolf25/Evara-UI',
+  },
+
+  {
+    id: 'beaudyshell',
+    name: 'BeaudyShell',
+    descriptionKey: 'projects.list.beaudyshell.description',
+    techStack: ['Rust', 'CLI', 'REPL', 'Shell', 'Terminal UI'],
+    status: 'open-source',
+    category: 'systems',
+    repositoryUrl: 'https://github.com/BleckWolf25/BeaudyShell',
+  },
+
+  {
+    id: 'great-calculator',
+    name: 'The Great Calculator v4',
+    descriptionKey: 'projects.list.great-calculator.description',
+    techStack: ['Vite', 'HTML5', 'CSS3', 'JavaScript', 'Vercel'],
+    status: 'open-source',
+    category: 'frontend',
+    liveUrl: 'https://thegreatcalculator.vercel.app/',
+    repositoryUrl: 'https://github.com/BleckWolf25/TheGreatCalculator',
   },
 ]

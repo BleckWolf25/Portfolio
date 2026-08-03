@@ -148,10 +148,9 @@
  * - A responsive mobile menu that collapses on desktop breakpoints.
  *
  * @since 10/05/2026
- * @updated 02/06/2026
+ * @updated 03/08/2026
  */
 // ---------- IMPORTS
-
 import { ref, computed } from 'vue'
 import { useScrollSpy } from '~/composables/useScrollSpy'
 import { useI18n } from '#imports'
@@ -240,7 +239,6 @@ const sections = [
   { id: 'technologies', labelKey: 'nav.tech' },
   { id: 'projects', labelKey: 'nav.projects' },
   { id: 'timeline', labelKey: 'nav.timeline' },
-  { id: 'soft-skills', labelKey: 'nav.skills' },
   { id: 'hobbies', labelKey: 'nav.hobbies' },
   { id: 'contact', labelKey: 'nav.contact' },
 ]

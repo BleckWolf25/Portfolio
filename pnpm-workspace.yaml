@@ -5,13 +5,14 @@ allowBuilds:
   unrs-resolver: true
   vue-demi: true
 minimumReleaseAgeExclude:
-  - '@iconify-json/simple-icons@1.2.85'
+  - '@iconify-json/simple-icons@1.2.85 || 1.2.93'
   - '@nuxt/kit@4.4.7'
   - '@nuxt/nitro-server@4.4.7'
   - '@nuxt/schema@4.4.7'
   - '@nuxt/vite-builder@4.4.7'
   - nuxt@4.4.7
   - vue-eslint-parser@10.4.1
+  - '@iconify-json/logos@1.2.12'
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - esbuild
