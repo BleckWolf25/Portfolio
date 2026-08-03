@@ -102,6 +102,10 @@ cd portfolio
 
 # Install dependencies
 pnpm install
+
+# Generate Nuxt OG image secret
+npx nuxt-og-image generate-secret
+
 ```
 
 ### Development

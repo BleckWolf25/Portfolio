@@ -8,21 +8,23 @@
  * @summary Unit tests for the InfiniteMarquee component.
  *
  * @description
- * Unit tests for the InfiniteMarquee component. Covers:
- * - Rendering: Checks if the correct number of skill pills are rendered (twice the array length).
- * - Prop Binding: Checks if `speed`, `direction`, and `pauseOnHover` map to CSS/classes correctly.
- * - Interactions: Checks if clicking and hovering badges correctly update tooltip state.
+ * Unit tests for the InfiniteMarquee component.
+ * Verifies that the component correctly renders the double skills list,
+ * binds speed and direction props to CSS custom properties, and conditionally adds the pause-on-hover class based on the prop value.
+ *
+ * @since 30/05/2026
+ * @updated 02/06/2026
  */
 // ---------- IMPORTS
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import InfiniteMarquee from '../../../app/components/ui/InfiniteMarquee.vue'
 import type { Skill } from '../../../data/skills'
 
 // ---------- DATA
 const mockSkills: Skill[] = [
-  { name: 'TypeScript', icon: 'i-devicon-typescript', level: 'Proficient' },
-  { name: 'Vue.js', icon: 'i-devicon-vuejs', level: 'Proficient' },
+  { name: 'TypeScript', icon: 'i-devicon-typescript' },
+  { name: 'Vue.js', icon: 'i-devicon-vuejs' },
 ]
 
 // ---------- HELPERS
@@ -32,10 +34,6 @@ const globalOptions = {
   },
   stubs: {
     UIcon: true,
-    UTooltip: {
-      template: `<div class="mock-tooltip"><slot /></div>`,
-      props: ['open', 'text', 'delayDuration'],
-    },
   },
 }
 
@@ -91,57 +89,5 @@ describe('InfiniteMarquee', () => {
       global: globalOptions,
     })
     expect(wrapperWithoutPause.find('.marquee-track').classes()).not.toContain('pause-on-hover')
-  })
-
-  it('updates tooltip state on hover and focus', async () => {
-    const wrapper = mount(InfiniteMarquee, {
-      props: {
-        skills: mockSkills,
-      },
-      global: globalOptions,
-    })
-
-    const firstPill = wrapper.findAll('.skill-pill')[0]!
-    const vm = wrapper.vm as unknown as { activeTooltipIndex: string | null }
-
-    // Initially activeTooltipIndex is null
-    expect(vm.activeTooltipIndex).toBe(null)
-
-    // Mouse enter triggers tooltip open
-    await firstPill.trigger('mouseenter')
-    expect(vm.activeTooltipIndex).toBe('a-0')
-
-    // Mouse leave triggers tooltip close
-    await firstPill.trigger('mouseleave')
-    expect(vm.activeTooltipIndex).toBe(null)
-
-    // Focus triggers tooltip open
-    await firstPill.trigger('focus')
-    expect(vm.activeTooltipIndex).toBe('a-0')
-
-    // Blur triggers tooltip close
-    await firstPill.trigger('blur')
-    expect(vm.activeTooltipIndex).toBe(null)
-  })
-
-  it('updates tooltip state and calls focus on click', async () => {
-    const wrapper = mount(InfiniteMarquee, {
-      props: {
-        skills: mockSkills,
-      },
-      global: globalOptions,
-    })
-
-    const firstPill = wrapper.findAll('.skill-pill')[0]!
-    const vm = wrapper.vm as unknown as { activeTooltipIndex: string | null }
-
-    // Setup a spy on the element's focus method
-    const focusSpy = vi.spyOn(firstPill.element as HTMLElement, 'focus')
-
-    // Click triggers both updating state and focusing element
-    await firstPill.trigger('click')
-
-    expect(focusSpy).toHaveBeenCalled()
-    expect(vm.activeTooltipIndex).toBe('a-0')
   })
 })

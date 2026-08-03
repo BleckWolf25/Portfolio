@@ -46,10 +46,7 @@ function assertSkillInvariants(skill: Skill): void {
       `skill.icon must be a non-empty string when defined (got: ${JSON.stringify(skill.icon)})`
     ).toBe(true)
   }
-  expect(
-    ['Proficient', 'Familiar', 'Learning'].includes(skill.level),
-    `skill.level must be one of Proficient, Familiar, or Learning (got: ${skill.level})`
-  ).toBe(true)
+  expect(skill).not.toHaveProperty('level')
 }
 
 function assertSkillCategoryInvariants(category: SkillCategory): void {
@@ -191,9 +188,8 @@ const skillArb: fc.Arbitrary<Skill> = fc.record(
   {
     name: nonEmptyString,
     icon: nonEmptyString,
-    level: fc.constantFrom('Proficient', 'Familiar', 'Learning' as const),
   },
-  { requiredKeys: ['name', 'level'] }
+  { requiredKeys: ['name'] }
 )
 
 const skillCategoryArb: fc.Arbitrary<SkillCategory> = fc.record({

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-this-alias */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * @file useScrollAnimation.test.ts
  *
@@ -27,7 +29,10 @@ import type { ScrollAnimationOptions } from '../../../app/composables/useScrollA
  * Creates a minimal Vue component that calls useScrollAnimation() and exposes
  * the target ref so tests can inspect it.
  */
-function makeTestComponent(options?: ScrollAnimationOptions, templateHtml = '<div ref="target"></div>') {
+function makeTestComponent(
+  options?: ScrollAnimationOptions,
+  templateHtml = '<div ref="target"></div>'
+) {
   return defineComponent({
     setup() {
       const target = ref<HTMLElement | null>(null)
@@ -109,7 +114,9 @@ describe('useScrollAnimation', () => {
     // @ts-expect-error - intentionally deleting for test
     delete window.IntersectionObserver
 
-    const wrapper = mount(makeTestComponent(undefined, '<div ref="target" style="opacity: 0;"></div>'))
+    const wrapper = mount(
+      makeTestComponent(undefined, '<div ref="target" style="opacity: 0;"></div>')
+    )
     const el = wrapper.vm.target as HTMLElement
     expect(el.style.opacity).toBe('1')
     expect(el.style.transform).toBe('none')
@@ -125,12 +132,17 @@ describe('useScrollAnimation', () => {
     // @ts-expect-error - intentionally deleting for test
     delete window.IntersectionObserver
 
-    const wrapper = mount(makeTestComponent({ staggerElements: '.child' }, `
+    const wrapper = mount(
+      makeTestComponent(
+        { staggerElements: '.child' },
+        `
       <div ref="target">
         <div class="child" style="opacity: 0;"></div>
         <div class="child" style="opacity: 0;"></div>
       </div>
-    `))
+    `
+      )
+    )
 
     const children = wrapper.vm.target!.querySelectorAll('.child')
     children.forEach((child) => {
@@ -161,11 +173,13 @@ describe('useScrollAnimation', () => {
   })
 
   it('applies custom options (delay, duration, translateY)', () => {
-    const wrapper = mount(makeTestComponent({
-      delay: 200,
-      duration: 1000,
-      translateY: 50,
-    }))
+    const wrapper = mount(
+      makeTestComponent({
+        delay: 200,
+        duration: 1000,
+        translateY: 50,
+      })
+    )
     const el = wrapper.vm.target as HTMLElement
 
     expect(el.style.transform).toBe('translateY(50px)')
@@ -176,9 +190,11 @@ describe('useScrollAnimation', () => {
   })
 
   it('applies custom options (translateY as string)', () => {
-    const wrapper = mount(makeTestComponent({
-      translateY: '2rem',
-    }))
+    const wrapper = mount(
+      makeTestComponent({
+        translateY: '2rem',
+      })
+    )
     const el = wrapper.vm.target as HTMLElement
 
     expect(el.style.transform).toBe('translateY(2rempx)') // Wait, the component blindly appends px? Let's check the implementation.
@@ -193,13 +209,18 @@ describe('useScrollAnimation', () => {
   })
 
   it('applies stagger to elements', () => {
-    const wrapper = mount(makeTestComponent({ staggerElements: '.child', stagger: 100, delay: 50 }, `
+    const wrapper = mount(
+      makeTestComponent(
+        { staggerElements: '.child', stagger: 100, delay: 50 },
+        `
       <div ref="target">
         <div class="child"></div>
         <div class="child"></div>
         <div class="child"></div>
       </div>
-    `))
+    `
+      )
+    )
 
     const children = wrapper.vm.target!.querySelectorAll('.child')
     expect((children[0] as HTMLElement).style.transitionDelay).toBe('50ms') // 50 + 0 * 100
@@ -273,14 +294,13 @@ describe('useScrollAnimation', () => {
   it('handles unmount properly if observer is null', () => {
     // If observer is not created (e.g. because fallback was used)
     const originalObserver = window.IntersectionObserver
-    // @ts-expect-error
-    delete window.IntersectionObserver
+    delete (window as { IntersectionObserver?: unknown }).IntersectionObserver
 
     const wrapper = mount(makeTestComponent())
     wrapper.unmount()
 
     // Should not throw or anything
-    window.IntersectionObserver = originalObserver
+    ;(window as { IntersectionObserver?: unknown }).IntersectionObserver = originalObserver
     expect(true).toBe(true)
   })
 })

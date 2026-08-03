@@ -15,7 +15,7 @@
  * i18n and scroll-spy are mocked to isolate the component under test.
  *
  * @since 30/05/2026
- * @updated 02/06/2026
+ * @updated 03/08/2026
  */
 // ---------- IMPORTS
 import { describe, it, expect, vi } from 'vitest'
@@ -75,11 +75,11 @@ const globalOptions = {
 
 // ---------- TESTS
 describe('AppNavbar', () => {
-  it('renders all 9 anchor links in desktop nav', () => {
+  it('renders all 8 anchor links in desktop nav', () => {
     const wrapper = mount(AppNavbar, { global: globalOptions })
     const desktopNav = wrapper.find('nav[aria-label="nav.mainNavigation"]')
     const links = desktopNav.findAll('a')
-    expect(links.length).toBe(9)
+    expect(links.length).toBe(8)
   })
 
   it('toggles language when language button is clicked', async () => {

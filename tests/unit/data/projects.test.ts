@@ -111,6 +111,22 @@ describe('projects array - example-based', () => {
     expect(uniqueIds.size).toBe(ids.length)
   })
 
+  it('includes the requested flagship projects and excludes the minecraft entries', () => {
+    const ids = projects.map((project) => project.id)
+
+    expect(ids).toEqual(
+      expect.arrayContaining([
+        'daily-dash',
+        'freechatium',
+        'evara-ui',
+        'beaudyshell',
+        'great-calculator',
+      ])
+    )
+    expect(ids).not.toContain('aetasferrealib')
+    expect(ids).not.toContain('aetasferrea')
+  })
+
   it('open-source projects have a repositoryUrl', () => {
     const openSource = projects.filter((p) => p.status === 'open-source')
     for (const project of openSource) {

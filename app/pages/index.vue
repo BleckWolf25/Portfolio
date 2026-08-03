@@ -13,7 +13,6 @@
     <TechnologiesSection :categories="skillCategories" />
     <ProjectsSection :projects="projects" />
     <TimelineSection :entries="timeline" />
-    <SoftSkillsSection :skills="softSkills" />
     <HobbiesSection />
     <ContactSection :contact="contact" />
   </div>
@@ -40,7 +39,6 @@
 import { skillCategories } from '~~/data/skills'
 import { projects } from '~~/data/projects'
 import { timeline } from '~~/data/timeline'
-import { softSkills } from '~~/data/softSkills'
 import { contact } from '~~/data/contact'
 
 // ---------- COMPONENT IMPORTS
@@ -50,7 +48,6 @@ import WhatIBuildSection from '~/components/sections/WhatIBuildSection.vue'
 import TechnologiesSection from '~/components/sections/TechnologiesSection.vue'
 import ProjectsSection from '~/components/sections/ProjectsSection.vue'
 import TimelineSection from '~/components/sections/TimelineSection.vue'
-import SoftSkillsSection from '~/components/sections/SoftSkillsSection.vue'
 import HobbiesSection from '~/components/sections/HobbiesSection.vue'
 import ContactSection from '~/components/sections/ContactSection.vue'
 </script>

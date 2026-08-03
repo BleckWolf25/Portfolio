@@ -17,7 +17,7 @@
  * render time, so the order here is unimportant.
  *
  * @since 12/05/2026
- * @updated 27/05/2026
+ * @updated 03/08/2026
  */
 // ---------- INTERFACES
 /**
@@ -63,7 +63,7 @@ export const timeline: TimelineItem[] = [
     startDate: '23/08/2023',
     endDate: '01/01/2026',
     description:
-      'Envisioned and spearheaded the development of few unannounced indie game projects, managing a medium-sized (35 members), multi-disciplinary team of developers and asset artists. Designed and architected high-performance core systems, utilizing C++ for gameplay mechanics and state management. Established team development standards, including automated workflows, version control strategy via GitHub, and centralized technical documentation. Handled business operations, pitch deck creation, and investor relations until winding down operations due to lack of external seed funding.',
+      'Founded and led systems development for indie game projects, managing technical architecture and team workflows. Designed core gameplay mechanics and state management using C++ and modern tooling. Established Git version control standards, CI workflows, and technical documentation to keep multi-member development organized.',
   },
   {
     id: 'web-dev-antonio',
@@ -72,6 +72,6 @@ export const timeline: TimelineItem[] = [
     startDate: '10/05/2023',
     endDate: '29/07/2023',
     description:
-      'Designed and developed a professional web presence for a private client, covering requirements gathering, UI/UX design, front-end implementation, and deployment. Delivered a responsive, accessible site on time and within scope.',
+      'Developed custom web software for a workshop client, streamlining daily operations and client tracking. Conducted discovery sessions to map business requirements into clear technical specs, optimized performance bottlenecks for fast loading, and delivered a responsive, easy-to-maintain application on time.',
   },
 ]

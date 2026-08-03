@@ -20,7 +20,7 @@
  *    social-card meta tags from the `site` configuration block below.
  *
  * @since 10/05/2026
- * @updated 03/06/2026
+ * @updated 03/08/2026
  *
  * @see https://nuxt.com/modules/ui
  * @see https://nuxt.com/modules/i18n
@@ -92,6 +92,9 @@ export default defineNuxtConfig({
 
   // Advanced Caching & Routing Rules
   routeRules: {
+    // Disable caching for the service worker script to ensure it always fetches the latest version
+    '/sw.js': { cache: false },
+
     // Cache static fonts for 1 year (immutable)
     '/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
 
@@ -100,7 +103,12 @@ export default defineNuxtConfig({
     '/favicon.ico': { headers: { 'cache-control': 'public, max-age=86400' } },
 
     // API responses caching if applicable
-    '/api/**': { headers: { 'access-control-allow-origin': 'https://joaoccosta.vercel.app', 'cache-control': 'max-age=60' } },
+    '/api/**': {
+      headers: {
+        'access-control-allow-origin': 'https://joaoccosta.vercel.app',
+        'cache-control': 'max-age=60',
+      },
+    },
   },
 
   // Nuxt modules
@@ -118,6 +126,24 @@ export default defineNuxtConfig({
     '@nuxt/a11y',
   ],
 
+  // Nuxt Icon: pre-bundle icons from scanned source files into the client
+  icon: {
+    serverBundle: {
+      collections: [
+        'devicon',
+        'heroicons',
+        'logos',
+        'material-icon-theme',
+        'simple-icons',
+        'tabler',
+      ],
+    },
+    fallbackToApi: true,
+    clientBundle: {
+      scan: true,
+    },
+  },
+
   /**
    * Site-wide metadata consumed by `@nuxtjs/seo` to generate the sitemap,
    * robots.txt, and Open Graph / Twitter card meta tags.
@@ -132,7 +158,7 @@ export default defineNuxtConfig({
   /**
    * Exclude the site's own live URL from the link checker's `absolute-site-urls`
    * rule. The URL appears in `data/projects.ts` as the Portfolio project's
-   * `liveUrl` — it is intentionally absolute because it points to the live
+   * `liveUrl`, it is intentionally absolute because it points to the live
    * deployment of this very site used as a demo link in a project card.
    */
   linkChecker: {
@@ -220,8 +246,7 @@ export default defineNuxtConfig({
   },
 
   security: {
-    headers: {
-    },
+    headers: {},
   },
 
   // Internationalization configuration for English and Portuguese locales
@@ -300,17 +325,6 @@ export default defineNuxtConfig({
           'color-contrast': { enabled: false },
         },
       },
-    },
-  },
-
-  // Vite configuration for build optimizations
-  vite: {
-    // Strip console.log and debugger in production builds
-    esbuild: {
-      drop: process.env.NODE_ENV === 'production' ? ['console', 'debugger'] : [],
-    },
-    optimizeDeps: {
-      include: ['animejs', '@unhead/schema-org/vue'],
     },
   },
 })

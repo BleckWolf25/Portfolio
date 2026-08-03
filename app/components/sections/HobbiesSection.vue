@@ -11,7 +11,7 @@
       <!-- Section heading -->
       <div class="hobby-element flex items-center gap-4 mb-12">
         <h2 id="hobbies-heading" class="text-3xl font-bold text-text-primary font-mono">
-          <span class="text-accent">07.</span> {{ $t('hobbies.title') }}
+          <span class="text-accent">06.</span> {{ $t('hobbies.title') }}
         </h2>
         <div class="h-px bg-border grow max-w-xs" aria-hidden="true" />
       </div>
@@ -61,7 +61,7 @@
  * so the section localises automatically when the user switches language.
  *
  * @since 21/05/2026
- * @updated 21/05/2026
+ * @updated 03/08/2026
  */
 // ---------- IMPORTS
 import { ref } from 'vue'

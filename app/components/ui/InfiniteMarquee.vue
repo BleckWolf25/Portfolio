@@ -8,7 +8,6 @@
 
     The outer wrapper applies edge-fade masks (left + right) and sets the
     CSS custom properties that drive the animation speed and direction.
-    This avoids any v-bind() / computed ref unwrapping issues in scoped CSS.
   -->
   <div
     class="marquee-wrapper relative w-full overflow-hidden py-4 select-none"
@@ -20,62 +19,29 @@
     <div class="marquee-track" :class="{ 'pause-on-hover': pauseOnHover }">
       <!-- Set 1 (visible content) -->
       <div class="flex gap-6 shrink-0 items-center px-3">
-        <UTooltip
+        <div
           v-for="(skill, idx) in skills"
           :key="`a-${idx}`"
-          :open="activeTooltipIndex === `a-${idx}`"
-          :text="
-            skill.level
-              ? $t('skills.levelLabel', { level: $t(`skills.levels.${skill.level.toLowerCase()}`) })
-              : skill.name
-          "
-          :delay-duration="200"
+          class="skill-pill text-left cursor-default"
         >
-          <button
-            type="button"
-            class="skill-pill text-left cursor-default"
-            @mouseenter="activeTooltipIndex = `a-${idx}`"
-            @mouseleave="activeTooltipIndex = null"
-            @focus="activeTooltipIndex = `a-${idx}`"
-            @blur="activeTooltipIndex = null"
-            @click="handleBadgeClick($event, `a-${idx}`)"
-          >
-            <UIcon v-if="skill.icon" :name="skill.icon" class="w-4 h-4 shrink-0 text-accent" />
-            <span class="text-sm font-mono font-medium text-text-primary whitespace-nowrap">
-              {{ skill.name }}
-            </span>
-          </button>
-        </UTooltip>
+          <UIcon v-if="skill.icon" :name="skill.icon" class="w-4 h-4 shrink-0 text-accent" />
+          <span class="text-sm font-mono font-medium text-text-primary whitespace-nowrap">
+            {{ skill.name }}
+          </span>
+        </div>
       </div>
       <!-- Set 2 (duplicate for loop) -->
       <div class="flex gap-6 shrink-0 items-center px-3" aria-hidden="true">
-        <UTooltip
+        <div
           v-for="(skill, idx) in skills"
           :key="`b-${idx}`"
-          :open="activeTooltipIndex === `b-${idx}`"
-          :text="
-            skill.level
-              ? $t('skills.levelLabel', { level: $t(`skills.levels.${skill.level.toLowerCase()}`) })
-              : skill.name
-          "
-          :delay-duration="200"
+          class="skill-pill text-left cursor-default"
         >
-          <button
-            type="button"
-            class="skill-pill text-left cursor-default"
-            tabindex="-1"
-            @mouseenter="activeTooltipIndex = `b-${idx}`"
-            @mouseleave="activeTooltipIndex = null"
-            @focus="activeTooltipIndex = `b-${idx}`"
-            @blur="activeTooltipIndex = null"
-            @click="handleBadgeClick($event, `b-${idx}`)"
-          >
-            <UIcon v-if="skill.icon" :name="skill.icon" class="w-4 h-4 shrink-0 text-accent" />
-            <span class="text-sm font-mono font-medium text-text-primary whitespace-nowrap">
-              {{ skill.name }}
-            </span>
-          </button>
-        </UTooltip>
+          <UIcon v-if="skill.icon" :name="skill.icon" class="w-4 h-4 shrink-0 text-accent" />
+          <span class="text-sm font-mono font-medium text-text-primary whitespace-nowrap">
+            {{ skill.name }}
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -94,25 +60,12 @@
  * @description
  * Creates a premium horizontal infinite-scrolling ticker for technology badges.
  * Uses hardware-accelerated CSS keyframe animation (translate3d) for 60+ FPS.
- * Animation speed and direction are passed as CSS custom properties on the
- * wrapper element (`--marquee-duration`, `--marquee-dir`). The inner
- * `.marquee-track` reads them via `var()`. This avoids the pitfall of using
- * `v-bind()` in scoped CSS with nested computed-ref property access, which
- * does NOT auto-unwrap the ref's `.value`.
- * Structure:
- * wrapper (sets CSS vars)
- * └── marquee-track (animated)
- * ├── [skills × 1]  ← visible set
- * └── [skills × 1]  ← duplicate (aria-hidden), for loop
  *
  * @since 20/05/2026
- * @updated 01/06/2026
+ * @updated 03/08/2026
  */
-// ---------- IMPORTS
-import { ref } from 'vue'
 import type { Skill } from '~~/data/skills'
 
-// ---------- PROPS
 withDefaults(
   defineProps<{
     /** Skills to render in this scrolling track. */
@@ -130,32 +83,6 @@ withDefaults(
     pauseOnHover: true,
   }
 )
-
-// ---------- STATE
-const activeTooltipIndex = ref<string | null>(null)
-
-// ---------- METHODS
-/**
- * Programmatically focuses the clicked element to guarantee mobile focus.
- *
- * @param event - The pointer or click event.
- */
-function focusBadge(event: Event) {
-  if (event.currentTarget) {
-    ;(event.currentTarget as HTMLElement).focus()
-  }
-}
-
-/**
- * Handles the badge click/touch event, focusing the element and setting active state programmatically.
- *
- * @param event - The pointer or click event.
- * @param indexKey - The unique key string for the tooltip.
- */
-function handleBadgeClick(event: Event, indexKey: string) {
-  focusBadge(event)
-  activeTooltipIndex.value = indexKey
-}
 </script>
 
 <style scoped>
@@ -198,8 +125,6 @@ function handleBadgeClick(event: Event, indexKey: string) {
 .marquee-track {
   display: flex;
   width: max-content;
-  /* animation-duration and direction come from CSS custom properties
-     set by the parent wrapper via :style binding */
   animation-name: scroll-marquee;
   animation-duration: var(--marquee-duration, 30s);
   animation-timing-function: linear;
@@ -229,18 +154,9 @@ function handleBadgeClick(event: Event, indexKey: string) {
   }
 }
 
-.skill-pill:hover,
-.skill-pill:focus,
-.skill-pill:focus-within {
-  outline: none;
+.skill-pill:hover {
   border-color: var(--color-accent);
   box-shadow: 0 0 14px rgba(0, 212, 255, 0.2);
-}
-
-.skill-pill:active {
-  border-color: var(--color-accent);
-  background: var(--color-accent-dim);
-  transform: scale(0.96);
 }
 
 @keyframes scroll-marquee {

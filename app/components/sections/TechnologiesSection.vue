@@ -91,11 +91,9 @@ const coreSkills = computed(() => {
 
   for (const cat of props.categories) {
     for (const skill of cat.skills) {
-      if (skill.level && skill.level === 'Proficient') {
-        if (!seen.has(skill.name)) {
-          seen.add(skill.name)
-          list.push(skill)
-        }
+      if (!seen.has(skill.name)) {
+        seen.add(skill.name)
+        list.push(skill)
       }
     }
   }
