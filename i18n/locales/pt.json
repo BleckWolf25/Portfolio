@@ -13,7 +13,7 @@
     "toggleMenu": "Alternar Menu Mobile",
     "mainNavigation": "Navegação Principal",
     "customizeTheme": "Personalizar cor do tema",
-    "toggleTheme": "Alternar tema escuro/claro",
+    "toggleTheme": "Alternar tema",
     "mobileNavigation": "Navegação Mobile",
     "themes": {
       "emerald": "Esmeralda",
@@ -24,7 +24,7 @@
     }
   },
   "hero": {
-    "greeting": "Hello World! Eu sou",
+    "greeting": "Olá, mundo! Eu sou",
     "tagline": "Engenheiro de Software",
     "description": "Desenvolvo software limpo e de alto desempenho e lidero pequenos projetos de engenharia, combinando bases técnicas sólidas com execução prática.",
     "cta": "Vamos Construir Algo",
@@ -32,23 +32,23 @@
   },
   "about": {
     "title": "Sobre Mim",
-    "p1": "Sou um engenheiro de software focado em construir software claro e fiável. Gosto de projetar sistemas backend e criar aplicações rápidas e responsivas.",
-    "p2": "Ao longo dos meus projetos, desenvolvi desde aplicações web full-stack a ferramentas desktop e mecânicas de jogo. Dou grande valor ao código limpo e à comunicação direta e honesta.",
-    "p3": "Quer esteja a escrever C++ para sistemas de baixo nível ou a construir uma aplicação web full-stack, a minha abordagem é simples: resolver problemas reais com código prático e fácil de manter."
+    "p1": "Sou um engenheiro de software focado em construir software claro e fiável. Gosto de arquitetar sistemas backend e escrever aplicações rápidas e responsivas.",
+    "p2": "Ao longo dos meus projetos, desenvolvi desde aplicações web full-stack a ferramentas desktop e várias mecânicas de jogo. Dou um elevado valor a código limpo e a uma comunicação direta e honesta.",
+    "p3": "Quer esteja a escrever C++ para sistemas de baixo nível ou a construir uma aplicação web full-stack, a minha abordagem é direta: resolver problemas reais com código prático e fácil de manter."
   },
   "whatIBuild": {
     "title": "O Que Construo",
     "webDev": {
       "title": "Desenvolvimento Web",
-      "description": "Aplicações web responsivas, acessíveis e de alto desempenho utilizando frameworks modernas como Vue, Nuxt e React."
+      "description": "Criação de aplicações web rápidas e intuitivas com frameworks modernas. Foco-me em interfaces limpas, UX responsiva e na eliminação de excessos desnecessários no frontend."
     },
     "softwareDev": {
       "title": "Desenvolvimento de Software",
-      "description": "Serviços backend escaláveis, software de ambiente de trabalho e ferramentas internas concebidas para máxima fiabilidade e manutenibilidade."
+      "description": "Arquitetura de backends, ferramentas de ambiente de trabalho e software empresarial à medida. Valorizo estruturas de dados sólidas, APIs fiáveis e sistemas simples que simplesmente funcionam."
     },
     "gameDev": {
       "title": "Desenvolvimento de Jogos",
-      "description": "Engines personalizados e protótipos de jogos com ênfase no desempenho, arquitetura ECS e lógica imersiva."
+      "description": "Desenvolvimento de sistemas de jogo, mecânicas e protótipos interativos. Foco-me em lógica em tempo real, otimização de desempenho e código modular e limpo."
     }
   },
   "technologies": {
@@ -72,15 +72,15 @@
       },
       "aitoolkit": {
         "name": "AI Toolkit",
-        "description": "Um framework sistémico de engenharia e avaliação de prompts. Inclui personas avançadas de agentes meta-cognitivos, injeção dinâmica de contexto few-shot, validação de esquemas para testes e um playground CLI interativo feito com LiteLLM."
+        "description": "Um framework sistémico de engenharia e avaliação de prompts. Inclui personas avançadas de agentes metacognitivos, injeção dinâmica de contexto few-shot, validação de esquemas para testes e um playground CLI interativo feito com LiteLLM."
       },
       "code-pulse-v2": {
         "name": "Code Pulse v2",
-        "description": "O Code Pulse é uma extensão para acompanhar a sua produtividade e padrões de codificação. Fornece insights inteligentes, tendências, complexidade e muito mais para melhorar os seus padrões e qualidade de código."
+        "description": "O Code Pulse é uma extensão para acompanhar a sua produtividade e padrões de codificação para o ajudar. Fornece insights inteligentes, tendências, complexidade e muito mais para melhorar os seus padrões e qualidade de código."
       },
       "portfolio-v3": {
         "name": "Portfólio Website v3",
-        "description": "Um Portfólio moderno com renderização do lado do servidor construído com Nuxt 4 e Vue 3. Inclui animações baseadas em scroll, i18n (EN/PT), conformidade WCAG 2.1 AA, Nuxt UI, Tailwind CSS v4 e uma arquitetura de conteúdo totalmente baseada em dados."
+        "description": "Um portfólio moderno totalmente renderizado do lado do servidor construído com Nuxt 4 e Vue 3. Inclui animações baseadas em scroll, i18n (EN/PT), conformidade WCAG 2.1 AA, Nuxt UI, Tailwind CSS v4 e uma arquitetura de conteúdo totalmente baseada em dados."
       },
       "daily-dash": {
         "name": "DailyDash",
@@ -99,16 +99,16 @@
         "description": "O BeaudyShell é um shell moderno, extensível e altamente acessível, escrito em Rust, com uma experiência REPL polida, destaque de sintaxe em tempo real, autocompletação inline, sugestões em ciclo por tab e restauração do histórico de comandos."
       },
       "great-calculator": {
-        "name": "A Grande Calculadora v4",
-        "description": "A Great Calculator é uma calculadora de alta precisão com modo científico, modo gráfico, funções e ferramentas de probabilidade, concebida para ser rápida, clara e precisa."
+        "name": "The Great Calculator v4",
+        "description": "A Grande Calculadora é uma calculadora de alta precisão com modo científico, modo gráfico, funções e ferramentas de probabilidade, concebida para ser rápida, clara e precisa."
       }
     }
   },
   "project": {
     "openSource": "Código Aberto",
     "confidential": "Confidencial",
-    "liveDemo": "Demo",
-    "viewRepository": "Código Fonte"
+    "liveDemo": "Demonstração Ao Vivo",
+    "viewRepository": "Código-Fonte"
   },
   "timeline": {
     "title": "Experiência Profissional",
@@ -121,7 +121,7 @@
       },
       "web-dev-antonio": {
         "role": "Programador Web",
-        "organisation": "António Costa",
+        "organisation": "Antonio Costa",
         "description": "Desenvolvi software web personalizado para um cliente de oficina, simplificando as operações diárias e o acompanhamento de clientes. Conduzi sessões de alinhamento para traduzir requisitos de negócio em especificações técnicas claras, otimizei estrangulamentos de desempenho para carregamentos rápidos e entreguei uma aplicação responsiva e fácil de manter dentro do prazo."
       }
     }
@@ -141,7 +141,7 @@
       "description": "Procurar adrenalina na estrada e explorar novos lugares sobre duas rodas."
     },
     "coding": {
-      "title": "Programar",
+      "title": "Programação",
       "description": "Escrever código como passatempo e aprender constantemente novas tecnologias."
     }
   },
@@ -158,11 +158,11 @@
   "automation-scripting": "Automação e Scripting",
   "frameworks-libraries": "Frameworks e Bibliotecas",
   "design-styling": "Design e Estilização",
-  "dev-tools": "Ferramentas de Desenvolvimento",
-  "databases-backend": "Bases de Dados e Back-end",
+  "dev-tools": "Ferramentas de Dev",
+  "databases-backend": "Bases de Dados e Backend",
   "runtimes-environments": "Runtimes e Ambientes",
   "ides": "IDEs",
-  "agentic-dev-environments": "Ambientes de Desenvolvimento Autónomos",
+  "agentic-dev-environments": "Ambientes de Desenvolvimento Agênticos",
   "game-dev": "Desenvolvimento de Jogos",
   "os": "Sistemas Operativos",
   "ai-productivity": "IA e Produtividade",
